@@ -1,0 +1,15 @@
+{
+  "name": "cowork-1",
+  "version": "1.0.0",
+  "description": "A simple job portal web application catered for students. A platform where students can grow competences and business has the ability to quickly scout for new talent.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
