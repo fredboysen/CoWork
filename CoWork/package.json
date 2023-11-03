@@ -1,0 +1,11 @@
+{
+  "name": "cowork",
+  "version": "1.0.0",
+  "description": "Project for CoWork Web Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Frederik Boysen",
+  "license": "ISC"
+}
