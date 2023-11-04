@@ -10,8 +10,12 @@ app.use("/styles", express.static(__dirname + "public/styles"));
 app.use("/scripts", express.static(__dirname + "public/scripts"));
 app.use("/images", express.static(__dirname + "public/images"));
 
-app.get("/", async (request, response) => {
-  response.send(await readFile("views/index.html", "utf8"));
+//setting views
+app.set("views", "./views");
+app.set("view engine", "ejs");
+
+app.get("", (req, res) => {
+  res.render("index");
 });
 
 //listen on port 3000
