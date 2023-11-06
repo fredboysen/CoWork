@@ -1,7 +1,5 @@
 //imports
-const { readFile } = require("fs").promises;
 const express = require("express");
-const path = require("path");
 
 const app = express();
 
