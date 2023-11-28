@@ -1,31 +1,36 @@
-//database connection code:
-const path = require("path");
-require("dotenv").config({
-  override: true,
-  path: path.join(__dirname, "development.env"),
-});
-const { Pool, Client} = require("pg");
+const { Client } = require("pg");
 
-const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env_DATABASE,
-    password: process.env_PASSWORD,
-    port: process.env.DB_PORT || 5432, // Default PostgreSQL port
-  });
-  
-  // Listen for the 'connect' event
-  pool.on('connect', () => {
-    console.log('Connected to the database');
-  });
-pool.query("SELECT NOW()", (err, result) => {
+const client = new Client({
+  host: "localhost",
+  port: "5432",
+  database: "postgres",
+  user: "postgres",
+  password: "1234",
+});
+
+client.connect();
+
+client.connect((err) => {
   if (err) {
-    console.error("Error executing query", err);
+    console.error("Error connecting to the database:", err.message);
   } else {
-    console.log("Current date and time from the database:", result.rows[0].now);
-  }
+    console.log("Connected to the database");
 
-  // Close the pool (optional, as the pool will be closed when the application exits)
-  pool.end();
+    // Run a simple query to test the connection
+    client.query("SELECT NOW()", (queryErr, result) => {
+      if (queryErr) {
+        console.error("Error executing query:", queryErr.message);
+      } else {
+        console.log(
+          "Current date and time from the database:",
+          result.rows[0].now
+        );
+      }
+
+    
+      client.end();
+    });
+  }
 });
+
 
