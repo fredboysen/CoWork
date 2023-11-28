@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="public/scripts/bootstrap.min.js" type="text/css" rel="stylesheet">
+  <link href="public\styles\bootstrap.min.css" type="text/css" rel="stylesheet">
   <link href="public/styles/styles.css" rel="stylesheet" type="text/css">
   <script src="public/scripts/bootstrap.bundle.min.js"></script>
 </head>
@@ -19,6 +19,7 @@
           <a class="nav-link active" href="index.html">Front page</a>
         </li>
         <li class="nav-item">
+
           <a class="nav-link" href="forum.html">Forum</a>
         </li>
         <li class="nav-item">
@@ -33,20 +34,21 @@
       </ul>
     </div>
     <div> <class="nav-item" id="profile">
-        <a class="nav-link float-right" shref="profile">Profile</a>
+        <a class="nav-link float-right" href="profile">Profile</a>
     </div>
   </nav>
 
   <div class="container1">
     <div class="row justify-content-center">
-      <div class="col-lg-2">
+      <div class="col-lg-2 side-panel">
+        
       </div>
-      <div class="col-lg-8">
+      <div class="col-lg-12 main-content">
         <input class="input" type="text" placeholder="Insert area or postal code">
         <input class="input" type="text" placeholder="Search for jobs or qualifications">
         <button type="button" id="bottom" class="btn btn-primary btn-lg mt-3">Search</button>
 
-        <div class="col-lg-4 mt-3">
+        <div class="col-lg-6 mt-3">
           <div class="fred">
             <img src="public/Images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
             <h5 class="titleF">Frederik Boysen <br> Global Business Engineering 5.Semester</h5>
@@ -57,7 +59,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 mt-3">
+        <div class="col-lg-6 mt-3">
           <div class="Ernø">
             <img src="public/Images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
             <h5 class="titleJ">Jacob A.E <br> Economics and IT 7. semester</h5>
@@ -69,7 +71,7 @@
         </div>
 
 
-        <div class="short-cut card col-lg-2 mt-3">
+        <div class="short-cut card col-lg-4 mt-3">
           <div class="card-body">
             <h5 class="card-title">Short cuts</h5>
             <ul class="list-group list-group-flush">
@@ -86,13 +88,13 @@
         </div>
 
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 side-panel side-panel">
         <!-- Right side content -->
         <!-- You can place content or ads here -->
       </div>
     </div>
   </div>
-
+  <script src="public/scripts/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
