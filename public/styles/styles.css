@@ -40,30 +40,58 @@ body {
   justify-content: space-between;
 }
 
-.side-panel,
 .main-content {
-  flex: 1;
+  flex: 1; 
   padding: 20px;
   box-sizing: border-box;
   background-color: grey;
-  width: 1000px;
 }
 
-.input {
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 100px;
-  margin-right: 200px;
-  font-size: 17px;
-  width: 255px;
+
+.left-side-panel {
+  width: 200px; /* Adjusted width for the left side-panel */
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full viewport height */
+  border: solid 2px;
 }
+
+.right-side-panel {
+  width: 200px; /* Adjusted width for the right side-panel */
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh; /* Full viewport height */
+  border: solid 2px;
+}
+
+.bottom-container {
+  display: flex;
+  align-items:normal;
+  margin-top: 100px;
+  float: right;
+}
+
+.search-container {
+  display: flex;
+  margin-right: 190px; /* Adjust spacing between elements */
+  
+}
+
+/* Optional: Adjust margins or paddings as needed */
+.input,
+.btn {
+  margin-right: 150px; /* Adjust spacing between elements */
+  width: 250px;
+}
+
 
 
 .col-lg-2 {
-  border: solid 2px;
   background-color: white;
-  height: 1000px;
 }
 
 
@@ -73,8 +101,9 @@ body {
   width: 250px;
   padding: 5%;
   float: right;
-  margin-right: -50%;
-  height: 545px;
+  margin-right: -500%;
+  margin-top: 250%;
+  height: fit-content;
 }
 
 
@@ -83,8 +112,10 @@ body {
   width: 250px;
   background-color: yellow;
   padding: 5%;
+  margin-left: 250%;
+  margin-top: 250%;
   float: left;
-  height: 100%;
+  height: fit-content;
 }
 
 .card-img-top {
@@ -95,15 +126,10 @@ body {
   margin-top: 20px;
 }
 
-#bottom {
-  width: 700px;
-  margin-left: 200px;
-}
-
 .short-cut {
   width: fit-content;
-  margin-left: 50%;
-  position: fixed;
+  margin-left: 1280px;
+  margin-top: -650px;
   height: fit-content;
-
 }
+

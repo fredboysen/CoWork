@@ -11,7 +11,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-yellow fixed-top">
+  <nav class="navbar navbar-expand-md navbar-light bg-yellow fixed-top">
     <div class="container">
       <img src="../public/Images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
       <ul class="navbar-nav ml-auto">
@@ -38,60 +38,65 @@
     </div>
   </nav>
 
+  <div class="bottom-container">
+    <input class="input" type="text" placeholder="Insert area or postal code">
+    <div class="search-container">
+      <input class="input input-element" type="text" placeholder="Search for jobs or qualifications">
+      <button type="button" id="bottom" class="btn btn-primary btn-lg">Search</button>
+    </div>
+  </div>
+
   <div class="container1">
     <div class="row justify-content-center">
-      <div class="col-lg-2 side-panel">
-        
+      <div class="col-lg-2 side-panel left-side-panel">
+        <!-- Left panel content -->
+        <p>Left Side Panel Content</p>
       </div>
-      <div class="col-lg-12 main-content">
-        <input class="input" type="text" placeholder="Insert area or postal code">
-        <input class="input" type="text" placeholder="Search for jobs or qualifications">
-        <button type="button" id="bottom" class="btn btn-primary btn-lg mt-3">Search</button>
-
-        <div class="col-lg-6 mt-3">
-          <div class="fred">
-            <img src="../public/Images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
-            <h5 class="titleF">Frederik Boysen <br> Global Business Engineering 5.Semester</h5>
-            <p class="card-text">I found a relevant study job through CoWork and i have never been more well-suited for
-              my future career! A relevant study job is extremely important to me. As I am studying Engineering, I feel
-              that it is very important to experience what the industry is like before I graduate
-            </p>
+      <div class="col-lg-8 main-content">
+        <div class="row">
+          <div class="col-lg-6 mt-3">
+            <div class="fred">
+              <img src="../public/Images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
+              <h5 class="titleF">Frederik Boysen <br> Global Business Engineering 5.Semester</h5>
+              <p class="card-text">I found a relevant study job through CoWork and i have never been more well-suited for
+                my future career! A relevant study job is extremely important to me. As I am studying Engineering, I feel
+                that it is very important to experience what the industry is like before I graduate
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 mt-3">
+            <div class="Ernø">
+              <img src="../public/Images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
+              <h5 class="titleJ">Jacob A.E <br> Economics and IT 7. semester</h5>
+              <p class="card-text">Personally, I deeply understand the significance of students discovering relevance in
+                their educational pursuits. It's not merely about absorbing information; it's about uncovering connections
+                between academic knowledge and practical application.
+              </p>
+            </div>
           </div>
         </div>
-
-        <div class="col-lg-6 mt-3">
-          <div class="Ernø">
-            <img src="../public/Images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
-            <h5 class="titleJ">Jacob A.E <br> Economics and IT 7. semester</h5>
-            <p class="card-text">Personally, I deeply understand the significance of students discovering relevance in
-              their educational pursuits. It's not merely about absorbing information; it's about uncovering connections
-              between academic knowledge and practical application.
-            </p>
-          </div>
-        </div>
-
-
-        <div class="short-cut card col-lg-4 mt-3">
-          <div class="card-body">
-            <h5 class="card-title">Short cuts</h5>
-            <ul class="list-group list-group-flush">
-              <!-- Når hjemmesiden er lavet skal # laves om til de jobs stillinger der er indenfor de forskellige fag-->
-              <li class="list-group-item"><a href="#">Engineering</a></li>
-              <li class="list-group-item"><a href="#">Medicine</a></li>
-              <li class="list-group-item"><a href="#">Industry and Trades</a></li>
-              <li class="list-group-item"><a href="#">Healthcare</a></li>
-              <li class="list-group-item"><a href="#">Sales and Communication</a></li>
-              <li class="list-group-item"><a href="#">Economics</a></li>
-              <li class="list-group-item"><a href="#">Other</a></li>
-            </ul>
-          </div>
-        </div>
-
       </div>
-      <div class="col-lg-2 side-panel side-panel">
-        <!-- Right side content -->
-        <!-- You can place content or ads here -->
+      <div class="col-lg-2 side-panel right-side-panel">
+        <!-- Right panel content -->
+        <p>Right Side Panel Content</p>
       </div>
+    </div>
+  </div>
+  
+
+  <div class="short-cut card col-lg-4">
+    <div class="card-body">
+      <h5 class="card-title">Short cuts</h5>
+      <ul class="list-group list-group-flush">
+        <!-- Når hjemmesiden er lavet skal # laves om til de jobs stillinger der er indenfor de forskellige fag-->
+        <li class="list-group-item"><a href="#">Engineering</a></li>
+        <li class="list-group-item"><a href="#">Medicine</a></li>
+        <li class="list-group-item"><a href="#">Industry and Trades</a></li>
+        <li class="list-group-item"><a href="#">Healthcare</a></li>
+        <li class="list-group-item"><a href="#">Sales and Communication</a></li>
+        <li class="list-group-item"><a href="#">Economics</a></li>
+        <li class="list-group-item"><a href="#">Other</a></li>
+      </ul>
     </div>
   </div>
   <script src="../public/scripts/bootstrap.bundle.min.js"></script>
