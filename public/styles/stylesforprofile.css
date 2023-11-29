@@ -1,26 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100vh;
-        background-color: #f0f0f0;
-      }
-      .card-img-top {
-        width: 75px;
-      }
-      
-      .card-tex {
-        margin-top: 20px;
-      }
-      
+.card-img-top {
+  width: 75px;
+}
+
+.card-tex {
+  margin-top: 20px;
+}
+
 .col-lg-2 {
-    background-color: white;
-  }
-  .navbar {
+  background-color: white;
+}
+
+.navbar {
   background-color: yellow;
   height: 75px;
 }
@@ -40,12 +41,14 @@
   border-bottom: 3px solid black;
 }
 
+
 .logo {
   max-width: 250px;
   /* Adjust the max-width as needed */
   height: auto;
   /* Maintain aspect ratio */
   float: left;
+
 }
 
 .container {
@@ -60,7 +63,7 @@
 }
 
 .main-content {
-  flex: 1; 
+  flex: 1;
   padding: 20px;
   box-sizing: border-box;
   background-color: grey;
@@ -68,128 +71,134 @@
 
 
 .left-side-panel {
-  width: 200px; /* Adjusted width for the left side-panel */
+  width: 200px;
+  /* Adjusted width for the left side-panel */
   background-color: white;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
+  /* Full viewport height */
   border: solid 2px;
 }
 
 .right-side-panel {
-  width: 200px; /* Adjusted width for the right side-panel */
+  width: 200px;
+  /* Adjusted width for the right side-panel */
   background-color: white;
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
+  /* Full viewport height */
   border: solid 2px;
 }
 
 .container-bruger {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 800px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-section,
+.middle-section,
+.signup-section {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.login-form,
+.signup-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-section,
+.middle-section,
+.signup-section {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 100px;
+}
+
+
+
+.login-form,
+.signup-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Your other styles */
+.form-group {
+  margin-bottom: 5px;
+  margin-top: 40px;
+}
+
+label {
+  display: block;
+  margin-bottom: 50px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: calc(100% - 22px);
+  /* Adjusting for padding and border */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: yellow;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: blue;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+
   .login-section,
-  .middle-section,
   .signup-section {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 5px;
-  }
-  
-  .login-form, .signup-section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 800px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .login-section,
-  .middle-section,
-  .signup-section {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 100px;
-  }
-  
-  
-  
-  .login-form, .signup-section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  /* Your other styles */
-  .form-group {
-    margin-bottom: 5px;
-    margin-top: 40px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 50px;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="password"] {
-    width: calc(100% - 22px); /* Adjusting for padding and border */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  input[type="submit"] {
-    background-color: yellow;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: blue;
-  }
-  
-  /* Responsive styles */
-  @media (min-width: 768px) {
-    .login-section,
-    .signup-section {
-      width: 48%;
-    }
-    .middle-section {
-      width: 100%;
-    }
+    width: 48%;
   }
 
-  
-  
+  .middle-section {
+    width: 100%;
+  }
+}

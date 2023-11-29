@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Profile</title>
+    <!-- Include necessary CSS and JS files -->
+    <link href="../public/styles/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="../public/styles/stylesforprofile.css" rel="stylesheet" type="text/css">
+    <script src="../public/scripts/bootstrap.bundle.min.js"></script>
+    <script src="../public/scripts/scriptupdate.js"></script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-md navbar-light bg-yellow fixed-top">
+        <div class="container">
+          <img src="../public/Images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Front page</a>
+            </li>
+            <li class="nav-item">
+    
+              <a class="nav-link" href="forum.html">Forum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="forstudents.html">For students</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="foremployers.html">For employers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="learningpaths.html">Learning paths</a>
+            </li>
+          </ul>
+        </div>
+        <div> <class="nav-item" id="profile">
+            <a class="nav-link float-right" href="profile.html">Profile</a>
+        </div>
+      </nav>
+
+    
+    <div class="container2">
+        <!-- Profile details -->
+        <h2>Welcome, <span id="userName"></span>!</h2>
+        <div class="user-details">
+            <h3>Personal Information</h3>
+            <p>Name: <span id="userFullName"></span></p>
+            <p>Email: <span id="userEmail"></span></p>
+            <p>Phone: <span id="userPhone"></span></p>
+            <a href="/edit-profile" class="btn btn-primary">Edit Profile</a>
+        </div>
+
+        <!-- Qualifications, job search, and studying details -->
+        <div class="user-qualifications">
+            <h3>Qualifications and Interests</h3>
+            <p>Qualifications: <span id="userQualifications"></span></p>
+            <p>Job Search Preferences: <span id="userPreferences"></span></p>
+            <p>Studying: <span id="userStudyingDetails"></span></p>
+            <a href="/update-qualifications" class="btn btn-primary">Update Qualifications</a>
+        </div>
+    </div>
+
+    <script src="../public/scripts/scriptupdate.js"></script>
+</body>
+</html>
