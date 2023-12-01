@@ -142,7 +142,7 @@ body {
 }
 
 @media (max-width: 1500px) {
-  /* Add your responsive CSS rules here */
+
   .col-lg-2 {
     display: none;
   } }

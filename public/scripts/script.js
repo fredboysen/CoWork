@@ -17,5 +17,15 @@ function toggleMenu() {
 
 
 
+  function redirectToProfile() {
+    // Perform any necessary login validation or actions here
+
+    // Redirect to profile2.html after form submission
+    window.location.href = "profile2.html";
+    return false; // Prevent the default form submission
+  }
+
+
+
 
 

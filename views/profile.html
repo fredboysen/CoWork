@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../public/styles/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="../public\styles\stylesforprofile.css" rel="stylesheet" type="text/css">
-    <script src="../public/scripts/bootstrap.bundle.min.js"></script>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../public/styles/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <link href="../public\styles\stylesforprofile.css" rel="stylesheet" type="text/css">
+  <script src="../public/scripts/bootstrap.bundle.min.js"></script>
+
 </head>
+
 <body>
 
   <nav class="navbar navbar-expand-md navbar-light bg-yellow fixed-top">
     <div class="container">
-      <img src="../public/Images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
+      <img src="/public/images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link active" href="index.html">Front page</a>
         </li>
         <li class="nav-item">
-
           <a class="nav-link" href="forum.html">Forum</a>
         </li>
         <li class="nav-item">
@@ -30,13 +31,28 @@
         <li class="nav-item">
           <a class="nav-link" href="learningpaths.html">Learning paths</a>
         </li>
+        <!-- Profile Link -->
+        <li class="nav-item">
+          <a class="nav-link float-right" href="profile.html">Profile</a>
+        </li>
+        <!-- Hamburger Icon -->
+        <li class="nav-item hamburger-icon">
+          <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            &#9776;
+          </a>
+        </li>
       </ul>
-    </div>
-    <div> <class="nav-item" id="profile">
-        <a class="nav-link float-right" href="profile.html">Profile</a>
+      <!-- Dropdown Menu -->
     </div>
   </nav>
 
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="index.html">Front page</a>
+    <a href="forstudents.html">For Students</a>
+    <a href="foremployers.html">For employers</a>
+    <a href="learningpaths.html">Learning paths</a>
+    <a href="profile.html">Profile</a>
+  </div>
   <div class="container-bruger">
     <div class="login-section">
       <form action="login.php" method="post" class="login-form">
@@ -49,45 +65,63 @@
           <label for="login-password">Adgangskode:</label>
           <input type="password" id="login-password" name="login-password" required>
         </div>
-        <input type="submit" value="Log ind">
+        <input type="submit" value="Log ind" class="submit-btn" onclick="auth()">
       </form>
     </div>
 
 
     <div class="middle-section">
-        <h4>If you don't have an account with CoWork, please create one:</h4>
-      </div>
+      <h4>If you don't have an account with CoWork, please create one:</h4>
+    </div>
 
-  <div class="container-bruger">
-   
-    <form action="process.php" method="post">
-      <div class="form-group">
-        <label for="name">Navn:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="address">Adresse:</label>
-        <input type="text" id="address" name="address" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Telefonnummer:</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Adgangskode:</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <input type="submit" value="Opret Bruger">
-    </form>
-  </div>
+    <div class="container-bruger">
+
+      <form action="process.php" method="post">
+        <div class="form-group">
+          <label for="name">Navn:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Adresse:</label>
+          <input type="text" id="address" name="address" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefonnummer:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Adgangskode:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <input type="submit" value="Opret Bruger">
+      </form>
+    </div>
 
 
+
+    <script>
+      function auth(){
+        var email = document.getElementById("login-email").value;
+        var password = document.getElementById("login-password").value;
+        if(email == "Thomas_Schelde@hotmail.com" && password =="admin123"){
+          window.location.assign("profile2.html");
+          alert("login succesfully");
+        }
+        else {
+          alert("invailid information");
+        }
+      }
+
+    </script>
+
+    <script src="../public/scripts/script.js"></script>
 
 
 
 </body>
+
 </html>

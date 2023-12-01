@@ -1,25 +1,8 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
   background-color: #f0f0f0;
 }
 
-.card-img-top {
-  width: 75px;
-}
 
-.card-tex {
-  margin-top: 20px;
-}
-
-.col-lg-2 {
-  background-color: white;
-}
 
 .navbar {
   background-color: yellow;
@@ -35,12 +18,37 @@ body {
 }
 
 
+
+/* Show icon on screens less than 1000px */
+@media (max-width: 998px) {
+  .hamburger-icon{
+    display: block; /* Show icon on smaller screens */
+  }
+
+  /* Hide regular navigation links on smaller screens */
+  .navbar a {
+    display: none;
+  }
+  
+}
+
+/* Show regular navigation links on screens 1000px and larger */
+@media (min-width: 1000px) {
+  .hamburger-icon {
+    display: none; /* Hide icon on larger screens */
+  }
+
+  /* Show regular navigation links on larger screens */
+  .navbar a {
+    display: inline;
+  }
+}
+
 .navbar a:hover {
   color: white;
   font-size: 22px;
   border-bottom: 3px solid black;
 }
-
 
 .logo {
   max-width: 250px;
@@ -48,8 +56,9 @@ body {
   height: auto;
   /* Maintain aspect ratio */
   float: left;
-
 }
+
+
 
 .container {
   width: 100%;
@@ -66,7 +75,15 @@ body {
   flex: 1;
   padding: 20px;
   box-sizing: border-box;
-  background-color: grey;
+
+}
+
+.card-img-top {
+  width: 75px;
+}
+
+.card-tex {
+  margin-top: 20px;
 }
 
 
@@ -123,16 +140,7 @@ body {
   border: 1px solid #ccc;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 800px;
-  width: 90%;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
+
 
 .login-section,
 .middle-section,
