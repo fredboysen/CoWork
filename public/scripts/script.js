@@ -5,8 +5,3 @@ $.get("xml/person.xml", function (xml, status) {
 });
 
 
-
-
-
-
-
