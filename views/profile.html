@@ -1,18 +1,21 @@
 <!-- views/login.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="../public/styles/bootstrap.min.css" type="text/css" rel="stylesheet">
-  <link href="../public/styles/stylesforprofile.css" rel="stylesheet" type="text/css">
+  <link href="../public\styles\stylesforprofile.css" rel="stylesheet" type="text/css">
   <script src="../public/scripts/bootstrap.bundle.min.js"></script>
+
 </head>
+
 <body>
 
   <nav class="navbar navbar-expand-md navbar-light bg-yellow fixed-top">
     <div class="container">
-      <img src="../public/Images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
+      <img src="/public/images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link active" href="index.html">Front page</a>
@@ -29,13 +32,30 @@
         <li class="nav-item">
           <a class="nav-link" href="learningpaths.html">Learning paths</a>
         </li>
+        <!-- Profile Link -->
+        <li class="nav-item">
+          <a class="nav-link float-right" href="profile.html">Profile</a>
+        </li>
+        <!-- Hamburger Icon -->
+        <li class="nav-item hamburger-icon">
+          <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            &#9776;
+          </a>
+        </li>
       </ul>
     </div>
-    <div class="nav-item" id="profile">
+    <div> <class="nav-item" id="profile">
         <a class="nav-link float-right" href="profile.html">Profile</a>
     </div>
   </nav>
 
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="index.html">Front page</a>
+    <a href="forstudents.html">For Students</a>
+    <a href="foremployers.html">For employers</a>
+    <a href="learningpaths.html">Learning paths</a>
+    <a href="profile.html">Profile</a>
+  </div>
   <div class="container-bruger">
     <div class="login-section">
       <!-- Updated form with onsubmit event and preventDefault -->
@@ -49,7 +69,7 @@
           <label for="login-password">Adgangskode:</label>
           <input type="password" id="login-password" name="password" required>
         </div>
-        <input type="submit" value="Log ind">
+        <input type="submit" value="Log ind" class="submit-btn" onclick="auth()">
       </form>
     </div>
 
@@ -58,60 +78,40 @@
     </div>
 
     <div class="middle-section">
-        <h4>If you don't have an account with CoWork, please create one:</h4>
-      </div>
+      <h4>If you don't have an account with CoWork, please create one:</h4>
+    </div>
 
-  </div>
-
-  <script>
-    // JavaScript function to handle form submission
-    async function submitForm(event) {
-      event.preventDefault(); // Prevent the default form submission
-      
-      const email = document.getElementById('login-email').value;
-      const password = document.getElementById('login-password').value;
-      
-      const response = await fetch('/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-      
-      const result = await response.json();
-
-      // Handle the result as needed (e.g., redirect or show an error)
-      if (result.success) {
-        window.location.href = '/index'; // Redirect to the home page
-      } else {
-        console.error('Login failed:', result.message);
-        // Handle login failure (e.g., show an error message)
-      }
-    }
-  </script>
-
-<div class="container-bruger">
-  <div class="registration-section">
-    <!-- Updated form action to "/register" and added 'enctype="application/json"' -->
-    <form action="/register" method="post" class="registration-form">
-      <h2>Register</h2>
+  <div class="container-bruger">
+   
+    <form action="process.php" method="post">
       <div class="form-group">
-        <label for="register-email">Email:</label>
-        <input type="email" id="register-email" name="email" required>
+        <label for="name">Navn:</label>
+        <input type="text" id="name" name="name" required>
       </div>
       <div class="form-group">
-        <label for="register-password">Password:</label>
-        <input type="password" id="register-password" name="password" required>
+        <label for="address">Adresse:</label>
+        <input type="text" id="address" name="address" required>
       </div>
       <div class="form-group">
-        <label for="register-role">Role:</label>
-        <input type="text" id="register-role" name="role" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
       </div>
-      <input type="submit" value="Register">
+      <div class="form-group">
+        <label for="phone">Telefonnummer:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Adgangskode:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <input type="submit" value="Opret Bruger">
     </form>
   </div>
-</div>
+
+
+
+
 
 </body>
+
 </html>

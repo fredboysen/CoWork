@@ -1,0 +1,122 @@
+body {
+    background-color: #f0f0f0;
+}
+
+
+.navbar {
+    background-color: yellow;
+    height: 75px;
+  }
+  
+  .navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s, background-color 0.3s;
+    margin-right: 40px;
+  }
+  
+  
+  
+  /* Show icon on screens less than 1000px */
+  @media (max-width: 998px) {
+    .hamburger-icon{
+      display: block; /* Show icon on smaller screens */
+    }
+  
+    /* Hide regular navigation links on smaller screens */
+    .navbar a {
+      display: none;
+    }
+    
+  }
+  
+  /* Show regular navigation links on screens 1000px and larger */
+  @media (min-width: 1000px) {
+    .hamburger-icon {
+      display: none; /* Hide icon on larger screens */
+    }
+  
+    /* Show regular navigation links on larger screens */
+    .navbar a {
+      display: inline;
+    }
+  }
+  
+  .navbar a:hover {
+    color: white;
+    font-size: 22px;
+    border-bottom: 3px solid black;
+  }
+  
+  .logo {
+    max-width: 250px;
+    /* Adjust the max-width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    float: left;
+  }
+
+
+  
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  
+  }
+  
+  .card-img-top {
+    width: 75px;
+  }
+  
+  .card-tex {
+    margin-top: 20px;
+  }
+
+
+  .container2 {
+    background-color: white;
+    padding: 40px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 450px; /* Få elementerne i min row tættere på hinanden */
+    margin-left: 450px; /* Få elementerne i min row tættere på hinanden */
+    margin-top: 200px;
+    
+}
+
+
+/* Additional styles for buttons */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.user-details{
+  float:right;
+  
+}
+
