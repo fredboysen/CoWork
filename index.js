@@ -32,8 +32,7 @@ app.post('/register', async (req, res) => {
 
   // Hash the password
   const hashedPassword = await bcrypt.hash(password.trim(), 15);
-  console.log('Hashed password length:', hashedPassword.length);
-
+  
 
   const query = 'INSERT INTO public.users (email, password, role) VALUES ($1, $2, $3) RETURNING user_id';
   const values = [email, hashedPassword, role];
