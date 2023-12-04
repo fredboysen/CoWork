@@ -9,6 +9,8 @@
     <title>Document</title>
 </head>
 <body>
+
+    
     
     <div class="container" id="container">
         <div class="registration-section">
@@ -85,7 +87,7 @@
       // Handle the result as needed (e.g., redirect or show an error)
       if (result.success) {
         console.log('Registration successful');
-        // Redirect to the profile page or wherever you want
+        window.location.href = 'profile2.html';
       } else {
         console.error('Registration failed:', result.message);
         // Handle registration failure (e.g., show an error message)
