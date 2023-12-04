@@ -2,7 +2,10 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require('body-parser');
-const { pool, checkConnection } = require('./db');
+const userModel = require('./db/models/user');
+const { pool, checkConnection } = require('./db'); // Adjust the path accordingly
+
+
 const bcrypt = require('bcrypt');
 
 const app = express();
@@ -30,26 +33,27 @@ app.post('/register', async (req, res) => {
     return res.status(500).json({ success: false, message: 'Database connection error' });
   }
 
-  // Hash the password
-  const hashedPassword = await bcrypt.hash(password.trim(), 15);
-  
-
-const query = 'INSERT INTO public.users (email, password, role, phone, name) VALUES ($1, $2, $3, $4, $5) RETURNING user_id';
-const values = [email, hashedPassword, role, phone, name];
-
-
   try {
-    const result = await pool.query(query, values);
-    const insertedUserId = result.rows[0].user_id;
-    console.log('User inserted with ID:', insertedUserId);
-    res.json({ success: true, message: 'Registration successful' });
+    // Assuming 'createUser' is an asynchronous function in userModel
+    const hashedPassword = await bcrypt.hash(password.trim(), 15);
+    const result = await userModel.createUser(email, hashedPassword, role, phone, name);
+
+    // Handle the query result
+    if (result.length > 0 && 'user_id' in result[0]) {
+      const insertedUserId = result[0].user_id;
+      console.log('User inserted with ID:', insertedUserId);
+      res.json({ success: true, message: 'Registration successful', userId: insertedUserId });
+    } else {
+      console.error('Unexpected query result:', result);
+      throw new Error('Failed to retrieve user ID from the query result');
+    }
   } catch (error) {
-    console.error('Error executing registration query', error);
+    console.error('Error handling registration request:', error);
     res.status(500).json({ success: false, message: 'Internal Server Error', error: error.message });
   }
 });
 
-// Inside your /login route
+//login route
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   console.log('Received login request:', { email, password });
@@ -60,14 +64,11 @@ app.post('/login', async (req, res) => {
     return res.status(500).json({ success: false, message: 'Database connection error' });
   }
 
-  const query = 'SELECT * FROM public.users WHERE email = $1';
-  const values = [email];
-
   try {
-    const result = await pool.query(query, values);
+    // Assuming 'getUserByEmail' is an asynchronous function
+    const user = await userModel.getUserByEmail(email);
 
-    if (result.rows.length > 0) {
-      const user = result.rows[0];
+    if (user) {
       const passwordMatch = await bcrypt.compare(password, user.password);
 
       if (passwordMatch) {
@@ -80,7 +81,7 @@ app.post('/login', async (req, res) => {
             email: user.email,
             role: user.role,
           },
-          redirectTo: '/index.html',
+          redirectTo: '/profile2.html',
         });
 
         res.json({
@@ -91,7 +92,7 @@ app.post('/login', async (req, res) => {
             email: user.email,
             role: user.role,
           },
-          redirectTo: '/index.html',
+          redirectTo: '/profile2.html',
         });
       } else {
         // Passwords don't match, login failed
@@ -112,10 +113,11 @@ app.post('/login', async (req, res) => {
       res.json({ success: false, message: 'User not found' });
     }
   } catch (error) {
-    console.error('Error executing login query', error);
+    console.error('Error during login:', error);
     res.status(500).json({ success: false, message: 'Internal Server Error', error: error.message });
   }
 });
+
 
 
 const port = process.env.PORT || 3000;
