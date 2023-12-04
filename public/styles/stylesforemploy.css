@@ -1,0 +1,210 @@
+.job-list {
+    display: flex;
+    flex-direction: column; /* Show items in a single column */
+    gap: 5px; /* Margin between job items */
+  }
+
+  .job-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 5px; /* Adjust the margin between job items */
+    width: 200px;
+    margin-left:40%;
+    margin-top: 100px;
+   
+  }
+
+  @media (min-width: 768px) {
+    /* For medium screens, two columns */
+    .job-column {
+      flex-basis: calc(50% - 20px); /* Adjust the width of each column */
+    }
+  }
+
+  @media (min-width: 992px) {
+    /* For large screens, three columns */
+    .job-column {
+      flex-basis: calc(33.33% - 20px); /* Adjust the width of each column */
+    }
+  }
+
+  
+img { 
+  width: 50%;
+}
+
+
+
+  .navbar {
+    background-color: yellow;
+    height: 75px;
+  }
+  
+  .navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s, background-color 0.3s;
+    margin-right: 40px;
+  }
+  
+  
+  
+  /* Show icon on screens less than 1000px */
+  @media (max-width: 998px) {
+    .hamburger-icon{
+      display: block; /* Show icon on smaller screens */
+    }
+  
+    /* Hide regular navigation links on smaller screens */
+    .navbar a {
+      display: none;
+    }
+    
+  }
+  
+  /* Show regular navigation links on screens 1000px and larger */
+  @media (min-width: 1000px) {
+    .hamburger-icon {
+      display: none; /* Hide icon on larger screens */
+    }
+  
+    /* Show regular navigation links on larger screens */
+    .navbar a {
+      display: inline;
+    }
+  }
+  
+  .navbar a:hover {
+    color: white;
+    font-size: 22px;
+    border-bottom: 3px solid black;
+  }
+  
+  .logo {
+    max-width: 250px;
+    /* Adjust the max-width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    float: left;
+  }
+
+
+  
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  
+  }
+  
+  .card-img-top {
+    width: 75px;
+  }
+  
+  .card-tex {
+    margin-top: 20px;
+  }
+
+  
+.left-side-panel {
+    width: 200px;
+    /* Adjusted width for the left side-panel */
+    background-color: rgba(236, 226, 226, 0.945);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    /* Full viewport height */
+    border: solid 2px;
+  }
+  
+  .right-side-panel {
+    width: 200px;
+    /* Adjusted width for the right side-panel */
+    background-color: rgba(236, 226, 226, 0.945);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    /* Full viewport height */
+  }
+  
+  .ad1
+  {
+    width: 220px;
+    height: 980px;
+    margin-left: -13px;
+  }
+  
+  .ad2
+  {
+    width: 210px;
+    height: 1000px;
+    margin-left: -25px;
+    margin-top: 70px;
+  }
+
+
+  .short-cut {
+    margin-left: 1400px; 
+    margin-top: 20px; 
+    width: fit-content;
+  }
+
+  /* Media query for responsiveness */
+@media (max-width: 1500px) {
+  .short-cut {
+    position: static; /* Remove fixed positioning on smaller screens */
+    margin-top: 10px; /* Adjust margin for smaller screens */
+    width: 100%; /* Occupy full width */
+    margin-left: 0px;
+  }
+}
+
+
+@media (max-width: 1500px) {
+
+    .col-lg-2 {
+      display: none;
+    } }
+
+
+    .bottom {
+        display:flex;
+        align-items: center;
+        margin-top: 2%; /* Adjusted for responsiveness */
+        justify-content:center; /* Creates space between elements */
+      }
+      
+      .input,
+      .btn {
+        margin-right: 10px; /* Adjust spacing between elements */
+        width: 200px; /* Adjust width for input and button */
+      }
+      
+      @media (max-width: 768px) {
+        .bottom,
+        .search {
+          justify-content: center; /* Align content to the left for smaller screens */
+          flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+        }
+      
+        .input,
+        .btn {
+          width: 100%; /* Adjust width to occupy full width on smaller screens */
+          margin-right: 0; /* Remove right margin on smaller screens */
+          margin-bottom: 10px; /* Add bottom margin for spacing */
+        }
+      }
