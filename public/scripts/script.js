@@ -15,13 +15,6 @@ function toggleMenu() {
     }
   }
 
-  function redirectToProfile() {
-    // Perform any necessary login validation or actions here
-
-    // Redirect to profile2.html after form submission
-    window.location.href = "profile2.html";
-    return false; // Prevent the default form submission
-  }
 
   document.addEventListener("DOMContentLoaded", function() {
     // Your script here
@@ -36,7 +29,20 @@ function toggleMenu() {
     loginBtn.addEventListener('click', () => {
         container.classList.remove("active");
     });
+
+    
 });
+
+
+function updateProfilePage(userData) {
+  // Update the user-related elements in profile2.html
+  document.getElementById('userName').textContent = userData.name;
+  document.getElementById('userEmail').textContent = userData.email;
+  document.getElementById('userRole').textContent = userData.role;
+
+  // Optionally, you can perform additional actions after updating the profile page
+  console.log('Profile page updated with user data:', userData);
+}
 
 // JavaScript function to handle registration form submission
 async function submitRegistrationForm(event) {
@@ -66,31 +72,46 @@ async function submitRegistrationForm(event) {
       console.error('Registration failed:', result.message);
       // Handle registration failure (e.g., show an error message)
   }
+  window.location.href = '/profile2.html'; 
 }
 
-// JavaScript function to handle login form submission
+// Your script here
 async function submitLoginForm(event) {
   event.preventDefault(); // Prevent the default form submission
 
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
 
-  const response = await fetch('/login', {
+  try {
+    const response = await fetch('/login', {
       method: 'POST',
       headers: {
-          'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ email, password }),
-  });
+    });
 
-  const result = await response.json();
+    const result = await response.json();
 
-  // Handle the result as needed (e.g., redirect or show an error)
-  if (result.success) {
+    // Handle the result as needed
+    if (result.success) {
       console.log('Login successful');
-      // Redirect to the profile page or wherever you want
-  } else {
+      
+      // Update the profile page with user data
+      updateProfilePage(result.userData);
+
+      // Debugging: Log the redirection
+      console.log('Redirecting to profile2.html');
+
+      // Redirect to the specified page
+      window.location.replace('/profile2.html');
+    
+    } else {
       console.error('Login failed:', result.message);
       // Handle login failure (e.g., show an error message)
+    }
+  } catch (error) {
+    console.error('Error during login:', error);
+    // Handle other errors (e.g., network issues)
   }
 }
