@@ -10,14 +10,18 @@ async function getUserByEmail(email) {
 }
 
 async function createUser(email, hashedPassword, role, phone, name) {
-  const query = 'INSERT INTO public.users (email, password, role, phone, name) VALUES ($1, $2, $3, $4, $5) RETURNING user_id';
-  const values = [email, hashedPassword, role, phone, name];
+    const query = 'INSERT INTO public.users (email, password, role, phone, name) VALUES ($1, $2, $3, $4, $5) RETURNING user_id';
+    const values = [email, hashedPassword, role, phone, name];
+  
+    try {
+      const result = await pool.query(query, values);
+      return result.rows;
+    } catch (error) {
+      console.error('Error executing createUser query', error);
+      throw new Error('Internal Server Error');
+    }
+  }
 
-  const result = await pool.query(query, values);
-  return result.rows[0].user_id;
-}
-
-// Other user-related functions...
 
 module.exports = {
   getUserByEmail,

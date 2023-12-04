@@ -38,11 +38,17 @@ app.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password.trim(), 15);
     const result = await userModel.createUser(email, hashedPassword, role, phone, name);
 
-    const insertedUserId = result.user_id;
-    console.log('User inserted with ID:', insertedUserId);
-    res.json({ success: true, message: 'Registration successful' });
+    // Handle the query result
+    if (result.length > 0 && 'user_id' in result[0]) {
+      const insertedUserId = result[0].user_id;
+      console.log('User inserted with ID:', insertedUserId);
+      res.json({ success: true, message: 'Registration successful', userId: insertedUserId });
+    } else {
+      console.error('Unexpected query result:', result);
+      throw new Error('Failed to retrieve user ID from the query result');
+    }
   } catch (error) {
-    console.error('Error executing registration query', error);
+    console.error('Error handling registration request:', error);
     res.status(500).json({ success: false, message: 'Internal Server Error', error: error.message });
   }
 });
