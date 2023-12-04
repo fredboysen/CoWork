@@ -1,16 +1,13 @@
-require('dotenv').config();
 const { Pool } = require("pg");
-const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_DATABASE,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  ssl: process.env.DB_SSL === 'true', // You can use SSL if needed
-  // Add the following line to specify MD5 authentication
-  password_encryption: 'md5',
-});
 
+// Update the connection details based on your local setup
+const pool = new Pool({
+  host: "localhost",
+  port: 5432,
+  database: "CoWork",
+  user: "postgres",
+  password: "1234",
+});
 
 // Function to check the connection status
 const checkConnection = async () => {
@@ -26,4 +23,3 @@ const checkConnection = async () => {
 };
 
 module.exports = { pool, checkConnection };
-
