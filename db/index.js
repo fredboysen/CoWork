@@ -1,13 +1,13 @@
 const { Pool } = require("pg");
-
+require('dotenv').config();
 const pool = new Pool({
-  host: "localhost",
-  port: "5432",
-  database: "CoWork",
-  user: "postgres",
-  password: "1234",
-
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_DATABASE,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
 });
+
 
 // Function to check the connection status
 const checkConnection = async () => {
@@ -23,3 +23,4 @@ const checkConnection = async () => {
 };
 
 module.exports = { pool, checkConnection };
+
