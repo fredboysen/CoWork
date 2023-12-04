@@ -21,8 +21,8 @@ app.set('view engine', 'html');
 
 // Registration route
 app.post('/register', async (req, res) => {
-  const { email, password, role } = req.body;
-  console.log('Received registration request:', { email, password, role });
+  const { email, password, role, phone } = req.body;
+  console.log('Received registration request:', { email, password, role, phone });
 
   // Check the connection status before executing a query
   const isConnected = await checkConnection();
@@ -34,8 +34,9 @@ app.post('/register', async (req, res) => {
   const hashedPassword = await bcrypt.hash(password.trim(), 15);
   
 
-  const query = 'INSERT INTO public.users (email, password, role) VALUES ($1, $2, $3) RETURNING user_id';
-  const values = [email, hashedPassword, role];
+const query = 'INSERT INTO public.users (email, password, role, phone) VALUES ($1, $2, $3, $4) RETURNING user_id';
+const values = [email, hashedPassword, role, phone];
+
 
   try {
     const result = await pool.query(query, values);
@@ -48,7 +49,7 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// Other routes...
+//Login route
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
