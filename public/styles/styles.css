@@ -8,13 +8,13 @@ body {
 }
 
 .navbar a {
-  color: black;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 15px;
   transition: color 0.3s, background-color 0.3s;
   margin-right: 150px;
+  cursor: pointer;
 }
-
 
 
 /* Show icon on screens less than 1000px */

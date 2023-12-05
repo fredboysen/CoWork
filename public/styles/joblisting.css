@@ -8,7 +8,7 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 body{
   background: rgb(233, 233, 233);
@@ -39,9 +39,10 @@ ul{
 li{
   padding-bottom: 2rem;
 }
-li a{
-  font-size: 16px;
+nav a {
+  font-size: 15px;
   color: rgb(85, 83, 83);
+  cursor: pointer;
 }
 
 nav i{
@@ -50,10 +51,7 @@ nav i{
   text-align: center;
 }
 
-.profile{
-  position: absolute;
-  bottom: 0%;
-}
+
 
 /* Main Section */
 .main{

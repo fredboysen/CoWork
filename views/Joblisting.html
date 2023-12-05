@@ -2,13 +2,9 @@
     <html lang="en">
     <head>
       <title>Job listing</title>
-<<<<<<< HEAD
-      <link rel="stylesheet" href="../public/styles/employers.css" />
+      <link rel="stylesheet" href="/public/styles/joblisting.css" />
       <!-- Font Awesome Cdn Link -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-=======
-      <link rel="stylesheet" href="../public/styles/joblisting.css" />
->>>>>>> f2e8f2e98916fa889f62f630fe93e78624bb7a1f
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       <script src="../public/scripts/bootstrap.bundle.min.js"></script>
 
     </head>
@@ -37,9 +33,13 @@
                 <span class="nav-item">Learning paths</span>
               </a>
               </li>
-              <li>
-                <button id="navbarLoginBtn" class="profile" onclick="toggleLogin()">Login</button>
-                <button id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">Logout</button>
+              <li > 
+                <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()">
+                  <i class="fas fa-right-from-bracket"></i> Login
+              </a>
+              <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">
+                  <i class="fas fa-right-from-bracket"></i> Logout
+              </a>
             </li>
             </ul>
           </div>
