@@ -47,8 +47,8 @@ body{
     margin: 15px 0 10px;
 }
 
-.container button{
-    background-color: Yellow;
+.container button {
+    background-color: yellow;
     color: #070606;
     font-size: 12px;
     padding: 10px 45px;
@@ -195,5 +195,18 @@ body{
     transform: translateX(200%);
 }
 
+.container select {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
 
-
+.container select:focus {
+    outline: none;
+    border: 1px solid yellow; /* Add focus styling if needed */
+}

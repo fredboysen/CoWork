@@ -1,54 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="../public/styles/stylesforlogin.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="../public/styles/stylesforlogin.css" />
     <script src="/public\scripts\jquery-3.6.0.min.js"></script>
     <script src="/public/scripts/script.js"></script>
 
     <title>Login Screen</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container" id="container">
-        <div class="registration-section">
-            <div class="form-container sign-up">
-                <form onsubmit="submitRegistrationForm(event)" class="registration-form">
-                    <h1>Create Account</h1>
-                    <input type="text" placeholder="Name" id="register-name" name = 'name' required>
-                    <input type="email" placeholder="Email" id="register-email" name = 'email' required>
-                    <input type="password" placeholder="Password" id="register-password" name = 'password' required>
-                    <input type="text" placeholder="Phone" id="register-phone" name="phone" required>
-                    <input type="text" placeholder="Role" id="register-role" name = 'role' required>
-                    <button type="submit" id = 'Register'>Sign Up</button>
-                </form>
-            </div>
-            <div class="form-container sign-in">
-                <form onsubmit="submitLoginForm(event)"  class="login-form">
-                    <h1>Sign In</h1>
-                    <input type="email" placeholder="Email" id="login-email" name = 'email' required>
-                    <input type="password" placeholder="Password" id="login-password" name = 'password' required>
-                    <button type="submit" id = 'Login' >Sign In</button>
-                </form>
-            </div>
-            <div class="toggle-container">
-                <div class="toggle">
-                    <div class="toggle-panel toggle-left">
-                        <h1>Welcome Back, CoWorker!</h1>
-                        <p>Please enter your personal details to use all site features!</p>
-                        <button class="hidden" id="login">Sign In</button>
-                    </div>
-                    <div class="toggle-panel toggle-right">
-                        <h1>Hello, CoWorker!</h1>
-                        <p>Register to unlock full access</p>
-                        <button class="hidden" id="register">Sign Up</button>
-                    </div>
-                </div>
-            </div>
+      <div class="registration-section">
+        <div class="form-container sign-up">
+          <form
+            onsubmit="submitRegistrationForm(event)"
+            class="registration-form">
+            <h1>Create Account</h1>
+            <input
+              type="text"
+              placeholder="Name"
+              id="register-name"
+              name="name"
+              required />
+            <input
+              type="email"
+              placeholder="Email"
+              id="register-email"
+              name="email"
+              required />
+            <input
+              type="password"
+              placeholder="Password"
+              id="register-password"
+              name="password"
+              required />
+            <input
+              type="text"
+              placeholder="Phone"
+              id="register-phone"
+              name="phone"
+              required />
+            <select id="register-role" name="role" required>
+              <option value="student">Student</option>
+              <option value="employer">Employer</option>
+            </select>
+
+            <button type="submit" id="Register">Sign Up</button>
+          </form>
         </div>
+        <div class="form-container sign-in">
+          <form onsubmit="submitLoginForm(event)" class="login-form">
+            <h1>Sign In</h1>
+            <input
+              type="email"
+              placeholder="Email"
+              id="login-email"
+              name="email"
+              required />
+            <input
+              type="password"
+              placeholder="Password"
+              id="login-password"
+              name="password"
+              required />
+            <button type="submit" id="Login">Sign In</button>
+          </form>
+        </div>
+        <div class="toggle-container">
+          <div class="toggle">
+            <div class="toggle-panel toggle-left">
+              <h1>Welcome Back, CoWorker!</h1>
+              <p>
+                Please enter your personal details to use all site features!
+              </p>
+              <button class="hidden" id="login">Sign In</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+              <h1>Hello, CoWorker!</h1>
+              <p>Register to unlock full access</p>
+              <button class="hidden" id="register">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-</body>
+  </body>
 </html>
