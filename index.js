@@ -81,7 +81,7 @@ app.post('/login', async (req, res) => {
             email: user.email,
             role: user.role,
           },
-          redirectTo: '/profile2.html',
+          redirectTo: '/Joblisting.html',
         });
 
         res.json({
@@ -92,7 +92,7 @@ app.post('/login', async (req, res) => {
             email: user.email,
             role: user.role,
           },
-          redirectTo: '/profile2.html',
+          redirectTo: '/Joblisting.html',
         });
       } else {
         // Passwords don't match, login failed
@@ -104,7 +104,7 @@ app.post('/login', async (req, res) => {
         res.json({ success: false, message: 'Incorrect password' });
       }
     } else {
-      // No user found with the provided email
+  
       console.log('User not found. Sending response:', {
         success: false,
         message: 'User not found',
