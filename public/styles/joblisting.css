@@ -24,7 +24,7 @@ nav{
   left: 0;
   bottom: 0;
   width: 280px;
-  height: 110vh;
+  height: 100vh;
   background-color: yellow;
 }
 .navbar{
@@ -52,7 +52,7 @@ nav i{
 
 .profile{
   position: absolute;
-  bottom: 20px;
+  bottom: 0%;
 }
 
 /* Main Section */
