@@ -43,8 +43,7 @@ body {
 }
 
 .navbar a:hover {
-  color: white;
-  font-size: 22px;
+  font-style: bold;
   border-bottom: 2px solid black;
 }
 
