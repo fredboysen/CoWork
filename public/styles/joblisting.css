@@ -96,7 +96,7 @@ h1{
 }
 
 .tags_bar{
-  width: 55%;
+  width: 35%;
   display: flex;
   padding: 10px;
   justify-content: space-between;
