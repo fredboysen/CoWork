@@ -1,12 +1,12 @@
 const { Pool } = require("pg");
 
+// Update the connection details based on your local setup
 const pool = new Pool({
   host: "localhost",
-  port: "5432",
+  port: 5432,
   database: "CoWork",
   user: "postgres",
   password: "1234",
-
 });
 
 // Function to check the connection status
