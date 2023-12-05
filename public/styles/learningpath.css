@@ -1,0 +1,144 @@
+
+.navbar {
+    background-color: yellow;
+    height: 75px;
+  }
+  
+  .navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s, background-color 0.3s;
+    margin-right: 150px;
+  }
+  
+  
+  
+  /* Show icon on screens less than 1000px */
+  @media (max-width: 998px) {
+    .hamburger-icon{
+      display: block; /* Show icon on smaller screens */
+    }
+  
+    /* Hide regular navigation links on smaller screens */
+    .navbar a {
+      display: none;
+    }
+    
+  }
+  
+  /* Show regular navigation links on screens 1000px and larger */
+  @media (min-width: 1000px) {
+    .hamburger-icon {
+      display: none; /* Hide icon on larger screens */
+    }
+  
+    /* Show regular navigation links on larger screens */
+    .navbar a {
+      display: inline;
+    }
+  }
+  
+  .navbar a:hover {
+    color: white;
+    font-size: 22px;
+    border-bottom: 2px solid black;
+  }
+  
+  .logo {
+    max-width: 250px;
+    /* Adjust the max-width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    float: left;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  
+  }
+  
+  
+  .left-side-panel {
+    width: 200px;
+    /* Adjusted width for the left side-panel */
+    background-color: rgba(236, 226, 226, 0.945);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    /* Full viewport height */
+    border: solid 2px;
+  }
+  
+  .right-side-panel {
+    width: 200px;
+    /* Adjusted width for the right side-panel */
+    background-color: rgba(236, 226, 226, 0.945);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    /* Full viewport height */
+  }
+  
+  .ad1 {
+    width: 220px;
+    height: 980px;
+    position: fixed;
+    left: 0; /* Adjust left position */
+    top: 0; /* Adjust top position */
+  }
+  
+  .ad2 {
+    width: 210px;
+    height: 1000px;
+    position: fixed;
+    right: 0; /* Adjust right position */
+    top: 70px; /* Adjust top position */
+  }
+
+
+@media (max-width: 1500px) {
+
+    .col-lg-2 {
+      display: none;
+    } }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  
+  .video {
+    margin-bottom: 100px; /* Add space between videos */
+  }
+
+  .video-content {
+    text-align: left; /* Align content text to the left within the video content */
+    margin-top: 15%;
+  }
+
+  .video-border {
+    border: 2px solid #333;
+   width: 750px;
+  }
+
+
+  
