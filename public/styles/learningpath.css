@@ -10,6 +10,8 @@
     font-size: 15px;
     transition: color 0.3s, background-color 0.3s;
     margin-right: 150px;
+    cursor: pointer;
+    
    
   }
   
@@ -95,6 +97,7 @@
     /* Full viewport height */
   }
   
+
   .ad1 {
     width: 220px;
     height: 980px;
@@ -123,17 +126,26 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5%;
-  }
-  
-  .video {
-    margin-bottom: 100px; /* Add space between videos */
+    margin-top: 10%;
   }
 
-  .video-content {
-    text-align: left; /* Align content text to the left within the video content */
-    margin-top: 15%;
+.video-container p {
+  font-style: italic;
+  margin-top: 20px;
+}
+
+
+.video-container a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+
+}
+  .video {
+    margin-bottom: 50px; /* Add space between videos */
   }
+
+
 
   .video-border {
     border: 2px solid #333;

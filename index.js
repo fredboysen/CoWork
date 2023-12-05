@@ -6,8 +6,22 @@ const userModel = require('./db/models/user');
 const { pool, checkConnection } = require('./db'); // Adjust the path accordingly
 const session = require("express-session")
 const bcrypt = require('bcrypt');
-
+const multer = require("multer");
 const app = express();
+
+const storage = multer.diskStorage({
+  destination: './uploads',  // Adjust the path accordingly
+  filename: function(req, file, cb) {
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({ storage: storage });
+
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+
 app.use(
   session({
     secret: "bigboy",
@@ -138,6 +152,17 @@ app.post("/logout", (req, res) => {
       res.json({ success: true, message: "Logout successful" });
     }
   });
+});
+
+//upload route for files
+app.post('/upload', upload.single('file'), (req, res) => {
+  try {
+    const { filename } = req.body;
+    res.json({ success: true, message: 'File uploaded successfully', filename });
+  } catch (error) {
+    console.error('Error uploading file:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
 });
 
 
