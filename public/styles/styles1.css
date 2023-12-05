@@ -1,0 +1,48 @@
+div {
+  
+    width: 1200px;
+    height: 1200px;
+  }
+  td {
+    border: 1px solid black;
+  }
+  .green {
+    float: left;
+    width: 10%;
+    height: 10%;
+    background-color: blue;
+    margin-left: 1900px;
+  }
+  .blue {
+  float: right;
+  width: 10%;
+  height: 10%;
+    background-color: green;
+    margin-right: 1050px;
+    margin-top: -10%;
+    
+  }
+
+  .small {
+    float: right;
+  width: 10%;
+  height: 10%;
+    background-color: purple;
+    margin-right: 1050px;
+    margin-top: 11%;
+  }
+  .orange {
+    float: left;
+  width: 10%;
+  height: 10%;
+    background-color: orange;
+    margin-left: 1900px;
+    margin-top: -8%;
+  }
+  .red {
+    background-color: red;
+    float: right;
+    width: 10%;
+    height: 10%;
+    margin-top: -20%;
+  }
