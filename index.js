@@ -62,11 +62,6 @@ app.post('/register', async (req, res) => {
   }
 
   try {
-    // Validate the role value
-    if (role !== 'student' && role !== 'employer') {
-      throw new Error('Invalid role value. Must be "student" or "employer".');
-    }
-
     // Assuming 'createUser' is an asynchronous function in userModel
     const hashedPassword = await bcrypt.hash(password.trim(), 15);
     const result = await userModel.createUser(email, hashedPassword, role, phone, name);
@@ -110,8 +105,6 @@ app.post("/login", async (req, res) => {
           email: user.email,
           role: user.role,
         };
-
-        // ... (other existing code)
 
         res.json({
           success: true,
