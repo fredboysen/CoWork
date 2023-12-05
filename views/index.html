@@ -1,113 +1,148 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="../public/styles/bootstrap.min.css"
+      type="text/css"
+      rel="stylesheet" />
+    <link href="../public/styles/styles.css" rel="stylesheet" type="text/css" />
+    <script src="../public/scripts/bootstrap.bundle.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../public/styles/bootstrap.min.css" type="text/css" rel="stylesheet">
-  <link href="../public/styles/styles.css" rel="stylesheet" type="text/css">
-  <script src="../public/scripts/bootstrap.bundle.min.js"></script>
-  <script src="../public/scripts/script.js"></script>
-</head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-yellow fixed-top">
+      <div class="container">
+        <img
+          src="/public/images/logo-no-background.png"
+          id="logo"
+          alt="logo"
+          class="logo float-left" />
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Joblisting.html">Job listing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="learningpaths.html">Learning paths</a>
+          </li>
+      
+          <li class="nav-item">
+            <button id="navbarLoginBtn" class="profile" onclick="toggleLogin()">Login</button>
+            <button id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">Logout</button>
+          </li>
 
-<body>
-
-  <nav class="navbar navbar-expand-md navbar-light bg-yellow fixed-top">
-    <div class="container">
-      <img src="/public/images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="Joblisting.html">Job listing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="learningpaths.html">Learning paths</a>
-        </li>
-        <!-- Profile Link -->
-        <li class="nav-item">
-          <a class="nav-link float-right" href="login-nice.html">Profile</a>
-        </li>
-        <!-- Hamburger Icon -->
-        <li class="nav-item hamburger-icon">
-          <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-            &#9776;
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="dropdown-menu" id="dropdownMenu">
-    <a href="Joblisting.html">Job listing</a>
-    <a href="learningpaths.html">Learning paths</a>
-    <a href="login-nice.html">Profile</a>
-  </div>
- 
-
-  <div class="bottom" style="margin-top: 100px;">
-    <input class="input" type="text" placeholder="Insert area or postal code">
-    <input class="input" type="text" placeholder="Search for jobs or qualifications">
-    <button type="button" id="bottom" class="btn btn-primary btn-lg">Search for </button>
-  </div>
-
-  <div class="container1">
-    <div class="row justify-content-center">
-      <div class="col-lg-2  col-sm-2 side-panel left-side-panel">
-        <img src="../public/images/jobhunt.jpg" id="ad1" alt="ad1" class="ad1">
-        <p>Left Side Panel Content</p>
+          <li class="nav-item hamburger-icon">
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+              &#9776;
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="col-lg-8 main-content">
-        <div class="row">
-          <div class="col-lg-6 col-sm-6 mt-3">
-            <div class="fred">
-              <img src="../public/images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
-              <h5 class="titleF">Frederik Boysen <br> Global Business Engineering 5.Semester</h5>
-              <p class="card-text">I found a relevant study job through CoWork and i have never been more well-suited
-                for
-                my future career! A relevant study job is extremely important to me. As I am studying Engineering, I
-                feel
-                that it is very important to experience what the industry is like before I graduate
-              </p>
+    </nav>
+
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="Joblisting.html">Job listing</a>
+      <a href="learningpaths.html">Learning paths</a>
+      <a href="login.html">Login</a>
+    </div>
+
+    <div class="bottom" style="margin-top: 100px">
+      <input
+        class="input"
+        type="text"
+        placeholder="Insert area or postal code" />
+      <input
+        class="input"
+        type="text"
+        placeholder="Search for jobs or qualifications" />
+      <button type="button" id="bottom" class="btn btn-primary btn-lg">
+        Search for
+      </button>
+    </div>
+
+    <div class="container1">
+      <div class="row justify-content-center">
+        <div class="col-lg-2 col-sm-2 side-panel left-side-panel">
+          <img
+            src="../public/images/jobhunt.jpg"
+            id="ad1"
+            alt="ad1"
+            class="ad1" />
+          <p>Left Side Panel Content</p>
+        </div>
+        <div class="col-lg-8 main-content">
+          <div class="row">
+            <div class="col-lg-6 col-sm-6 mt-3">
+              <div class="fred">
+                <img
+                  src="../public/images/clipart--person-icon--cliparts-15.png"
+                  class="card-img-top"
+                  alt="Person Image" />
+                <h5 class="titleF">
+                  Frederik Boysen <br />
+                  Global Business Engineering 5.Semester
+                </h5>
+                <p class="card-text">
+                  I found a relevant study job through CoWork and i have never
+                  been more well-suited for my future career! A relevant study
+                  job is extremely important to me. As I am studying
+                  Engineering, I feel that it is very important to experience
+                  what the industry is like before I graduate
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-6 col-sm-6 mt-3">
-            <div class="Ernø">
-              <img src="../public/images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
-              <h5 class="titleJ">Jacob A.E <br> Economics and IT 7. semester</h5>
-              <p class="card-text">Personally, I deeply understand the significance of students discovering relevance in
-                their educational pursuits. It's not merely about absorbing information; it's about uncovering
-                connections
-                between academic knowledge and practical application.
-              </p>
+            <div class="col-lg-6 col-sm-6 mt-3">
+              <div class="Ernø">
+                <img
+                  src="../public/images/clipart--person-icon--cliparts-15.png"
+                  class="card-img-top"
+                  alt="Person Image" />
+                <h5 class="titleJ">
+                  Jacob A.E <br />
+                  Economics and IT 7. semester
+                </h5>
+                <p class="card-text">
+                  Personally, I deeply understand the significance of students
+                  discovering relevance in their educational pursuits. It's not
+                  merely about absorbing information; it's about uncovering
+                  connections between academic knowledge and practical
+                  application.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
-      </div>
-      <div class="col-lg-2 col-sm-2 side-panel right-side-panel">
-        <img src="../public/images/low-cost.png" id="ad2" alt="ad2" class="ad2 float-right">
-        <p>Right Side Panel Content</p>
+        <div class="col-lg-2 col-sm-2 side-panel right-side-panel">
+          <img
+            src="../public/images/low-cost.png"
+            id="ad2"
+            alt="ad2"
+            class="ad2 float-right" />
+          <p>Right Side Panel Content</p>
+        </div>
       </div>
     </div>
-  </div>
-  
 
-  <div class="short-cut card col-lg-4 col-sm-4 fixed-top" style="top: 75px; right: 20px;">
-
-    <div class="card-body">
-      <h5 class="card-title">Short cuts</h5>
-      <ul class="list-group list-group-flush">
-        <!-- Når hjemmesiden er lavet skal # laves om til de jobs stillinger der er indenfor de forskellige fag-->
-        <li class="list-group-item"><a href="#">Engineering</a></li>
-        <li class="list-group-item"><a href="#">Medicine</a></li>
-        <li class="list-group-item"><a href="#">Industry and Trades</a></li>
-        <li class="list-group-item"><a href="#">Healthcare</a></li>
-        <li class="list-group-item"><a href="#">Sales and Communication</a></li>
-        <li class="list-group-item"><a href="#">Economics</a></li>
-        <li class="list-group-item"><a href="#">Other</a></li>
-      </ul>
+    <div
+      class="short-cut card col-lg-4 col-sm-4 fixed-top"
+      style="top: 75px; right: 20px">
+      <div class="card-body">
+        <h5 class="card-title">Short cuts</h5>
+        <ul class="list-group list-group-flush">
+          <!-- Når hjemmesiden er lavet skal # laves om til de jobs stillinger der er indenfor de forskellige fag-->
+          <li class="list-group-item"><a href="#">Engineering</a></li>
+          <li class="list-group-item"><a href="#">Medicine</a></li>
+          <li class="list-group-item"><a href="#">Industry and Trades</a></li>
+          <li class="list-group-item"><a href="#">Healthcare</a></li>
+          <li class="list-group-item">
+            <a href="#">Sales and Communication</a>
+          </li>
+          <li class="list-group-item"><a href="#">Economics</a></li>
+          <li class="list-group-item"><a href="#">Other</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <script src="../public/scripts/bootstrap.bundle.min.js"></script>
-</body>
-
+    <script src="../public/scripts/script.js"></script>
+  </body>
 </html>
