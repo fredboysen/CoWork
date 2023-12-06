@@ -10,6 +10,9 @@
     font-size: 15px;
     transition: color 0.3s, background-color 0.3s;
     margin-right: 150px;
+    cursor: pointer;
+    
+   
   }
   
   
@@ -41,7 +44,6 @@
   
   .navbar a:hover {
     color: white;
-    font-size: 22px;
     border-bottom: 2px solid black;
   }
   
@@ -95,6 +97,7 @@
     /* Full viewport height */
   }
   
+
   .ad1 {
     width: 220px;
     height: 980px;
@@ -123,27 +126,28 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 10%;
   }
-  
+
+.video-container p {
+  font-style: italic;
+  margin-top: 20px;
+}
+
+
+.video-container a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+
+}
   .video {
-    margin-bottom: 100px; /* Add space between videos */
+    margin-bottom: 50px; /* Add space between videos */
   }
 
   .video-content {
-    text-align: center; /* Align content text to the left within the video content */
-    margin-top: 10%;
-    width: 80%;
-    padding: 15px;
-    cursor: pointer;
-    display: center;
-    border-radius: 10px;
-    background: #fff;
-    margin-bottom: 15px;
-    justify-content: space-between;
-    border: 2px solid rgb(190, 190, 190);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-    
+    text-align: left; /* Align content text to the left within the video content */
+    margin-top: 15%;
   }
 
   .video-border {

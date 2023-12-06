@@ -16,12 +16,16 @@
             <div class="form-container sign-up">
                 <form onsubmit="submitRegistrationForm(event)" class="registration-form">
                     <h1>Create Account</h1>
-                    <input type="text" placeholder="Name" id="register-name" name = 'name' required>
-                    <input type="email" placeholder="Email" id="register-email" name = 'email' required>
-                    <input type="password" placeholder="Password" id="register-password" name = 'password' required>
+                    <input type="text" placeholder="Name" id="register-name" name="name" required>
+                    <input type="email" placeholder="Email" id="register-email" name="email" required>
+                    <input type="password" placeholder="Password" id="register-password" name="password" required>
                     <input type="text" placeholder="Phone" id="register-phone" name="phone" required>
-                    <input type="text" placeholder="Role" id="register-role" name = 'role' required>
-                    <button type="submit" id = 'Register'>Sign Up</button>
+                    <select id="register-role" name="role" required>
+                        <option value="student">Student</option>
+                        <option value="employer">Employer</option>
+                    </select>
+            
+                    <button type="submit" id='Register'>Sign Up</button>
                 </form>
             </div>
             <div class="form-container sign-in">

@@ -8,13 +8,13 @@ body {
 }
 
 .navbar a {
-  color: black;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 15px;
   transition: color 0.3s, background-color 0.3s;
   margin-right: 150px;
+  cursor: pointer;
 }
-
 
 
 /* Show icon on screens less than 1000px */
@@ -43,8 +43,7 @@ body {
 }
 
 .navbar a:hover {
-  color: white;
-  font-size: 22px;
+  font-style: bold;
   border-bottom: 2px solid black;
 }
 
@@ -187,7 +186,7 @@ body {
 }
 
   .short-cut {
-    margin-left: 1400px; 
+    margin-left: 1450px; 
     margin-top: 20px; 
     width: fit-content;
   }

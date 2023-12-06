@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>User Profile</title>
     <!-- Include necessary CSS and JS files -->
-    <link href="../public/styles/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="../public/styles/bootstrap/bootstrap-grid.min.css" type="text/css" rel="stylesheet">
     <link href="../public/styles/stylesforprofile2.css" rel="stylesheet" type="text/css">
-    <script src="../public/scripts/bootstrap.bundle.min.js"></script>
+    <script src="../public/scripts//bootstrap/bootstrap.bundle.min.js"></script>
+    <link href="/public/styles/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet">
     
 </head>
 <body>
@@ -17,22 +18,15 @@
       <img src="/public/images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="index.html">Front page</a>
+          <a class="nav-link" href="index.html">Front page</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="forstudents.html">For students</a>
+          <a class="nav-link" href="Joblisting.html">Job listing</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="foremployers.html">For employers</a>
+          <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()">Sign in</a>
+          <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">Sign out</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="learningpaths.html">Learning paths</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link float-right" href="profile.html">Profile</a>
-        </li>
-      
         <li class="nav-item hamburger-icon">
           <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
             &#9776;
@@ -40,12 +34,10 @@
         </li>
       </ul>
     </div>
-
   </nav>
+  
   <div class="dropdown-menu" id="dropdownMenu">
-    <a href="index.html">Front page</a>
-    <a href="forstudents.html">For Students</a>
-    <a href="foremployers.html">For employers</a>
+    <a href="Joblisting.html">Job listing</a>
     <a href="learningpaths.html">Learning paths</a>
     <a href="login-nice.html">Profile</a>
   </div>

@@ -4,11 +4,32 @@ const path = require("path");
 const bodyParser = require('body-parser');
 const userModel = require('./db/models/user');
 const { pool, checkConnection } = require('./db'); // Adjust the path accordingly
-
-
+const session = require("express-session")
 const bcrypt = require('bcrypt');
-
+const multer = require("multer");
 const app = express();
+
+const storage = multer.diskStorage({
+  destination: './uploads',  // Adjust the path accordingly
+  filename: function(req, file, cb) {
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({ storage: storage });
+
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+
+app.use(
+  session({
+    secret: "bigboy",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }, // Set to true if using HTTPS
+  })
+);
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,6 +42,13 @@ app.use("*/images", express.static(path.join(__dirname, "public/images")));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
+
+
+app.get('/check-login-status', (req, res) => {
+  const isLoggedIn = req.session.user ? true : false;
+  res.json({ success: true, isLoggedIn });
+});
+
 
 // Registration route
 app.post('/register', async (req, res) => {
@@ -54,70 +82,86 @@ app.post('/register', async (req, res) => {
 });
 
 //login route
-app.post('/login', async (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  console.log('Received login request:', { email, password });
+  console.log("Received login request:", { email, password });
 
-  // Check the connection status before executing a query
   const isConnected = await checkConnection();
   if (!isConnected) {
-    return res.status(500).json({ success: false, message: 'Database connection error' });
+    return res.status(500).json({ success: false, message: "Database connection error" });
   }
 
   try {
-    // Assuming 'getUserByEmail' is an asynchronous function
     const user = await userModel.getUserByEmail(email);
 
     if (user) {
       const passwordMatch = await bcrypt.compare(password, user.password);
 
       if (passwordMatch) {
-        // Passwords match, login successful
-        console.log('Login successful. Sending response:', {
-          success: true,
-          message: 'Login successful',
-          userData: {
-            name: user.name,
-            email: user.email,
-            role: user.role,
-          },
-          redirectTo: '/Joblisting.html',
-        });
+        // Passwords match, set up the session
+        req.session.user = {
+          userId: user.user_id,
+          name: user.name,
+          email: user.email,
+          role: user.role,
+        };
 
         res.json({
           success: true,
-          message: 'Login successful',
+          message: "Login successful",
           userData: {
             name: user.name,
             email: user.email,
             role: user.role,
           },
-          redirectTo: '/Joblisting.html',
+          redirectTo: "/index.html",
         });
       } else {
         // Passwords don't match, login failed
-        console.log('Incorrect password. Sending response:', {
+        console.log("Incorrect password. Sending response:", {
           success: false,
-          message: 'Incorrect password',
+          message: "Incorrect password",
         });
 
-        res.json({ success: false, message: 'Incorrect password' });
+        res.json({ success: false, message: "Incorrect password" });
       }
     } else {
-  
-      console.log('User not found. Sending response:', {
+      console.log("User not found. Sending response:", {
         success: false,
-        message: 'User not found',
+        message: "User not found",
       });
 
-      res.json({ success: false, message: 'User not found' });
+      res.json({ success: false, message: "User not found" });
     }
   } catch (error) {
-    console.error('Error during login:', error);
-    res.status(500).json({ success: false, message: 'Internal Server Error', error: error.message });
+    console.error("Error during login:", error);
+    res.status(500).json({ success: false, message: "Internal Server Error", error: error.message });
   }
 });
 
+// Logout route
+app.post("/logout", (req, res) => {
+  // Destroy the session
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Error during logout:", err);
+      res.status(500).json({ success: false, message: "Internal Server Error", error: err.message });
+    } else {
+      res.json({ success: true, message: "Logout successful" });
+    }
+  });
+});
+
+//upload route for files
+app.post('/upload', upload.single('file'), (req, res) => {
+  try {
+    const { filename } = req.body;
+    res.json({ success: true, message: 'File uploaded successfully', filename });
+  } catch (error) {
+    console.error('Error uploading file:', error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+});
 
 
 const port = process.env.PORT || 3000;
