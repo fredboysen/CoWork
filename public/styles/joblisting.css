@@ -1,5 +1,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -8,7 +12,7 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 body{
   background: rgb(233, 233, 233);
@@ -25,7 +29,7 @@ nav{
   bottom: 0;
   width: 280px;
   height: 100vh;
-  background-color: yellow;
+  background-color: #fdda00;
 }
 .navbar{
   width: 80%;
@@ -39,10 +43,9 @@ ul{
 li{
   padding-bottom: 2rem;
 }
-nav a {
-  font-size: 15px;
+li a{
+  font-size: 16px;
   color: rgb(85, 83, 83);
-  cursor: pointer;
 }
 
 nav i{
@@ -51,7 +54,10 @@ nav i{
   text-align: center;
 }
 
-
+.profile{
+  position: absolute;
+  bottom: 0;
+}
 
 /* Main Section */
 .main{
@@ -59,7 +65,7 @@ nav i{
 }
 .main-top{
   width: 100%;
-  background-color: yellow;
+  background-color: #fdda00;
   padding: 10px;
   text-align: center;
   font-size: 18px;
@@ -95,7 +101,7 @@ h1{
   width: 300px;
 }
 .tags_bar{
-  width: 35%;
+  width: 55%;
   display: flex;
   padding: 10px;
   justify-content: space-between;
@@ -109,6 +115,7 @@ h1{
   font-size: 13px;
   cursor: pointer;
 }
+
 .tag i{
   margin-right: 0.7rem;
 }

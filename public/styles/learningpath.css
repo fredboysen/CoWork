@@ -1,6 +1,6 @@
 
 .navbar {
-    background-color: yellow;
+    background-color: #fdda00;
     height: 75px;
   }
   
@@ -83,7 +83,7 @@
     left: 0;
     height: 100vh;
     /* Full viewport height */
-    border: solid 2px;
+    
   }
   
   .right-side-panel {
@@ -129,6 +129,22 @@
     margin-top: 10%;
   }
 
+<<<<<<< HEAD
+  .video-content {
+    text-align: center; /* Align content text to the left within the video content */
+    margin-top: 10%;
+    width: 80%;
+    padding: 15px;
+    cursor: pointer;
+    display: center;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    border: 2px solid rgb(190, 190, 190);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    
+=======
 .video-container p {
   font-style: italic;
   margin-top: 20px;
@@ -143,6 +159,7 @@
 }
   .video {
     margin-bottom: 50px; /* Add space between videos */
+>>>>>>> 4273b7e09fd5a7b43a01d1d43e6d703ee328ebda
   }
 
 
@@ -151,6 +168,8 @@
     border: 2px solid #333;
    width: 750px;
   }
+
+
 
 
   

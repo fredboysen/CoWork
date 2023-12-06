@@ -1,4 +1,103 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en">
+<head>
+  <title>Job listing</title>
+  <link rel="stylesheet" href="/public/styles/joblisting.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Main container -->
+  <div class="container">
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+          <h1>Jobs</h1>
+        </div>
+         <!-- Menu items as a list -->
+        <ul>
+          <li><a href="index.html">
+            <i class="fas fa-tasks"></i>
+            <span class="nav-item">Front page</span>
+          </a>
+          </li>
+          <li><a href="documents.html">
+            <i class="fab fa-dochub"></i>
+            <span class="nav-item">Documents</span>
+          </a>
+          </li>
+          <li><a href="learningpaths.html">
+            <i class="fas fa-question-circle"></i>
+            <span class="nav-item">Learning paths</span>
+          </a>
+          </li>
+          <li > 
+            <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()">
+              <i class="fas fa-right-from-bracket"></i> Sign in
+          </a>
+          <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">
+              <i class="fas fa-right-from-bracket"></i> Sign out
+          </a>
+        </li>
+        <li>
+            <a id="navbarPostJobBtn" class="profile" onclick="openPostJob()">
+              <i class="fas fa-plus"></i> Post a Job
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main section for job listings -->
+    <section class="main">
+      <!-- Top section with a message -->
+      <div class="main-top">
+        <p>Lets CoWork your way to success!</p>
+      </div>
+
+      <!-- Job posting form -->
+      <div id="postJob" class="posting">
+        <div class="posting-content">
+          <span class="close" onclick="closePostJob()">&times;</span>
+          <h2>Post a Job</h2>
+          <form id="postJobForm">
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="keySkills">Key Skills:</label>
+            <input type="text" id="keySkills" name="keySkills" required>
+
+            <label for="jobDesc">Job Description:</label>
+            <textarea id="jobDesc" name="jobDesc" rows="4" required></textarea>
+
+            <!-- New input fields for links -->
+            <label for="pdfLink">PDF Link:</label>
+            <input type="url" id="pdfLink" name="pdfLink" required>
+
+            <label for="jobPostingLink">Job Posting Link:</label>
+            <input type="url" id="jobPostingLink" name="jobPostingLink" required>
+
+            <button type="submit">Post Job</button>
+          </form>
+        </div>
+      </div>
+
+      <section id="jobListings" class="main-body">
+        
+      </section>
+    </section>
+  </div>
+  
+  <script src="/public/scripts/common.js"></script>
+  <script src="/public/scripts/joblisting.js"></script>
+  <script src="/public/scripts/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+=======
     <html lang="en">
     <head>
       <title>Job listing</title>
@@ -66,6 +165,9 @@
               <option>Web Design</option>
               <option>App Design</option>
               <option>App Development</option>
+              <option>Medicine</option>
+              <option>Finance</option>
+              <option>Mathamatics</option>
             </select>
               <!-- Additional filter dropdown -->
             <select class="filter">
@@ -85,11 +187,11 @@
             </div>
             <div class="tag">   <!-- Individual tags for job categories -->
               <i class="fas fa-times"></i>
-              <span>PHP</span>
+              <span>Finance</span>
             </div>
             <div class="tag">   <!-- Individual tags for job categories -->
               <i class="fas fa-times"></i>
-              <span>JavaScript</span>
+              <span>Ledership</span>
             </div>
           </div>
     
@@ -184,3 +286,4 @@
       <script src="../public/scripts/script.js"></script>
     </body>
     </html>
+>>>>>>> db8f26a1b0e7e7fbd5a80892d2d97027621145db

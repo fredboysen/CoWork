@@ -3,6 +3,8 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require('body-parser');
 const userModel = require('./db/models/user');
+const { postApplication } = require('./db/models/user');
+const { getJobListings } = require('./db/models/user');
 const { pool, checkConnection } = require('./db'); // Adjust the path accordingly
 const session = require("express-session")
 const bcrypt = require('bcrypt');
@@ -160,6 +162,52 @@ app.post('/upload', upload.single('file'), (req, res) => {
   } catch (error) {
     console.error('Error uploading file:', error);
     res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+});
+
+
+//job posting route
+app.post('/post-application', async (req, res) => {
+  const { user } = req.session; // Assuming user data is stored in the session
+  const { jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink } = req.body;
+
+  if (!user || user.role !== 'employer') {
+    return res.status(403).json({ success: false, message: 'Permission denied' });
+  }
+
+  // Check the connection status before executing a query
+  const isConnected = await checkConnection();
+  if (!isConnected) {
+    return res.status(500).json({ success: false, message: 'Database connection error' });
+  }
+
+  try {
+    const result = await postApplication(user.userId, jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink);
+    if (result.success) {
+      res.json({ success: true, message: 'Job application posted successfully', jobId: result.jobId });
+    } else {
+      res.status(500).json({ success: false, message: 'Error posting job application' });
+    }
+  } catch (error) {
+    console.error('Error handling job application request:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error', error: error.message });
+  }
+});
+
+
+app.get('/get-job-listings', async (req, res) => {
+  const isConnected = await checkConnection();
+  if (!isConnected) {
+    return res.status(500).json({ success: false, message: 'Database connection error' });
+  }
+
+  try {
+    // Assuming you have a function to get job listings from the database
+    const jobListings = await getJobListings();
+    res.json({ success: true, jobListings });
+  } catch (error) {
+    console.error('Error fetching job listings:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error', error: error.message });
   }
 });
 
