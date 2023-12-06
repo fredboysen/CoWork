@@ -81,7 +81,7 @@
     left: 0;
     height: 100vh;
     /* Full viewport height */
-    border: solid 2px;
+    
   }
   
   .right-side-panel {
@@ -131,14 +131,27 @@
   }
 
   .video-content {
-    text-align: left; /* Align content text to the left within the video content */
-    margin-top: 15%;
+    text-align: center; /* Align content text to the left within the video content */
+    margin-top: 10%;
+    width: 80%;
+    padding: 15px;
+    cursor: pointer;
+    display: center;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    border: 2px solid rgb(190, 190, 190);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    
   }
 
   .video-border {
     border: 2px solid #333;
    width: 750px;
   }
+
+
 
 
   
