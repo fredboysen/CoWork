@@ -9,21 +9,41 @@
 <body>
   <!-- Main container -->
   <div class="container">
-    <!-- Navigation bar -->
     <nav>
       <div class="navbar">
         <div class="logo">
           <h1>Jobs</h1>
         </div>
-        <!-- Menu items as a list -->
+         <!-- Menu items as a list -->
         <ul>
-          <!-- ... Your existing menu items ... -->
-          <li>
-            <a id="navbarPostJobBtn" class="profile" onclick="openPostJobModal()">
+          <li><a href="index.html">
+            <i class="fas fa-tasks"></i>
+            <span class="nav-item">Front page</span>
+          </a>
+          </li>
+          <li><a href="documents.html">
+            <i class="fab fa-dochub"></i>
+            <span class="nav-item">Documents</span>
+          </a>
+          </li>
+          <li><a href="learningpaths.html">
+            <i class="fas fa-question-circle"></i>
+            <span class="nav-item">Learning paths</span>
+          </a>
+          </li>
+          <li > 
+            <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()">
+              <i class="fas fa-right-from-bracket"></i> Sign in
+          </a>
+          <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">
+              <i class="fas fa-right-from-bracket"></i> Sign out
+          </a>
+        </li>
+        <li>
+            <a id="navbarPostJobBtn" class="profile" onclick="openPostJob()">
               <i class="fas fa-plus"></i> Post a Job
             </a>
           </li>
-          <!-- ... Your existing menu items ... -->
         </ul>
       </div>
     </nav>
@@ -36,9 +56,9 @@
       </div>
 
       <!-- Job posting form -->
-      <div id="postJobModal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closePostJobModal()">&times;</span>
+      <div id="postJob" class="posting">
+        <div class="posting-content">
+          <span class="close" onclick="closePostJob()">&times;</span>
           <h2>Post a Job</h2>
           <form id="postJobForm">
             <label for="jobTitle">Job Title:</label>
@@ -53,14 +73,20 @@
             <label for="jobDesc">Job Description:</label>
             <textarea id="jobDesc" name="jobDesc" rows="4" required></textarea>
 
+            <!-- New input fields for links -->
+            <label for="pdfLink">PDF Link:</label>
+            <input type="url" id="pdfLink" name="pdfLink" required>
+
+            <label for="jobPostingLink">Job Posting Link:</label>
+            <input type="url" id="jobPostingLink" name="jobPostingLink" required>
+
             <button type="submit">Post Job</button>
           </form>
         </div>
       </div>
 
       <section id="jobListings" class="main-body">
-        <h1>Recent Jobs</h1>
-        <!-- Job listings will be dynamically added here -->
+        
       </section>
     </section>
   </div>
@@ -69,5 +95,4 @@
   <script src="/public/scripts/joblisting.js"></script>
   <script src="/public/scripts/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

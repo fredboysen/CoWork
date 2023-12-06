@@ -169,7 +169,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 //job posting route
 app.post('/post-application', async (req, res) => {
   const { user } = req.session; // Assuming user data is stored in the session
-  const { jobTitle, location, keySkills, jobDesc } = req.body;
+  const { jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink } = req.body;
 
   if (!user || user.role !== 'employer') {
     return res.status(403).json({ success: false, message: 'Permission denied' });
@@ -182,7 +182,7 @@ app.post('/post-application', async (req, res) => {
   }
 
   try {
-    const result = await postApplication(user.userId, jobTitle, location, keySkills, jobDesc);
+    const result = await postApplication(user.userId, jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink);
     if (result.success) {
       res.json({ success: true, message: 'Job application posted successfully', jobId: result.jobId });
     } else {

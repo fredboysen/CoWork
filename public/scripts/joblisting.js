@@ -1,20 +1,21 @@
-function openPostJobModal() {
-    const postJobModal = document.getElementById('postJobModal');
-    if (postJobModal) {
-      postJobModal.style.display = 'block';
+function openPostJob() {
+    const postJob = document.getElementById('postJob');
+    if (postJob) {
+      postJob.style.display = 'block';
     }
   }
   
-  function closePostJobModal() {
-    const postJobModal = document.getElementById('postJobModal');
-    if (postJobModal) {
-      postJobModal.style.display = 'none';
+  function closePostJob() {
+    const postJob = document.getElementById('postJob');
+    if (postJob) {
+      postJob.style.display = 'none';
     }
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     checkLoginStatus();
   
+    closePostJob();
     const navbarLoginBtn = document.getElementById('navbarLoginBtn');
     const navbarLogoutBtn = document.getElementById('navbarLogoutBtn');
   
@@ -22,6 +23,7 @@ function openPostJobModal() {
       navbarLoginBtn.addEventListener('click', toggleLoginOrLogout);
       navbarLogoutBtn.addEventListener('click', logout);
     }
+
     fetchAndDisplayJobListings();
 
   const postJobForm = document.getElementById('postJobForm');
@@ -32,6 +34,8 @@ function openPostJobModal() {
     const location = document.getElementById('location').value;
     const keySkills = document.getElementById('keySkills').value;
     const jobDesc = document.getElementById('jobDesc').value;
+    const pdfLink = document.getElementById('pdfLink').value;
+    const jobPostingLink = document.getElementById('jobPostingLink').value;
 
     try {
       // Make an asynchronous request to the server to create a job
@@ -40,7 +44,7 @@ function openPostJobModal() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ jobTitle, location, keySkills, jobDesc }),
+        body: JSON.stringify({ jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink }),
       });
 
       const result = await response.json();
@@ -56,11 +60,8 @@ function openPostJobModal() {
     } catch (error) {
       console.error('Error posting job application:', error);
       // Handle other errors (e.g., network issues)
-    } finally {
-      // Close the modal or perform any other necessary cleanup
-      closePostJobModal();
     }
-  })
+})
   });
 
 
@@ -77,22 +78,24 @@ function openPostJobModal() {
         result.jobListings.forEach((job) => {
           const jobCard = document.createElement('div');
           jobCard.className = 'job_card';
-  
+
           jobCard.innerHTML = `
-            <div class="job_details">
-              <div class="img">
-                <!-- Add your icon or image here -->
-              </div>
-              <div class="text">
-                <h2>${job.jobTitle}</h2>
-                <span>${job.location} - ${job.keySkills}</span>
-              </div>
+          <div class="jobDesc">
+            
+            <div class="text">
+              <h2>${job.jobTitle}</h2>
+              <span>${job.location} - ${job.keySkills}</span>
             </div>
-            <div class="job_salary">
-              <h4>${job.salary}</h4>
-              <span>${job.postedDate}</span>
-            </div>
-          `;
+          </div>
+          <div class="job_title">
+            <h4>${job.title}</h4>
+            <span>${job.created_at}</span>
+            <p>${job.jobDesc}</p> <!-- Include job description -->
+            <a href="${job.pdfLink}" type="url" target="_blank">View PDF</a>
+            <a href="${job.jobPostingLink}" type="url" target="_blank">Job Posting</a>
+          </div>
+        `;
+        
   
           jobListingsContainer.appendChild(jobCard);
         });
@@ -103,4 +106,5 @@ function openPostJobModal() {
       console.error('Error fetching job listings:', error);
     }
   }
+  
   

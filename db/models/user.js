@@ -32,9 +32,9 @@ async function createUser(email, hashedPassword, role, phone, name) {
     }
   }
 
-  async function postApplication(postedBy, jobTitle, location, keySkills, jobDesc) {
-    const query = 'INSERT INTO public.application (postedBy, jobTitle, location, keySkills, jobDesc, created_at) VALUES ($1, $2, $3, $4, $5, CURRENT_DATE) returning jobId';
-    const values = [postedBy, jobTitle, location, keySkills, jobDesc];
+  async function postApplication(postedBy, jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink) {
+    const query = 'INSERT INTO public.application (postedBy, jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_DATE) returning jobId';
+    const values = [postedBy, jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink];
     
     try {
       const result = await pool.query(query, values);
