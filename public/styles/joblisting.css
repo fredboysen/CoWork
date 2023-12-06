@@ -94,7 +94,6 @@ h1{
 .search_bar .filter{
   width: 300px;
 }
-
 .tags_bar{
   width: 35%;
   display: flex;
@@ -168,7 +167,6 @@ h1{
   border: 2px solid blueviolet;
   transition: 0.4s;
 }
-
  @media (min-width: 576px) {
     .container {
       /* Adjust the container width or other properties */
@@ -178,7 +176,6 @@ h1{
   
     /* Additional adjustments for tablet-specific elements */
   }
-  
   /* Example adjustments for larger screens */
   @media (min-width: 992px) {
     .job_card {

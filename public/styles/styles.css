@@ -100,14 +100,14 @@ body {
 .ad1
 {
   width: 220px;
-  height: 980px;
+  height: 100vh;
   margin-left: -13px;
 }
 
 .ad2
 {
-  width: 210px;
-  height: 1000px;
+  width: 220px;
+  height: 100vh;
   margin-left: -25px;
   margin-top: 70px;
 }
