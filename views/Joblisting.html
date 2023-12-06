@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
 <head>
   <title>Job listing</title>
   <link rel="stylesheet" href="/public/styles/joblisting.css" />
-  <!-- Font Awesome Cdn Link -->
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -41,7 +40,7 @@
           </a>
         </li>
         <li>
-            <a id="navbarPostJobBtn" class="profile" onclick="openPostJob()">
+            <a id="navbarPostJobBtn" class="profile1" onclick="openPostJob()">
               <i class="fas fa-plus"></i> Post a Job
             </a>
           </li>
@@ -97,193 +96,3 @@
   <script src="/public/scripts/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-=======
-    <html lang="en">
-    <head>
-      <title>Job listing</title>
-      <link rel="stylesheet" href="/public/styles/joblisting.css" />
-      <!-- Font Awesome Cdn Link -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-      <script src="/public/styles/bootstrap/bootstrap-grid.min.css"></script>
-
-    </head>
-    <body>
-          <!-- Main container -->
-      <div class="container" >
-        <nav>
-          <div class="navbar">
-            <div class="logo">
-              <h1>Jobs</h1>
-            </div>
-             <!-- Menu items as a list -->
-            <ul>
-              <li><a href="index.html">
-                <i class="fas fa-tasks"></i>
-                <span class="nav-item">Front page</span>
-              </a>
-              </li>
-              <li><a href="documents.html">
-                <i class="fab fa-dochub"></i>
-                <span class="nav-item">Documents</span>
-              </a>
-              </li>
-              <li><a href="learningpaths.html">
-                <i class="fas fa-question-circle"></i>
-                <span class="nav-item">Learning paths</span>
-              </a>
-              </li>
-              <li > 
-                <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()">
-                  <i class="fas fa-right-from-bracket"></i> Login
-              </a>
-              <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">
-                  <i class="fas fa-right-from-bracket"></i> Logout
-              </a>
-            </li>
-            </ul>
-          </div>
-        </nav>
-    
-          <!-- Main section for job listings -->
-        <section class="main">
-               <!-- Top section with a message -->
-          <div class="main-top">
-            <p>Lets CoWork your way to succes!</p>
-          </div>
-           <!-- Body section with recent job listings -->
-          <div class="main-body">
-            <!-- Header for recent jobs -->
-            <h1>Recent Jobs</h1>
-           <!-- Search bar for job search -->
-
-          <div class="search_bar">
-             <!-- Input for job search -->
-            <input type="search" placeholder="Search job here...">
-              <!-- Dropdown for job categories -->
-            <select name="" id="">
-              <option>Category</option>
-              <option>Web Design</option>
-              <option>App Design</option>
-              <option>App Development</option>
-              <option>Medicine</option>
-              <option>Finance</option>
-              <option>Mathamatics</option>
-            </select>
-              <!-- Additional filter dropdown -->
-            <select class="filter">
-              <option>Filter</option>
-            </select>
-          </div>
-
-     <!-- Tags section for job filtering -->
-          <div class="tags_bar"> 
-            <div class="tag">  <!-- Individual tags for job categories -->
-              <i class="fas fa-times"></i>
-              <span>Programming</span>
-            </div>
-            <div class="tag">   <!-- Individual tags for job categories -->
-              <i class="fas fa-times"></i>
-              <span>Design</span>
-            </div>
-            <div class="tag">   <!-- Individual tags for job categories -->
-              <i class="fas fa-times"></i>
-              <span>Finance</span>
-            </div>
-            <div class="tag">   <!-- Individual tags for job categories -->
-              <i class="fas fa-times"></i>
-              <span>Ledership</span>
-            </div>
-          </div>
-    
-         <!-- Row with job count and view all link -->
-          <div class="row">
-            <p>There are more than <span>50</span> Jobs</p>   <!-- Display of the number of available jobs -->
-            <a href="#">See all</a>  <!-- Link to view all available jobs -->
-          </div>
-    
-          <div class="job_card">   <!-- Details of the job 1 --> 
-            <div class="job_details">
-              <div class="img">
-                <i class="fab fa-google-drive"></i>
-              </div>
-              <div class="text">
-                <h2>UX Designer</h2>
-                <span>Google Drive - Junior Post</span>
-              </div>
-            </div>
-            <div class="job_salary">
-              <h4> 500.000 - 750.000</h4>
-              <span>1 days ago</span>
-            </div>
-          </div>
-          
-          <div class="job_card"> <!-- Details of the job 2 -->
-            <div class="job_details">
-              <div class="img">
-                <i class="fab fa-google"></i>
-              </div>
-              <div class="text">
-                <h2>JavaScript Developer</h2>
-                <span>Google - Senior Post</span>
-              </div>
-            </div>
-            <div class="job_salary">
-              <h4>580.000 - 880.000</h4>
-              <span>2 days ago</span>
-            </div>
-          </div>
-    
-          <div class="job_card"> <!-- Details of the job 3 -->
-            <div class="job_details">
-              <div class="img">
-                <i class="fab fa-facebook"></i>
-              </div>
-              <div class="text">
-                <h2>Product Developer</h2>
-                <span>Facbook - Manager Post</span>
-              </div>
-            </div>
-            <div class="job_salary">
-              <h4>500.000 - 600.000</h4>
-              <span>2 days ago</span>
-            </div>
-          </div>
-    
-          <div class="job_card"> <!-- Details of the job 4 -->
-            <div class="job_details">
-              <div class="img">
-                <i class="fab fa-git-alt"></i>
-              </div>
-              <div class="text">
-                <h2>Programmer</h2>
-                <span>Github - Juni Post</span>
-              </div>
-            </div>
-            <div class="job_salary">
-              <h4>600.000 - 700.000</h4>
-              <span>3 days ago</span>
-            </div>
-          </div>
-    
-          <div class="job_card"> <!-- Details of the job 5 -->
-            <div class="job_details">
-              <div class="img">
-                <i class="fab fa-youtube"></i>
-              </div>
-              <div class="text">
-                <h2>React.js Expert</h2>
-                <span>Youtube - VIP</span>
-              </div>
-            </div>
-            <div class="job_salary">
-              <h4> 400.000 - 700.000</h4>
-              <span>4 days ago</span>
-            </div>
-          </div>
-        </div>
-        </section>
-      </div>
-      <script src="../public/scripts/script.js"></script>
-    </body>
-    </html>
->>>>>>> db8f26a1b0e7e7fbd5a80892d2d97027621145db
