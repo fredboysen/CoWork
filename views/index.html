@@ -1,260 +1,281 @@
 <!DOCTYPE HTML>
 
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="/public/styles/bootstrap/bootstrap.min.css"
-      type="text/css"
-      rel="stylesheet" />
-    <link href="../public/styles/styles.css" rel="stylesheet" type="text/css" />
-    <script src="../public/scripts//bootstrap/bootstrap.bundle.min.js"></script>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/public/styles/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <link href="../public/styles/frontpage.css" rel="stylesheet" type="text/css" />
+  <script src="../public/scripts//bootstrap/bootstrap.bundle.min.js"></script>
+</head>
 
 <body>
- 
-      <nav class="navbar navbar-expand-md navbar-light bg-yellow fixed-top">
-        <div class="container">
-          <img src="/public/images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="learningpaths.html">Learning path</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Joblisting.html">Job listing</a>
-            </li>
-            <li class="nav-item">
-              <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()">Sign in</a>
-              <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">Sign out</a>
-            </li>
-            <li class="nav-item hamburger-icon">
-              <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-                &#9776;
-              </a>
-            </li>
-          </ul>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-yellow fixed-top">
+    <div class="container">
+      <img src="/public/images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="learningpaths.html">Learning path</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Joblisting.html">Job listing</a>
+        </li>
+        <li class="nav-item">
+          <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()">Sign in</a>
+          <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">Sign out</a>
+        </li>
+        <li class="nav-item hamburger-icon">
+          <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            &#9776;
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-12-medium">
+          <!-- Banner Copy -->
+          <p>CoWork: Where students find tailored job opportunities. Discover meaningful work experiences aligned with
+            your studies. Streamlined connections for students and employers.</p>
         </div>
-      </nav>
-    
-      <div id="banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-6 col-12-medium">
-              <!-- Banner Copy -->
-              <p>CoWork: Where students find tailored job opportunities. Discover meaningful work experiences aligned with your studies. Streamlined connections for students and employers.</p>
-            </div>
-            <div class="col-6 col-12-medium imp-medium">
+        <div class="col-6 col-12-medium imp-medium">
 
-              <!-- Banner Image -->
-              <a href="#" class="bordered-feature-image"><img src="/public/Images/logo-color.pdf" alt="" /></a>
+          <!-- Banner Image -->
+          <a href="#" class="bordered-feature-image"><img src="/public/Images/logo-color.pdf" alt="" /></a>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features">
-      <div class="container">
-        <div class="row">
-          <div class="col-3 col-6-medium col-12-small">
-
-            <!-- Feature #1 -->
-            <section>
-              <a href="#" class="bordered-feature-image"><img src="/public/Images/406268213_338339208812118_740798429528094468_n.jpg" alt="" /></a>
-              <h2>Jonas Etmann Skjøth</h2>
-              <p>
-                <strong>Jonas E. Skjøth</strong>, Co-founder of CoWork, played a pivotal role in shaping the company. With a focus on marketing and finance, Jonas adeptly navigated the intricacies of these domains, contributing significantly to CoWork's success. His proficiency in analyzing competition provided invaluable insights that drove the company's strategies and growth. You can reach out to Jonas via email at <a href="mailto:jonas.etmann@cowork.com">jonas.etmann@cowork.com</a>.
-              </p>
-            </section>
-
-          </div>
-          <div class="col-3 col-6-medium col-12-small">
-
-            <!-- Feature #2 -->
-            <section>
-              <a href="#" class="bordered-feature-image"><img src="/public/Images/385529416_872546594272544_8289244985925664875_n.jpg" alt="" /></a>
-              <h2>Benjamin Kring Suner</h2>
-              <p>
-                <strong>Benjamin Kring Suner</strong> co-founded CoWork with a keen focus on operational efficiency and strategic planning. His multi-faceted approach involved streamlining processes and orchestrating seamless operations within the company. Benjamin's adeptness at aligning strategic initiatives with the company's vision significantly contributed to its growth and success. You can connect with Benjamin via email at <a href="mailto:benjamin.skring@cowork.com">benjamin.krings@cowork.com</a>.
-              </p>
-            </section>
-
-          </div>
-          <div class="col-3 col-6-medium col-12-small">
-
-            <!-- Feature #3 -->
-            <section>
-              <a href="#" class="bordered-feature-image"><img id="thom" src="/public/Images/403970237_324085987173603_1922788542620055907_n.jpg" alt="" /></a>
-            
-                <h2>About Thomas Schelde</h2>
-                <p>
-                  As the most crucial player in CoWork's launch, <strong>Thomas Schelde</strong>, a Co-founder, wielded unparalleled expertise in software front-end development. His innovative approach and mastery in crafting seamless user experiences were instrumental in shaping the website's interface, serving as the cornerstone of CoWork's successful launch. Thomas played a pivotal role in designing and implementing the front-end elements, ensuring an intuitive and engaging online platform for users. Connect with Thomas via email at <a href="mailto:thomas.schelde@cowork.com">thomas.schelde@cowork.com</a>.
-                </p>
-              </section>
-              
-          </div>
-          <div class="col-3 col-6-medium col-12-small">
-
-            <!-- Feature #4 -->
-            <section>
-              <a href="#" class="bordered-feature-image-2"><img src="/public/Images/403632658_869473291748763_1702201186405426330_n.jpg" alt="" /></a>
-      
-                <h2>About Frederik Boysen</h2>
-                <p>
-                  <strong>Frederik Boysen</strong>, an essential Co-founder, spearheaded the backend development at CoWork with unparalleled expertise. His proficiency in crafting robust and scalable systems formed the backbone of CoWork's technical infrastructure. Frederik played a pivotal role in architecting and implementing the backend solutions, ensuring a seamless and efficient platform for the company's operations. Connect with Frederik via email at <a href="mailto:frederik.boysen@cowork.com">frederik.boysen@cowork.com</a>.D 
-                </p>
-              </section>
-              
-
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+  </section>
 
-    <!-- Content -->
-    <section id="content">
-      <div class="container">
-        <div class="row aln-center">
-          <div class="col-4 col-12-medium">
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-3 col-6-medium col-12-small">
 
-            <!-- Box #1 -->
-            <section>
-              <header>
-                <h2>Who We Are</h2>
-                <h3>A subheading about who we are</h3>
-              </header>
-              <a href="#" class="feature-image"><img src="images/pic05.jpg" alt="" /></a>
-              <p>
-                Duis neque nisi, dapibus sed mattis quis, rutrum accumsan magna sed.
-                Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet mollis
-                justo facilisis quis. Sed sagittis amet lorem ipsum.
-              </p>
-            </section>
+          <!-- Feature #1 -->
+          <section>
+            <a href="#" class="bordered-feature-image"><img
+                src="/public/Images/406268213_338339208812118_740798429528094468_n.jpg" alt="" /></a>
+            <h2>Jonas Etmann Skjøth</h2>
+            <p>
+              <strong>Jonas E. Skjøth</strong>, Co-founder of CoWork, played a pivotal role in shaping the company. With
+              a focus on marketing and finance, Jonas adeptly navigated the intricacies of these domains, contributing
+              significantly to CoWork's success. His proficiency in analyzing competition provided invaluable insights
+              that drove the company's strategies and growth. You can reach out to Jonas via email at <a
+                href="mailto:jonas.etmann@cowork.com">jonas.etmann@cowork.com</a>.
+            </p>
+          </section>
 
-          </div>
-          <div class="col-4 col-6-medium col-12-small">
+        </div>
+        <div class="col-3 col-6-medium col-12-small">
 
-            <!-- Box #2 -->
-            <section>
-              <header>
-                <h2>What We Do</h2>
-                <h3>A subheading about what we do</h3>
-              </header>
-              <ul class="check-list">
-                <li>Sed mattis quis rutrum accum</li>
-                <li>Eu varius nibh suspendisse lorem</li>
-                <li>Magna eget odio amet mollis justo</li>
-                <li>Facilisis quis sagittis mauris</li>
-                <li>Amet tellus gravida lorem ipsum</li>
-              </ul>
-            </section>
+          <!-- Feature #2 -->
+          <section>
+            <a href="#" class="bordered-feature-image"><img
+                src="/public/Images/385529416_872546594272544_8289244985925664875_n.jpg" alt="" /></a>
+            <h2>Benjamin Kring Suner</h2>
+            <p>
+              <strong>Benjamin Kring Suner</strong> co-founded CoWork with a keen focus on operational efficiency and
+              strategic planning. His multi-faceted approach involved streamlining processes and orchestrating seamless
+              operations within the company. Benjamin's adeptness at aligning strategic initiatives with the company's
+              vision significantly contributed to its growth and success. You can connect with Benjamin via email at <a
+                href="mailto:benjamin.skring@cowork.com">benjamin.krings@cowork.com</a>.
+            </p>
+          </section>
 
-          </div>
-          <div class="col-4 col-6-medium col-12-small">
+        </div>
+        <div class="col-3 col-6-medium col-12-small">
 
-            <!-- Box #3 -->
-            <section>
-              <header>
-                <h2>What People Are Saying</h2>
-                <h3>And a final subheading about our clients</h3>
-              </header>
-              <ul class="quote-list">
-                <li>
-                  <img src="images/pic06.jpg" alt="" />
-                  <p>"Neque nisidapibus mattis"</p>
-                  <span>Jane Doe, CEO of UntitledCorp</span>
-                </li>
-                <li>
-                  <img src="images/pic07.jpg" alt="" />
-                  <p>"Lorem ipsum consequat!"</p>
-                  <span>John Doe, President of FakeBiz</span>
-                </li>
-                <li>
-                  <img src="images/pic08.jpg" alt="" />
-                  <p>"Magna veroeros amet tempus"</p>
-                  <span>Mary Smith, CFO of UntitledBiz</span>
-                </li>
-              </ul>
-            </section>
+          <!-- Feature #3 -->
+          <section>
+            <a href="#" class="bordered-feature-image"><img id="thom"
+                src="/public/Images/403970237_324085987173603_1922788542620055907_n.jpg" alt="" /></a>
 
-          </div>
+            <h2>About Thomas Schelde</h2>
+            <p>
+              As the most crucial player in CoWork's launch, <strong>Thomas Schelde</strong>, a Co-founder, wielded
+              unparalleled expertise in software front-end development. His innovative approach and mastery in crafting
+              seamless user experiences were instrumental in shaping the website's interface, serving as the cornerstone
+              of CoWork's successful launch. Thomas played a pivotal role in designing and implementing the front-end
+              elements, ensuring an intuitive and engaging online platform for users. Connect with Thomas via email at
+              <a href="mailto:thomas.schelde@cowork.com">thomas.schelde@cowork.com</a>.
+            </p>
+          </section>
+
+        </div>
+        <div class="col-3 col-6-medium col-12-small">
+
+          <!-- Feature #4 -->
+          <section>
+            <a href="#" class="bordered-feature-image-2"><img
+                src="/public/Images/403632658_869473291748763_1702201186405426330_n.jpg" alt="" /></a>
+
+            <h2>About Frederik Boysen</h2>
+            <p>
+              <strong>Frederik Boysen</strong>, an essential Co-founder, spearheaded the backend development at CoWork
+              with unparalleled expertise. His proficiency in crafting robust and scalable systems formed the backbone
+              of CoWork's technical infrastructure. Frederik played a pivotal role in architecting and implementing the
+              backend solutions, ensuring a seamless and efficient platform for the company's operations. Connect with
+              Frederik via email at <a href="mailto:frederik.boysen@cowork.com">frederik.boysen@cowork.com</a>.D
+            </p>
+          </section>
+
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <section id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-8 col-12-medium">
+  <!-- Content -->
+  <section id="content">
+    <div class="container">
+      <div class="row aln-center">
+        <div class="col-4 col-12-medium">
 
-            <!-- Links -->
-            <section>
-              <h2>Links to Important Stuff</h2>
-              <div>
-                <div class="row">
-                  <div class="col-3 col-12-small">
-                    <ul class="link-list last-child">
-                      <li><a href="#">Neque amet dapibus</a></li>
-                      <li><a href="#">Sed mattis quis rutrum</a></li>
-                      <li><a href="#">Accumsan suspendisse</a></li>
-                      <li><a href="#">Eu varius vitae magna</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-3 col-12-small">
-                    <ul class="link-list last-child">
-                      <li><a href="#">Neque amet dapibus</a></li>
-                      <li><a href="#">Sed mattis quis rutrum</a></li>
-                      <li><a href="#">Accumsan suspendisse</a></li>
-                      <li><a href="#">Eu varius vitae magna</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-3 col-12-small">
-                    <ul class="link-list last-child">
-                      <li><a href="#">Neque amet dapibus</a></li>
-                      <li><a href="#">Sed mattis quis rutrum</a></li>
-                      <li><a href="#">Accumsan suspendisse</a></li>
-                      <li><a href="#">Eu varius vitae magna</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-3 col-12-small">
-                    <ul class="link-list last-child">
-                      <li><a href="#">Neque amet dapibus</a></li>
-                      <li><a href="#">Sed mattis quis rutrum</a></li>
-                      <li><a href="#">Accumsan suspendisse</a></li>
-                      <li><a href="#">Eu varius vitae magna</a></li>
-                    </ul>
-                  </div>
+          <!-- Box #1 -->
+          <section>
+            <header>
+              <h2>Who We Are</h2>
+              <h3>A subheading about who we are</h3>
+            </header>
+            <a href="#" class="feature-image"><img src="images/pic05.jpg" alt="" /></a>
+            <p>
+              Duis neque nisi, dapibus sed mattis quis, rutrum accumsan magna sed.
+              Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet mollis
+              justo facilisis quis. Sed sagittis amet lorem ipsum.
+            </p>
+          </section>
+
+        </div>
+        <div class="col-4 col-6-medium col-12-small">
+
+          <!-- Box #2 -->
+          <section>
+            <header>
+              <h2>What We Do</h2>
+              <h3>A subheading about what we do</h3>
+            </header>
+            <ul class="check-list">
+              <li>Sed mattis quis rutrum accum</li>
+              <li>Eu varius nibh suspendisse lorem</li>
+              <li>Magna eget odio amet mollis justo</li>
+              <li>Facilisis quis sagittis mauris</li>
+              <li>Amet tellus gravida lorem ipsum</li>
+            </ul>
+          </section>
+
+        </div>
+        <div class="col-4 col-6-medium col-12-small">
+
+          <!-- Box #3 -->
+          <section>
+            <header>
+              <h2>What People Are Saying</h2>
+              <h3>And a final subheading about our clients</h3>
+            </header>
+            <ul class="quote-list">
+              <li>
+                <img src="images/pic06.jpg" alt="" />
+                <p>"Neque nisidapibus mattis"</p>
+                <span>Jane Doe, CEO of UntitledCorp</span>
+              </li>
+              <li>
+                <img src="images/pic07.jpg" alt="" />
+                <p>"Lorem ipsum consequat!"</p>
+                <span>John Doe, President of FakeBiz</span>
+              </li>
+              <li>
+                <img src="images/pic08.jpg" alt="" />
+                <p>"Magna veroeros amet tempus"</p>
+                <span>Mary Smith, CFO of UntitledBiz</span>
+              </li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-8 col-12-medium">
+
+          <!-- Links -->
+          <section>
+            <h2>Links to Important Stuff</h2>
+            <div>
+              <div class="row">
+                <div class="col-3 col-12-small">
+                  <ul class="link-list last-child">
+                    <li><a href="#">Neque amet dapibus</a></li>
+                    <li><a href="#">Sed mattis quis rutrum</a></li>
+                    <li><a href="#">Accumsan suspendisse</a></li>
+                    <li><a href="#">Eu varius vitae magna</a></li>
+                  </ul>
+                </div>
+                <div class="col-3 col-12-small">
+                  <ul class="link-list last-child">
+                    <li><a href="#">Neque amet dapibus</a></li>
+                    <li><a href="#">Sed mattis quis rutrum</a></li>
+                    <li><a href="#">Accumsan suspendisse</a></li>
+                    <li><a href="#">Eu varius vitae magna</a></li>
+                  </ul>
+                </div>
+                <div class="col-3 col-12-small">
+                  <ul class="link-list last-child">
+                    <li><a href="#">Neque amet dapibus</a></li>
+                    <li><a href="#">Sed mattis quis rutrum</a></li>
+                    <li><a href="#">Accumsan suspendisse</a></li>
+                    <li><a href="#">Eu varius vitae magna</a></li>
+                  </ul>
+                </div>
+                <div class="col-3 col-12-small">
+                  <ul class="link-list last-child">
+                    <li><a href="#">Neque amet dapibus</a></li>
+                    <li><a href="#">Sed mattis quis rutrum</a></li>
+                    <li><a href="#">Accumsan suspendisse</a></li>
+                    <li><a href="#">Eu varius vitae magna</a></li>
+                  </ul>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
 
-          </div>
-          <div class="col-4 col-12-medium imp-medium">
+        </div>
+        <div class="col-4 col-12-medium imp-medium">
 
-            <!-- Blurb -->
-            <section>
-              <h2>An Informative Text Blurb</h2>
-              <p>
-                Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu
-                varius nibh. Suspendisse vitae magna eget odio amet mollis. Duis neque nisi,
-                dapibus sed mattis quis, sed rutrum accumsan sed. Suspendisse eu varius nibh
-                lorem ipsum amet dolor sit amet lorem ipsum consequat gravida justo mollis.
-              </p>
-            </section>
+          <!-- Blurb -->
+          <section>
+            <h2>An Informative Text Blurb</h2>
+            <p>
+              Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu
+              varius nibh. Suspendisse vitae magna eget odio amet mollis. Duis neque nisi,
+              dapibus sed mattis quis, sed rutrum accumsan sed. Suspendisse eu varius nibh
+              lorem ipsum amet dolor sit amet lorem ipsum consequat gravida justo mollis.
+            </p>
+          </section>
 
-          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Copyright -->
-    <div id="copyright">
-      &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
     </div>
-    <script src="../public/scripts/script.js"></script>
-  </body>
+  </section>
+
+  <!-- Copyright -->
+  <div id="copyright">
+    &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+  </div>
+  <script src="../public/scripts/script.js"></script>
+</body>
+
 </html>
