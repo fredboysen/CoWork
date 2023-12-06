@@ -83,7 +83,7 @@
     left: 0;
     height: 100vh;
     /* Full viewport height */
-    border: solid 2px;
+    
   }
   
   .right-side-panel {
@@ -145,12 +145,17 @@
     margin-bottom: 50px; /* Add space between videos */
   }
 
-
+  .video-content {
+    text-align: left; /* Align content text to the left within the video content */
+    margin-top: 15%;
+  }
 
   .video-border {
     border: 2px solid #333;
    width: 750px;
   }
+
+
 
 
   
