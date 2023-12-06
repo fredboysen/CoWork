@@ -2,7 +2,7 @@ body {
     background-color: #f0f0f0;
 }
 .navbar {
-  background-color: yellow;
+  background-color: #fdda00;
   height: 75px;
 }
 
@@ -90,7 +90,7 @@ body {
     padding: 8px 16px;
     margin-top: 10px;
     text-decoration: none;
-    background-color: yellow;
+    background-color: #fdda00;
     color: black;
     border: none;
     border-radius: 4px;
