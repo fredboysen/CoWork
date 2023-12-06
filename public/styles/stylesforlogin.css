@@ -48,7 +48,7 @@ body{
 }
 
 .container button {
-    background-color: yellow;
+    background-color: #fdda00;
     color: #070606;
     font-size: 12px;
     padding: 10px 45px;
@@ -147,9 +147,9 @@ body{
 }
 
 .toggle{
-    background-color: yellow;
+    background-color: #fdda00;
     height: 100%;
-    background: linear-gradient(to right,rgb(182, 182, 12), Yellow);
+    background: linear-gradient(to right,#fdda00, #fdda00);
     color: #141414;
     position: relative;
     left: -100%;
@@ -208,5 +208,5 @@ body{
 
 .container select:focus {
     outline: none;
-    border: 1px solid yellow; /* Add focus styling if needed */
+    border: 1px solid #fdda00; /* Add focus styling if needed */
 }
