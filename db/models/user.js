@@ -21,8 +21,9 @@ async function createUser(email, hashedPassword, role, phone, name) {
       throw new Error('Internal Server Error');
     }
   };
+  
   async function getJobListings() {
-    const query = 'SELECT * FROM public.application';
+    const query = 'SELECT jobTitle, companyName, jobId, location, keySkills, jobDesc, pdfLink, to_char(created_at, \'YYYY-MM-DD\') as created_at FROM public.application';
     try {
       const result = await pool.query(query);
       return result.rows;
@@ -32,9 +33,11 @@ async function createUser(email, hashedPassword, role, phone, name) {
     }
   }
 
-  async function postApplication(postedBy, jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink) {
-    const query = 'INSERT INTO public.application (postedBy, jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_DATE) returning jobId';
-    const values = [postedBy, jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink];
+  async function postApplication(postedBy, jobTitle, companyName,  location, keySkills, jobDesc, pdfLink) {
+    const query = 'INSERT INTO public.application (postedBy, jobTitle, companyName, location, keySkills, jobDesc, pdfLink, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_DATE) returning jobId';
+    const values = [postedBy, jobTitle, companyName, location, keySkills, jobDesc, pdfLink];
+    
+    
     
     try {
       const result = await pool.query(query, values);
@@ -45,6 +48,8 @@ async function createUser(email, hashedPassword, role, phone, name) {
       return { success: false, message: 'Error posting application' };
     }
   }
+
+
 
 
 module.exports = {

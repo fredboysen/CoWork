@@ -169,7 +169,9 @@ app.post('/upload', upload.single('file'), (req, res) => {
 //job posting route
 app.post('/post-application', async (req, res) => {
   const { user } = req.session; // Assuming user data is stored in the session
-  const { jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink } = req.body;
+  const { jobTitle, companyName, location, keySkills, jobDesc, pdfLink } = req.body;
+  console.log('Received request body:', req.body);
+
 
   if (!user || user.role !== 'employer') {
     return res.status(403).json({ success: false, message: 'Permission denied' });
@@ -182,7 +184,7 @@ app.post('/post-application', async (req, res) => {
   }
 
   try {
-    const result = await postApplication(user.userId, jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink);
+    const result = await postApplication(user.userId, jobTitle, companyName, location, keySkills, jobDesc, pdfLink);
     if (result.success) {
       res.json({ success: true, message: 'Job application posted successfully', jobId: result.jobId });
     } else {
@@ -210,6 +212,7 @@ app.get('/get-job-listings', async (req, res) => {
     res.status(500).json({ success: false, message: 'Internal Server Error', error: error.message });
   }
 });
+
 
 
 const port = process.env.PORT || 3000;

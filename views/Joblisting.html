@@ -31,7 +31,12 @@
             <span class="nav-item">Learning paths</span>
           </a>
           </li>
-          <li > 
+          <li>
+            <a id="navbarPostJobBtn" class="posting" onclick="openPostJob()">
+              <i class="fas fa-plus"></i> Post a Job
+            </a>
+          </li>
+          <li> 
             <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()">
               <i class="fas fa-right-from-bracket"></i> Sign in
           </a>
@@ -39,11 +44,6 @@
               <i class="fas fa-right-from-bracket"></i> Sign out
           </a>
         </li>
-        <li>
-            <a id="navbarPostJobBtn" class="profile1" onclick="openPostJob()">
-              <i class="fas fa-plus"></i> Post a Job
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -55,39 +55,38 @@
         <p>Lets CoWork your way to success!</p>
       </div>
 
-      <!-- Job posting form -->
-      <div id="postJob" class="posting">
-        <div class="posting-content">
-          <span class="close" onclick="closePostJob()">&times;</span>
-          <h2>Post a Job</h2>
-          <form id="postJobForm">
-            <label for="jobTitle">Job Title:</label>
-            <input type="text" id="jobTitle" name="jobTitle" required>
+     <div id="postJob" class="posting">
+    <div class="posting-content">
+      <span class="close" onclick="closePostJob()">&times;</span>
+      <h2>Post a Job</h2>
+      <form id="postJobForm">
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobTitle" name="jobTitle" required>
 
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required>
+        <label for="companyName">Company:</label>
+        <input type="text" id="companyName" name="companyName" required>
 
-            <label for="keySkills">Key Skills:</label>
-            <input type="text" id="keySkills" name="keySkills" required>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
 
-            <label for="jobDesc">Job Description:</label>
-            <textarea id="jobDesc" name="jobDesc" rows="4" required></textarea>
+        <label for="keySkills">Key Skills:</label>
+        <input type="text" id="keySkills" name="keySkills" required>
 
-            <!-- New input fields for links -->
-            <label for="pdfLink">PDF Link:</label>
-            <input type="url" id="pdfLink" name="pdfLink" required>
+        <label for="jobDesc">Job Description:</label>
+        <textarea id="jobDesc" name="jobDesc" rows="4" required></textarea>
 
-            <label for="jobPostingLink">Job Posting Link:</label>
-            <input type="url" id="jobPostingLink" name="jobPostingLink" required>
+        <!-- New input fields for links -->
+        <label for="pdfLink">PDF Link:</label>
+        <input type="url" id="pdfLink" name="pdfLink" required>
 
-            <button type="submit">Post Job</button>
-          </form>
-        </div>
-      </div>
+        <button type="submit">Post Job</button>
+      </form>
+    </div>
+  </div>
 
-      <section id="jobListings" class="main-body">
-        
-      </section>
+  <section id="jobListings" class="main-body">
+
+  </section>
     </section>
   </div>
   
