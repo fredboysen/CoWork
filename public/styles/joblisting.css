@@ -56,7 +56,12 @@ nav i{
 
 .profile{
   position: absolute;
+<<<<<<< HEAD
 }
+=======
+  bottom: 0;
+} 
+>>>>>>> f5c55aca1cef5419b30b0095fdd891e0f27a1ef8
 
 /* Main Section */
 .main{
