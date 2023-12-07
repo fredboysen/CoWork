@@ -33,6 +33,7 @@ async function createUser(email, hashedPassword, role, phone, name) {
     }
   }
 
+
   async function postApplication(postedBy, jobTitle, companyName,  location, keySkills, jobDesc, pdfLink) {
     const query = 'INSERT INTO public.application (postedBy, jobTitle, companyName, location, keySkills, jobDesc, pdfLink, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_DATE) returning jobId';
     const values = [postedBy, jobTitle, companyName, location, keySkills, jobDesc, pdfLink];
@@ -51,7 +52,6 @@ async function createUser(email, hashedPassword, role, phone, name) {
 
 
 
-
 module.exports = {
   getUserByEmail,
   createUser,
@@ -59,3 +59,4 @@ module.exports = {
   getJobListings,
   // Export other functions as needed
 };
+

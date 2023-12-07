@@ -12,9 +12,8 @@
     <nav>
       <div class="navbar">
         <div class="logo">
-          <h1>Jobs</h1>
+          <h1>Job listings</h1>
         </div>
-         <!-- Menu items as a list -->
         <ul>
           <li><a href="index.html">
             <i class="fas fa-tasks"></i>
@@ -48,16 +47,13 @@
       </div>
     </nav>
 
-    <!-- Main section for job listings -->
     <section class="main">
-      <!-- Top section with a message -->
       <div class="main-top">
         <p>Lets CoWork your way to success!</p>
       </div>
 
      <div id="postJob" class="posting">
     <div class="posting-content">
-      <span class="close" onclick="closePostJob()">&times;</span>
       <h2>Post a Job</h2>
       <form id="postJobForm">
         <label for="jobTitle">Job Title:</label>
@@ -75,17 +71,18 @@
         <label for="jobDesc">Job Description:</label>
         <textarea id="jobDesc" name="jobDesc" rows="4" required></textarea>
 
-        <!-- New input fields for links -->
-        <label for="pdfLink">PDF Link:</label>
+        <label for="pdfLink">Job link:</label>
         <input type="url" id="pdfLink" name="pdfLink" required>
 
         <button type="submit">Post Job</button>
+        <button type="button" class="close" onclick="closePostJob()">Close</button>
+
       </form>
     </div>
   </div>
 
   <section id="jobListings" class="main-body">
-
+<!-- This section will be generated using function from joblisting.js file which connects to server to fetch data-->
   </section>
     </section>
   </div>

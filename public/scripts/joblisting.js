@@ -95,7 +95,7 @@ function openPostJob() {
     <h4>${job.companyname}</h4>
     <span>${job.created_at}</span>
     <p>${job.jobdesc}</p>
-    <a href="${job.pdflink}" type="url" target="_blank">View PDF</a>
+    <a href="${job.pdflink}" class ="pdfLink" "type="url" target="_blank">Read more</a>
     <!-- Add link for jobPostingLink if needed -->
   </div>
 `;

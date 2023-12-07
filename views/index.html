@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="/public/styles/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet" />
   <link href="../public/styles/frontpage.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="../public/scripts//bootstrap/bootstrap.bundle.min.js"></script>
 </head>
 
@@ -17,14 +18,16 @@
       <img src="/public/images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="learningpaths.html">Learning path</a>
+          <a class="nav-link" href="learningpaths.html">             <i class="fas fa-question-circle"></i>
+            Learning path</a>
+          
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Joblisting.html">Job listing</a>
+          <a class="nav-link" href="Joblisting.html"> <i class="fas fa-plus"></i>Job listing</a>
         </li>
         <li class="nav-item">
-          <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()">Sign in</a>
-          <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()">Sign out</a>
+          <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()"> <i class="fa-solid fa-right-to-bracket"></i> Sign in</a>
+          <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()"> <i class="fa-solid fa-right-to-bracket"></i> Sign out</a>
         </li>
         <li class="nav-item hamburger-icon">
           <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
