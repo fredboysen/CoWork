@@ -1,7 +1,13 @@
+body {
+  overflow-x: hidden;
+}
 
 .navbar {
     background-color: #fdda00;
     height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .navbar a {
@@ -9,9 +15,8 @@
     text-decoration: none;
     font-size: 15px;
     transition: color 0.3s, background-color 0.3s;
-    margin-right: 150px;
+    margin: 0 50px;
     cursor: pointer;
-    
    
   }
   

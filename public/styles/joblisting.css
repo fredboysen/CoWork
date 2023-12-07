@@ -23,7 +23,7 @@ body{
   margin: auto;
 }
 nav{
-  position: sticky;
+  position:sticky;
   top: 0;
   left: 0;
   bottom: 0;
