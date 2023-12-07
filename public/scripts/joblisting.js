@@ -12,6 +12,7 @@ function openPostJob() {
     }
   }
 
+
   document.addEventListener("DOMContentLoaded", function () {
     checkLoginStatus();
   
@@ -31,11 +32,11 @@ function openPostJob() {
     event.preventDefault();
 
     const jobTitle = document.getElementById('jobTitle').value;
+    const companyName = document.getElementById('companyName').value;
     const location = document.getElementById('location').value;
     const keySkills = document.getElementById('keySkills').value;
     const jobDesc = document.getElementById('jobDesc').value;
     const pdfLink = document.getElementById('pdfLink').value;
-    const jobPostingLink = document.getElementById('jobPostingLink').value;
 
     try {
       // Make an asynchronous request to the server to create a job
@@ -44,7 +45,7 @@ function openPostJob() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ jobTitle, location, keySkills, jobDesc, pdfLink, jobPostingLink }),
+        body: JSON.stringify({ jobTitle, companyName, location, keySkills, jobDesc, pdfLink }),
       });
 
       const result = await response.json();
@@ -53,6 +54,10 @@ function openPostJob() {
       if (result.success) {
         console.log('Job application posted successfully');
         // You can do something with the result, e.g., show a success message
+        alert(`Job have been succesfully posted!`);
+        window.location.href = '/joblisting.html';
+
+
       } else {
         console.error('Job application posting failed:', result.message);
         // Handle job application posting failure (e.g., show an error message)
@@ -78,24 +83,22 @@ function openPostJob() {
         result.jobListings.forEach((job) => {
           const jobCard = document.createElement('div');
           jobCard.className = 'job_card';
-
+  
           jobCard.innerHTML = `
-          <div class="jobDesc">
-            
-            <div class="text">
-              <h2>${job.jobTitle}</h2>
-              <span>${job.location} - ${job.keySkills}</span>
-            </div>
-          </div>
-          <div class="job_title">
-            <h4>${job.title}</h4>
-            <span>${job.created_at}</span>
-            <p>${job.jobDesc}</p> <!-- Include job description -->
-            <a href="${job.pdfLink}" type="url" target="_blank">View PDF</a>
-            <a href="${job.jobPostingLink}" type="url" target="_blank">Job Posting</a>
-          </div>
-        `;
-        
+  <div class="jobDesc">
+    <div class="text">
+      <h2>${job.jobtitle}</h2>
+      <span>${job.location} - ${job.keyskills}</span>
+    </div>
+  </div>
+  <div class="companyName">
+    <h4>${job.companyname}</h4>
+    <span>${job.created_at}</span>
+    <p>${job.jobdesc}</p>
+    <a href="${job.pdflink}" type="url" target="_blank">View PDF</a>
+    <!-- Add link for jobPostingLink if needed -->
+  </div>
+`;
   
           jobListingsContainer.appendChild(jobCard);
         });
@@ -106,5 +109,6 @@ function openPostJob() {
       console.error('Error fetching job listings:', error);
     }
   }
-  
+
+
   
