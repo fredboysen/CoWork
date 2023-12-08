@@ -1,4 +1,4 @@
-const { pool } = require('../index'); // Assuming your pool is exported from 'index.js' or similar
+const { pool } = require('../index');
 const bcrypt = require('bcrypt');
 
 async function getUserByEmail(email) {
@@ -45,7 +45,6 @@ async function createUser(email, hashedPassword, role, phone, name) {
       return { success: true, jobId: result.rows[0].jobId };
     } catch (error) {
       console.error('Error posting application', error);
-      // Add a return statement here to handle the error
       return { success: false, message: 'Error posting application' };
     }
   }
@@ -57,6 +56,6 @@ module.exports = {
   createUser,
   postApplication,
   getJobListings,
-  // Export other functions as needed
+  
 };
 

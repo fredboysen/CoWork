@@ -12,7 +12,6 @@ function openPostJob() {
     }
   }
 
-
   document.addEventListener("DOMContentLoaded", function () {
     checkLoginStatus();
   
@@ -24,51 +23,48 @@ function openPostJob() {
       navbarLoginBtn.addEventListener('click', toggleLoginOrLogout);
       navbarLogoutBtn.addEventListener('click', logout);
     }
-
+  
     fetchAndDisplayJobListings();
+  
+    
+    const postJobForm = document.getElementById('postJobForm');
+    postJobForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+  
+      const jobTitle = document.getElementById('jobTitle').value;
+      const companyName = document.getElementById('companyName').value;
+      const location = document.getElementById('location').value;
+      const keySkills = document.getElementById('keySkills').value;
+      const jobDesc = document.getElementById('jobDesc').value;
+      const pdfLink = document.getElementById('pdfLink').value;
+  
+      try { 
+        const response = await fetch('/post-application', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ jobTitle, companyName, location, keySkills, jobDesc, pdfLink }),
+        });
+  
+        const result = await response.json();
+  
+        // Handle the result
+        if (result.success) {
+          console.log('Job application posted successfully');
+          alert(`Job has been successfully posted!`);
+          window.location.href = '/joblisting.html';
+        } else {
+          console.error('Job application posting failed:', result.message);
+          alert(`Permission Denied`);
 
-  const postJobForm = document.getElementById('postJobForm');
-  postJobForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    const jobTitle = document.getElementById('jobTitle').value;
-    const companyName = document.getElementById('companyName').value;
-    const location = document.getElementById('location').value;
-    const keySkills = document.getElementById('keySkills').value;
-    const jobDesc = document.getElementById('jobDesc').value;
-    const pdfLink = document.getElementById('pdfLink').value;
-
-    try {
-      // Make an asynchronous request to the server to create a job
-      const response = await fetch('/post-application', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ jobTitle, companyName, location, keySkills, jobDesc, pdfLink }),
-      });
-
-      const result = await response.json();
-
-      // Handle the result
-      if (result.success) {
-        console.log('Job application posted successfully');
-        // You can do something with the result, e.g., show a success message
-        alert(`Job have been succesfully posted!`);
-        window.location.href = '/joblisting.html';
-
-
-      } else {
-        console.error('Job application posting failed:', result.message);
-        // Handle job application posting failure (e.g., show an error message)
+        }
+      } catch (error) {
+        console.error('Error posting job application:', error);
       }
-    } catch (error) {
-      console.error('Error posting job application:', error);
-      // Handle other errors (e.g., network issues)
-    }
-})
+    });
   });
-
+  
 
   async function fetchAndDisplayJobListings() {
     try {

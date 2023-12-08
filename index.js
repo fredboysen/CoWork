@@ -1,18 +1,17 @@
-// index.js/server code
+//Imports
 const express = require("express");
 const path = require("path");
 const bodyParser = require('body-parser');
-const userModel = require('./db/models/user');
-const { postApplication } = require('./db/models/user');
-const { getJobListings } = require('./db/models/user');
-const { pool, checkConnection } = require('./db'); // Adjust the path accordingly
+const userModel = require('./db/models/queries');
+const { postApplication } = require('./db/models/queries');
+const { getJobListings } = require('./db/models/queries');
+const { checkConnection } = require('./db');
 const session = require("express-session")
 const bcrypt = require('bcrypt');
 const multer = require("multer");
 const app = express();
-
 const storage = multer.diskStorage({
-  destination: './uploads',  // Adjust the path accordingly
+  destination: './uploads',
   filename: function(req, file, cb) {
     cb(null, file.originalname);
   }
@@ -26,16 +25,15 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use(
   session({
-    secret: "bigboy",
+    secret: "verysecretkey",
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }, // Set to true if using HTTPS
+    cookie: { secure: false },
   })
 );
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "views")));
 app.use("*/styles", express.static(path.join(__dirname, "public/styles")));
@@ -57,14 +55,13 @@ app.post('/register', async (req, res) => {
   const { email, password, role, phone, name } = req.body;
   console.log('Received registration request:', { email, password, role, phone, name });
 
-  // Check the connection status before executing a query
+  // Checks the connection status before executing a query
   const isConnected = await checkConnection();
   if (!isConnected) {
     return res.status(500).json({ success: false, message: 'Database connection error' });
   }
 
   try {
-    // Assuming 'createUser' is an asynchronous function in userModel
     const hashedPassword = await bcrypt.hash(password.trim(), 15);
     const result = await userModel.createUser(email, hashedPassword, role, phone, name);
 
@@ -100,7 +97,7 @@ app.post("/login", async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, user.password);
 
       if (passwordMatch) {
-        // Passwords match, set up the session
+        // Passwords match, session start
         req.session.user = {
           userId: user.user_id,
           name: user.name,
@@ -168,7 +165,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 
 //job posting route
 app.post('/post-application', async (req, res) => {
-  const { user } = req.session; // Assuming user data is stored in the session
+  const { user } = req.session; 
   const { jobTitle, companyName, location, keySkills, jobDesc, pdfLink } = req.body;
   console.log('Received request body:', req.body);
 
@@ -197,6 +194,7 @@ app.post('/post-application', async (req, res) => {
 });
 
 
+// retrieves job listing from database
 app.get('/get-job-listings', async (req, res) => {
   const isConnected = await checkConnection();
   if (!isConnected) {
@@ -204,7 +202,6 @@ app.get('/get-job-listings', async (req, res) => {
   }
 
   try {
-    // Assuming you have a function to get job listings from the database
     const jobListings = await getJobListings();
     res.json({ success: true, jobListings });
   } catch (error) {
@@ -215,7 +212,7 @@ app.get('/get-job-listings', async (req, res) => {
 
 
 
-
+//server port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`App available on http://localhost:${port}`);
