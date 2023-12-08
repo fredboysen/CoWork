@@ -54,23 +54,10 @@ async function submitRegistrationForm(event) {
       checkLoginStatus();
     } catch (error) {
       console.error('Error during registration:', error);
-      // Handle other errors (e.g., network issues)
       alert('Error during registration. Please try again.');
     }
   }
   
-  async function toggleLoginOrLogout() {
-    // Check if the user is logged in
-    const result = await checkLoginStatus();
-    if (result.success && result.isLoggedIn) {
-      // If the user is logged in, initiate the logout process
-      logout();
-    } else {
-      // If the user is not logged in, proceed with the login functionality
-      toggleLogin();
-      window.location.href = '/login.html';
-    }
-  }
   
   async function submitLoginForm(event) {
     event.preventDefault(); // Prevent the default form submission
@@ -89,21 +76,16 @@ async function submitRegistrationForm(event) {
   
       const result = await response.json();
   
-      // Handle the result as needed
       if (result.success) {
-        // Check and update login status
         checkLoginStatus();
   
-        // Redirect to the specified page
         const redirectTo = result.redirectTo || "/index.html";
         window.location.assign(redirectTo);
         alert(`Welcome Back! You have successfully logged in.`);
       } else {
         console.error("Login failed:", result.message);
-        // Handle login failure (e.g., show an error message)
       }
     } catch (error) {
       console.error("Error during login:", error);
-      // Handle other errors (e.g., network issues)
     }
   }

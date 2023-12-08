@@ -67,18 +67,15 @@ function showLogoutButton() {
   
       if (result.success) {
         console.log("Logout successful");
-        // Check and update login status
         checkLoginStatus();
   
         // Redirect to the appropriate page after logout
         window.location.href = '/login.html';
       } else {
         console.error("Logout failed:", result.message);
-        // Handle logout failure (e.g., show an error message)
       }
     } catch (error) {
       console.error("Error during logout:", error);
-      // Handle other errors (e.g., network issues)
     }
   }
   

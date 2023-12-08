@@ -39,7 +39,6 @@ function openPostJob() {
       const pdfLink = document.getElementById('pdfLink').value;
   
       try { 
-        // Make an asynchronous request to the server to create a job
         const response = await fetch('/post-application', {
           method: 'POST',
           headers: {
@@ -62,7 +61,6 @@ function openPostJob() {
         }
       } catch (error) {
         console.error('Error posting job application:', error);
-        // Handle other errors (e.g., network issues)
       }
     });
   });

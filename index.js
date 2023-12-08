@@ -1,16 +1,15 @@
-// index.js/server code
+//Imports
 const express = require("express");
 const path = require("path");
 const bodyParser = require('body-parser');
 const userModel = require('./db/models/queries');
 const { postApplication } = require('./db/models/queries');
 const { getJobListings } = require('./db/models/queries');
-const { pool, checkConnection } = require('./db');
+const { checkConnection } = require('./db');
 const session = require("express-session")
 const bcrypt = require('bcrypt');
 const multer = require("multer");
 const app = express();
-
 const storage = multer.diskStorage({
   destination: './uploads',
   filename: function(req, file, cb) {
