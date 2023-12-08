@@ -1,4 +1,4 @@
-# Disclaimer: This is a prototype meaning it does not have the full functionalities expected in a fully fleshed application
+### Disclaimer: This is a prototype meaning it does not have the full functionalities expected in a fully fleshed application
 
 # CoWork
 
