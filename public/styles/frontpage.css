@@ -27,6 +27,7 @@ body {
     transition: color 0.3s, background-color 0.3s;
     margin: 10px 10px 50px 125px;
     cursor: pointer;
+	display: inline;
   }
 
   .contact {
@@ -44,38 +45,6 @@ body {
 	text-align: center;
 }
 
-/* Show icon on screens less than 1000px */
-@media (max-width: 500px) {
-	.hamburger-icon {
-		display: inline;
-		/* Show icon on smaller screens */
-
-	}
-
-	/* Hide regular navigation links on smaller screens */
-	.navbar a {
-		display: none;
-	}
-
-}
-
-/* Show regular navigation links on screens 1000px and larger */
-@media (min-width: 1000px) {
-	.hamburger-icon {
-		display: none;
-		/* Hide icon on larger screens */
-	}
-
-	/* Show regular navigation links on larger screens */
-	.navbar a {
-		display: inline;
-	}
-}
-
-.navbar a:hover {
-	color: white;
-}
-
 .logo {
 	max-width: 250px;
 	/* Adjust the max-width as needed */
@@ -88,25 +57,74 @@ margin-left: -45.1%;
 
 
 
+/* dropdown */
 
-.container {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-.flex-container {
-	display: flex;
-	justify-content: space-between;
-}
-
-.main-content {
-	flex: 1;
-	padding: 20px;
-	box-sizing: border-box;
+.dropdown botton {
+	background-color: #fdda00;
+	 color: black;
+	 padding: 2px 5px;
+	 border: none;
+	 cursor: pointer;
 
 }
 
+.dropdown a {
+	display: block; 
+	text-decoration: none;
+	padding: 10px 15px;
+	margin-left: 10%;
+}
+
+.dropdown .content{
+	display: none;
+	background-color: #fdda00;
+	position: absolute;
+	min-width: 100px;
+	box-shadow: 2px 2px 5px black;
+	width: 100px !important;
+	border-radius: 10px;
+}
+
+.dropdown:hover .content {
+	display: block;
+}
+
+.dropdown:hover botton{
+	background-color: hsl(0,0,70%);
+}
+
+.dropdown a:hover{
+	background-color: hsl(0, 0%, 52%);
+}
+
+@media screen and (max-width: 770px) {
+	.navbar li {
+	  display: none ; /* Hide the regular links on smaller screens */
+	}
+  
+	.dropdown {
+	  display: block; /* Show the dropdown as the navigation bar */
+	 position: absolute;
+	}
+  
+	.logo {
+		display: none;
+	}
+	.dropdown .dropbtn {
+	  display: block;
+	}
+  
+	.dropdown:hover .dropdown-content {
+	  display: block; /* Show dropdown content on hover */
+	}
+  }
+  
+  /* Media query for screens larger than 770px */
+  @media screen and (min-width: 771px) {
+	.dropdown {
+	  display: none; /* Hide the dropdown on larger screens */
+	}
+  }
 
 ol,
 ul {

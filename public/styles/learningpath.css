@@ -23,38 +23,80 @@ body {
     transition: color 0.3s, background-color 0.3s;
     margin: 0 72px;
     cursor: pointer;
+    display: inline;
+    }
+  
+  
+/* dropdown */
+
+.dropdown botton {
+	background-color: #fdda00;
+	 color: black;
+	 padding: 2px 5px;
+	 border: none;
+	 cursor: pointer;
+}
+
+.dropdown a {
+	display: block; 
+	text-decoration: none;
+	padding: 2px 2px;
+ margin-left: 10%;
+}
+
+.dropdown .content{
+	display: none;
+	background-color: #fdda00;
+	position: absolute;
+	box-shadow: 2px 2px 5px black;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.dropdown:hover .content {
+	display: block;
+  min-width: 80px;
+  border: 1px solid black;
+  max-height: 200px; /* Tilføjet - Juster efter behov */
+    width: 100px !important;
+}
+
+
+
+
+
+@media screen and (max-width: 770px) {
+	.navbar li {
+	  display: none ; /* Hide the regular links on smaller screens */
+	}
+  
+	.dropdown {
+	  display: block; /* Show the dropdown as the navigation bar */
+	  position: relative;
+    margin-right: 100%;
+	}
+  
+	.logo {
+		display: none;
+	}
+	.dropdown .dropbtn {
+	  display: block;
+	}
+  
+	.dropdown:hover .dropdown-content {
+	  display: block; /* Show dropdown content on hover */
+	}
   }
   
+  /* Media query for screens larger than 770px */
+  @media screen and (min-width: 771px) {
+	.dropdown {
+	  display: none; /* Hide the dropdown on larger screens */
+	}
+  }
+
 
   
-  /* Show icon on screens less than 1000px */
-  @media (max-width: 998px) {
-    .hamburger-icon{
-      display: inline; /* Show icon on smaller screens */
-    }
-  
-    /* Hide regular navigation links on smaller screens */
-    .navbar a {
-      display: none;
-    }
-    
-  }
-  
-  /* Show regular navigation links on screens 1000px and larger */
-  @media (min-width: 1000px) {
-    .hamburger-icon {
-      display: none; /* Hide icon on larger screens */
-    }
-  
-    /* Show regular navigation links on larger screens */
-    .navbar a {
-      display: inline;
-    }
-  }
-  
-  .navbar a:hover {
-    color: white;
-  }
   
   .logo {
     max-width: 250px;
