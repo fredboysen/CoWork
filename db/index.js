@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 
-// Update the connection details based on your local setup
+
 const pool = new Pool({
   host: "localhost",
   port: 5432,
