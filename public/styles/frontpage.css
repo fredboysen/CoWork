@@ -28,8 +28,21 @@ body {
     margin: 10px 10px 50px 125px;
     cursor: pointer;
   }
-  
 
+  .contact {
+	background-color: #fdda00; 
+	color: #000000; 
+	padding: 20px; 
+	text-align: center;
+	font-style: bold;
+	font-weight: 500;
+  }
+  
+.footer {
+	background-color: #f4f4f4; 
+	padding: 20px; 
+	text-align: center;
+}
 
 /* Show icon on screens less than 1000px */
 @media (max-width: 500px) {
