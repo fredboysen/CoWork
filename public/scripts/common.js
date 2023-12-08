@@ -43,7 +43,7 @@ function showLogoutButton() {
   
   function toggleLogin() {
     var loginForm = document.getElementById('loginForm');
-    if (loginForm && loginForm.style) { // Check if loginForm and loginForm.style exist
+    if (loginForm && loginForm.style) { 
       if (loginForm.style.display === 'block') {
         loginForm.style.display = 'none';
       } else {

@@ -53,12 +53,12 @@ function openPostJob() {
         // Handle the result
         if (result.success) {
           console.log('Job application posted successfully');
-          // You can do something with the result, e.g., show a success message
           alert(`Job has been successfully posted!`);
           window.location.href = '/joblisting.html';
         } else {
           console.error('Job application posting failed:', result.message);
-          // Handle job application posting failure (e.g., show an error message)
+          alert(`Permission Denied`);
+
         }
       } catch (error) {
         console.error('Error posting job application:', error);
@@ -67,8 +67,6 @@ function openPostJob() {
     });
   });
   
-  
-
 
   async function fetchAndDisplayJobListings() {
     try {
