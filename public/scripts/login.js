@@ -91,9 +91,15 @@ async function submitRegistrationForm(event) {
     
   }
 
-document.getElementById("goBack").addEventListener("click", function() {
-    window.history.back(); // This will take the user back to the previous page
-});
-  
+  // Get the elements by their unique IDs
+  const goBackButtons = document.querySelectorAll(".goBackButton");
 
+  // Add event listeners to handle click events for each button
+  goBackButtons.forEach(button => {
+      button.addEventListener("click", function() {
+          // Handle the action for the 'Go Back' button
+          // For example, go back to the previous page
+          window.history.back();
+      });
+  });
   
