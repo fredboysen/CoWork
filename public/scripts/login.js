@@ -106,4 +106,12 @@ async function submitRegistrationForm(event) {
       console.error("Error during login:", error);
       // Handle other errors (e.g., network issues)
     }
+    
   }
+
+document.getElementById("goBack").addEventListener("click", function() {
+    window.history.back(); // This will take the user back to the previous page
+});
+  
+
+  

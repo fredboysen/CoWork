@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200");
 
+
+body {
+	background:  #f7f7f7 url("images/bg03.jpg");
+	color:  #000000;
+	
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.0;
+}
+
 .navbar {
     background-color: #fdda00;
     height: 75px;
@@ -13,9 +24,8 @@
     text-decoration: none;
     font-size: 15px;
     transition: color 0.3s, background-color 0.3s;
-    margin: 0 50px;
+    margin: 10px 10px 50px 125px;
     cursor: pointer;
-   
   }
   
 
@@ -50,8 +60,8 @@
 
 .navbar a:hover {
 	color: white;
-	border-bottom: 2px solid black;
 }
+
 
 .logo {
 	max-width: 250px;
@@ -59,13 +69,17 @@
 	height: auto;
 	/* Maintain aspect ratio */
 	float: left;
+    margin-top: 15%;
+margin-left: -45.1%;
 }
+
+
+
 
 .container {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
-
 }
 
 .flex-container {
@@ -90,32 +104,6 @@ blockquote,
 q {
 	quotes: none;
 }
-
-
-/* Basic */
-
-
-
-body {
-	background:  #f7f7f7 url("images/bg03.jpg");
-	color:  #000000;
-	font-size: 10pt;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-}
-
-
-
-a {
-	text-decoration: underline;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
 
 /* Container */
 
@@ -808,55 +796,6 @@ a:hover {
 
 
 
-/* Header */
-
-#header {
-	position: relative;
-	background: rgb(7, 7, 7);
-	border-bottom: solid 1px #0e0f10;
-	box-shadow: inset 0px -1px 0px 0px #5d5e5f;
-	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
-}
-
-#header>.container {
-	position: relative;
-	min-height: 155px;
-}
-
-#header h1 {
-	position: absolute;
-	left: 0;
-	bottom: 35px;
-	font-size: 2.75em;
-}
-
-#header h1 a {
-	color: #030303;
-	text-decoration: none;
-}
-
-#header nav {
-	position: absolute;
-	right: 0;
-	bottom: 35px;
-	font-weight: 200;
-}
-
-#header nav a {
-	color: #030303;
-	text-decoration: none;
-	font-size: 1.4em;
-	margin-left: 60px;
-	outline: 0;
-}
-
-#header nav a:hover {
-	color: #f6f8f8;
-}
-
-.subpage #header>.container {
-	height: 155px;
-}
 
 /* Banner */
 
@@ -868,10 +807,7 @@ a:hover {
 	margin-top: 2%;
 }
 
-#banner .bordered-feature-image {
-	margin-bottom: 0;
 
-}
 
 #banner p {
 	font-size: 1.5em;
@@ -954,34 +890,6 @@ a:hover {
 	border-bottom: solid 1px #e2e6e8;
 }
 
-/* Footer */
-
-
-#footer h2 {
-	font-size: 1.25em;
-	color: #212f35;
-	margin: 0 0 1em 0;
-}
-
-#footer a {
-	color: #546b76;
-}
-
-#footer .quote-list li {
-	border-top: solid 1px #e0e4e6;
-	border-bottom: solid 1px #b5bec3;
-}
-
-#footer .link-list li {
-	border-top: solid 1px #e0e4e6;
-	border-bottom: solid 1px #b5bec3;
-}
-
-#footer .check-list li {
-	border-top: solid 1px #e0e4e6;
-	border-bottom: solid 1px #b5bec3;
-}
-
 /* Copyright */
 
 #copyright {
@@ -1053,9 +961,6 @@ a:hover {
 		font-size: 2.25em;
 	}
 
-	#header nav a {
-		font-size: 1.1em;
-	}
 
 	/* Content */
 
@@ -1073,76 +978,9 @@ a:hover {
 
 }
 
-/* Medium */
-
-#navPanel,
-#titleBar {
-	display: none;
-}
-
-@media screen and (max-width: 980px) {
-
-	/* Basic */
-
-	html,
-	body {
-		overflow-x: hidden;
-	}
-
-	/* Header */
-
-	#header {
-		text-align: center;
-	}
-
-	#header>.container:first-child {
-		display: none;
-
-	}
-
-	/* Content */
-
-	#content {
-		padding: 25px 0;
-	}
-
-
-	body.navPanel-visible #page-wrapper {
-		-moz-transform: translateX(275px);
-		-webkit-transform: translateX(275px);
-		-ms-transform: translateX(275px);
-		transform: translateX(275px);
-	}
-
-	body.navPanel-visible #titleBar {
-		-moz-transform: translateX(275px);
-		-webkit-transform: translateX(275px);
-		-ms-transform: translateX(275px);
-		transform: translateX(275px);
-	}
-
-	body.navPanel-visible #navPanel {
-		-moz-transform: translateX(0);
-		-webkit-transform: translateX(0);
-		-ms-transform: translateX(0);
-		transform: translateX(0);
-	}
-
-}
-
-/* Small */
-
 @media screen and (max-width: 736px) {
 
-	/* Basic */
-
-	body,
-	input,
-	textarea,
-	select {
-		font-size: 13pt;
-		line-height: 1.4em;
-	}
+	
 
 	/* Multi-use */
 
@@ -1254,18 +1092,6 @@ a:hover {
 	padding: 130px 0px;
 }
 
-article,
-aside,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section {
-	display: block;
-}
 
 
 .section-header .section-title {
