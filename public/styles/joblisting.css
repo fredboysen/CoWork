@@ -14,6 +14,7 @@
 }
 body{
   background: rgb(233, 233, 233);
+  overflow-x: hidden;
 }
 .container{
   display: flex;
