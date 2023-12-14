@@ -1,3 +1,4 @@
+
 function openPostJob() {
     const postJob = document.getElementById('postJob');
     if (postJob) {
@@ -13,9 +14,12 @@ function openPostJob() {
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    //checking login status and  closing job posting form after html load
     checkLoginStatus();
   
     closePostJob();
+
+    //if login/logout is present add eventlistiner
     const navbarLoginBtn = document.getElementById('navbarLoginBtn');
     const navbarLogoutBtn = document.getElementById('navbarLogoutBtn');
   
@@ -30,7 +34,7 @@ function openPostJob() {
     const postJobForm = document.getElementById('postJobForm');
     postJobForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-  
+  //Taking values from form inputs by user
       const jobTitle = document.getElementById('jobTitle').value;
       const companyName = document.getElementById('companyName').value;
       const location = document.getElementById('location').value;
@@ -38,6 +42,7 @@ function openPostJob() {
       const jobDesc = document.getElementById('jobDesc').value;
       const pdfLink = document.getElementById('pdfLink').value;
   
+      //Post request for job application
       try { 
         const response = await fetch('/post-application', {
           method: 'POST',
@@ -49,7 +54,7 @@ function openPostJob() {
   
         const result = await response.json();
   
-        // Handle the result
+        // Handling the result
         if (result.success) {
           console.log('Job application posted successfully');
           alert(`Job has been successfully posted!`);
@@ -65,7 +70,7 @@ function openPostJob() {
     });
   });
   
-
+//Get joblisting & Update html
   async function fetchAndDisplayJobListings() {
     try {
       const response = await fetch('/get-job-listings');
@@ -79,7 +84,7 @@ function openPostJob() {
         result.jobListings.forEach((job) => {
           const jobCard = document.createElement('div');
           jobCard.className = 'job_card';
-  
+  //Updating html content 
           jobCard.innerHTML = `
   <div class="jobDesc">
     <div class="text">

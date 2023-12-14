@@ -1,6 +1,8 @@
 const { pool } = require('../index');
 const bcrypt = require('bcrypt');
 
+
+//select statement to retrieve user data for login
 async function getUserByEmail(email) {
   const query = 'SELECT * FROM public.users WHERE email = $1';
   const values = [email];
@@ -9,6 +11,8 @@ async function getUserByEmail(email) {
   return result.rows.length > 0 ? result.rows[0] : null;
 }
 
+
+//Insert new user in the database based on user input
 async function createUser(email, hashedPassword, role, phone, name) {
     const query = 'INSERT INTO public.users (email, password, role, phone, name) VALUES ($1, $2, $3, $4, $5) RETURNING user_id';
     const values = [email, hashedPassword, role, phone, name];
@@ -22,6 +26,8 @@ async function createUser(email, hashedPassword, role, phone, name) {
     }
   };
   
+
+  //select statement to display table data for joblisting page
   async function getJobListings() {
     const query = 'SELECT jobTitle, companyName, jobId, location, keySkills, jobDesc, pdfLink, to_char(created_at, \'YYYY-MM-DD\') as created_at FROM public.application';
     try {
@@ -33,7 +39,7 @@ async function createUser(email, hashedPassword, role, phone, name) {
     }
   }
 
-
+//Insert data based on user input from job posting function in joblisting page
   async function postApplication(postedBy, jobTitle, companyName,  location, keySkills, jobDesc, pdfLink) {
     const query = 'INSERT INTO public.application (postedBy, jobTitle, companyName, location, keySkills, jobDesc, pdfLink, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, CURRENT_DATE) returning jobId';
     const values = [postedBy, jobTitle, companyName, location, keySkills, jobDesc, pdfLink];
@@ -50,7 +56,7 @@ async function createUser(email, hashedPassword, role, phone, name) {
   }
 
 
-
+//exports
 module.exports = {
   getUserByEmail,
   createUser,
