@@ -29,7 +29,6 @@ async function submitRegistrationForm(event) {
   
     try {
    // creating a post request to '/register' with form data
-
       const response = await fetch('/register', {
         method: 'POST',
         headers: {
@@ -47,7 +46,7 @@ async function submitRegistrationForm(event) {
         const redirectTo = '/login.html';
         window.location.href = redirectTo;
   
-        // Welcome message if succesful
+        // Welcome message if  login succesful
         alert(`Welcome, ${name}! You have successfully registered. Please login to start your CoWorking Journey!`);
       } else {
         console.error('Registration failed:', result.message);
@@ -71,7 +70,6 @@ async function submitRegistrationForm(event) {
     try {
   
       // requesting a post request to '/login' with login credentials
-
       const response = await fetch("/login", {
         method: "POST",
         headers: {
