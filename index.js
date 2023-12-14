@@ -62,10 +62,10 @@ app.post('/register', async (req, res) => {
   }
 
   try {
+    //trimming password to ensure no unintended spacing
     const hashedPassword = await bcrypt.hash(password.trim(), 15);
     const result = await userModel.createUser(email, hashedPassword, role, phone, name);
 
-    // Handle the query result
     if (result.length > 0 && 'user_id' in result[0]) {
       const insertedUserId = result[0].user_id;
       console.log('User inserted with ID:', insertedUserId);

@@ -40,7 +40,7 @@ async function submitRegistrationForm(event) {
   
       const result = await response.json();
   
-      // Handle the result
+      // Handling the result
       if (result.success) {
         console.log('Registration successful');
         // Redirecting to the profile page
