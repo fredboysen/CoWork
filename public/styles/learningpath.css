@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200");
+
+/* Body Styles */
+
+/* Body Background and Font Styles */
 body {
 	background:  #f7f7f7 url("images/bg03.jpg");
 	color:  #000000;
@@ -8,6 +12,8 @@ body {
 	line-height: 1.0;
   overflow-x: hidden;
 }
+
+/* Navbar Styles */
 .navbar {
     background-color: #fdda00;
     height: 75px;
@@ -16,6 +22,7 @@ body {
     align-items: center;
   }
   
+  /* Navbar Link Styles */
   .navbar a {
     color: black;
     text-decoration: none;
@@ -29,6 +36,7 @@ body {
   
 /* dropdown */
 
+/* Dropdown Button Styles */
 .dropdown botton {
 	background-color: #fdda00;
 	 color: black;
@@ -37,6 +45,7 @@ body {
 	 cursor: pointer;
 }
 
+/* Dropdown Anchor Tag Styles */
 .dropdown a {
 	display: block; 
 	text-decoration: none;
@@ -44,6 +53,7 @@ body {
  margin-left: 10%;
 }
 
+/* Dropdown Content Styles */
 .dropdown .content{
 	display: none;
 	background-color: #fdda00;
@@ -53,6 +63,7 @@ body {
   border-radius: 10px;
 }
 
+/* Show Dropdown Content on Hover */
 .dropdown:hover .content {
 	display: block;
   min-width: 80px;
@@ -64,6 +75,9 @@ body {
 
 
 
+/* Media Queries for Responsive Design */
+
+/* Media Query for Screens Below 770px */
 
 @media screen and (max-width: 770px) {
 	.navbar li {
@@ -97,12 +111,10 @@ body {
 
 
   
-  
+  /* logo */ 
   .logo {
-    max-width: 250px;
-    /* Adjust the max-width as needed */
+    max-width: 250px;   
     height: auto;
-    /* Maintain aspect ratio */
   }
   
 
@@ -136,11 +148,13 @@ body {
 	margin-top: 46%;
 }
   
+/* Flex Container Styles */
   .flex-container {
     display: flex;
     justify-content: space-between;
   }
   
+  /* Main Content Styles */
   .main-content {
     flex: 1;
     padding: 20px;
@@ -148,55 +162,49 @@ body {
   
   }
 
+  /* List Styles */
   ol,
 ul {
 	list-style: none;
 }
 
 
-
-.container {
-	margin: 0 auto;
-	max-width: 100%;
-	width: 1200px;
-
-}
-
-
 /* Container */
-
 .container {
 	margin: 0 auto;
 	max-width: 100%;
 	width: 1200px;
 }
 
-@media screen and (max-width: 1680px) {
 
+/* Media Queries for Container Responsiveness */
+
+/* Media Query for Screens up to 1680px */
+@media screen and (max-width: 1680px) {
 	.container {
 		width: 1200px;
 	}
 
 }
 
+/* Media Query for Screens up to 1280px */
 @media screen and (max-width: 1280px) {
-
 	.container {
 		width: calc(100% - 40px);
 	}
 
 }
 
+/* Media Query for Screens up to 980px */
 @media screen and (max-width: 980px) {
-
 	.container {
 		width: calc(100% - 50px);
 	}
 
 }
 
+/* Media Query for Screens up to 736px */
 @media screen and (max-width: 736px) {
-
 	.container {
 		width: calc(100% - 40px);
 	}
@@ -204,7 +212,7 @@ ul {
 }
 
 
- 
+ /* Left Side Panel Styles */
 .left-side-panel {
   width: 100px;
   /* Adjusted width for the left side-panel */
@@ -217,6 +225,7 @@ ul {
   
 }
 
+/* Right Side Panel Styles */
 .right-side-panel {
   width: 100px;
   /* Adjusted width for the right side-panel */
@@ -228,7 +237,8 @@ ul {
   /* Full viewport height */
 }
 
-
+/* Ad Styles */
+/* Advertisement 1 Styles */
 .ad1 {
   width: 130px;
   height: 100vh;
@@ -237,6 +247,7 @@ ul {
   top: 0; /* Adjust top position */
 }
 
+/* Advertisement 2 Styles */
 .ad2 {
   width: 130px;
   height: 100vh;
@@ -245,13 +256,14 @@ ul {
   top: 70px; /* Adjust top position */
 }
 
-
+/* Media Query for Screens up to 1500px */
 @media (max-width: 1500px) {
 
     .col-lg-2 {
       display: none;
     } }
 
+   /* Video Container Styles */
   .video-container {
     display: flex;
     justify-content: center;
@@ -260,14 +272,14 @@ ul {
     margin-top: 10%;
   }
 
-
+/* Video Container Paragraph Styles */
 .video-container p {
   font-style: italic;
   margin-top: 20px;
 
 }
 
-
+/* Video Container Anchor Tag Styles */
 .video-container a {
   text-decoration: none;
   font-weight: bold;
@@ -276,24 +288,14 @@ ul {
   
 }
 
-
+/* Video Styles */
   .video {
     margin-bottom: 50px; /* Add space between videos */
   }
 
 
-
+/* Video Border Styles */
   .video-border {
     border: 2px solid #333;
    width: 750px;
   }
-
-
-  
-
-
-
-
-  
-
-  

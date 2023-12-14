@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../public/styles/stylesforlogin.css">
+    
+    
+    <!-- Title -->
     <title>Login Screen</title>
 </head>
 <body>
+    <!-- Main Container -->
     <div class="container" id="container">
+        <!-- Registration Section -->
         <div class="registration-section">
+            <!-- Sign Up Form -->
             <div class="form-container sign-up">
                 <form onsubmit="submitRegistrationForm(event)" class="registration-form">
                     <h1>Create Account</h1>
+                    <!-- Input fields for registration -->
                     <input type="text" placeholder="Name" id="register-name" name="name" required>
                     <input type="email" placeholder="Email" id="register-email" name="email" required>
                     <input type="password" placeholder="Password" id="register-password" name="password" required>
@@ -21,27 +29,35 @@
                         <option value="student">Student</option>
                         <option value="employer">Employer</option>
                     </select>
-            
+                    <!-- Button for registration -->
                     <button type="submit" id='Register'>Sign Up</button>
                     <button class="goBackButton">Go Back</button> 
                 </form>
             </div>
+            
+            <!-- Sign In Form -->
             <div class="form-container sign-in">
                 <form onsubmit="submitLoginForm(event)"  class="login-form">
                     <h1>Sign In</h1>
+                    <!-- Input fields for login -->
                     <input type="email" placeholder="Email" id="login-email" name = 'email' required>
                     <input type="password" placeholder="Password" id="login-password" name = 'password' required>
-                    <button type="submit" id = 'Login' >Sign In</button>
+                    <!-- Button for login -->
+                    <button type="submit" id='Login' >Sign In</button>
                     <button class="goBackButton">Go Back</button>
                 </form>
             </div>
+            
+            <!-- Toggle Container -->
             <div class="toggle-container">
                 <div class="toggle">
+                    <!-- Left Panel for Sign In -->
                     <div class="toggle-panel toggle-left">
                         <h1>Welcome Back, CoWorker!</h1>
                         <p>Please enter your personal details to use all site features!</p>
                         <button class="hidden" id="login">Sign In</button>
                     </div>
+                    <!-- Right Panel for Sign Up -->
                     <div class="toggle-panel toggle-right">
                         <h1>Hello, CoWorker!</h1>
                         <p>Register to unlock full access</p>
@@ -52,6 +68,7 @@
         </div>
     </div>
 
+    <!-- JavaScript libraries -->
     <script src="/public\scripts\jquery-3.6.0.min.js"></script>
     <script src="/public/scripts/common.js"></script>
     <script src="/public/scripts/login.js"></script>
