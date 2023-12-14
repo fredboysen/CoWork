@@ -10,28 +10,26 @@ const session = require("express-session")
 const bcrypt = require('bcrypt');
 const multer = require("multer");
 const app = express();
-const storage = multer.diskStorage({
-  destination: './uploads',
+const storage = multer.diskStorage({ destination: './uploads',
   filename: function(req, file, cb) {
     cb(null, file.originalname);
   }
 });
 
+
 const upload = multer({ storage: storage });
 
-
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-
+//session setup
 app.use(
   session({
-    secret: "verysecretkey",
+    secret: "testkey",
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false },
   })
 );
 
+//Body parsing (JSON and URLencoded bodies) and serving static files
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -39,11 +37,13 @@ app.use(express.static(path.join(__dirname, "views")));
 app.use("*/styles", express.static(path.join(__dirname, "public/styles")));
 app.use("*/scripts", express.static(path.join(__dirname, "public/scripts")));
 app.use("*/images", express.static(path.join(__dirname, "public/images")));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-
+//route for checking login status
 app.get('/check-login-status', (req, res) => {
   const isLoggedIn = req.session.user ? true : false;
   res.json({ success: true, isLoggedIn });
@@ -116,7 +116,7 @@ app.post("/login", async (req, res) => {
           redirectTo: "/index.html",
         });
       } else {
-        // Passwords don't match, login failed
+        // Passwords dont match, login failed
         console.log("Incorrect password. Sending response:", {
           success: false,
           message: "Incorrect password",
@@ -140,7 +140,7 @@ app.post("/login", async (req, res) => {
 
 // Logout route
 app.post("/logout", (req, res) => {
-  // Destroy the session
+  // Destroy the session after logout
   req.session.destroy((err) => {
     if (err) {
       console.error("Error during logout:", err);
@@ -174,7 +174,7 @@ app.post('/post-application', async (req, res) => {
     return res.status(403).json({ success: false, message: 'Permission denied' });
   }
 
-  // Check the connection status before executing a query
+  // Checking connection status before executing a query
   const isConnected = await checkConnection();
   if (!isConnected) {
     return res.status(500).json({ success: false, message: 'Database connection error' });

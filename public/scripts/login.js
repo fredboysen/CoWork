@@ -16,15 +16,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+
+
 async function submitRegistrationForm(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
+    //taking values from form input
     const name = document.getElementById('register-name').value;
     const email = document.getElementById('register-email').value;
     const password = document.getElementById('register-password').value;
-    const phone = document.getElementById('register-phone').value;  // This corresponds to 'phone'
+    const phone = document.getElementById('register-phone').value;  
     const role = document.getElementById('register-role').value;
   
     try {
+   // creating a post request to '/register' with form data
+
       const response = await fetch('/register', {
         method: 'POST',
         headers: {
@@ -38,20 +43,18 @@ async function submitRegistrationForm(event) {
       // Handle the result
       if (result.success) {
         console.log('Registration successful');
-        // Redirect to the profile page or wherever you want
-        const redirectTo = '/login.html'; // Change this to the desired redirect URL
+        // Redirecting to the profile page
+        const redirectTo = '/login.html';
         window.location.href = redirectTo;
   
-        // Display a welcome message
+        // Welcome message if succesful
         alert(`Welcome, ${name}! You have successfully registered. Please login to start your CoWorking Journey!`);
       } else {
         console.error('Registration failed:', result.message);
-        // Handle registration failure (e.g., show an error message)
+
         alert(`Registration failed: ${result.message}`);
       }
-  
-      // Check and update login status after registration
-      checkLoginStatus();
+        checkLoginStatus();
     } catch (error) {
       console.error('Error during registration:', error);
       alert('Error during registration. Please try again.');
@@ -60,12 +63,15 @@ async function submitRegistrationForm(event) {
   
   
   async function submitLoginForm(event) {
-    event.preventDefault(); // Prevent the default form submission
-  
+    event.preventDefault();
+  // taking value from form inputs
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
   
     try {
+  
+      // requesting a post request to '/login' with login credentials
+
       const response = await fetch("/login", {
         method: "POST",
         headers: {
@@ -97,8 +103,6 @@ async function submitRegistrationForm(event) {
   // Add event listeners to handle click events for each button
   goBackButtons.forEach(button => {
       button.addEventListener("click", function() {
-          // Handle the action for the 'Go Back' button
-          // For example, go back to the previous page
           window.history.back();
       });
   });

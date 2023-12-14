@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     checkLoginStatus();
   
+    //if buttons are present, add eventlistener
     const navbarLoginBtn = document.getElementById('navbarLoginBtn');
     const navbarLogoutBtn = document.getElementById('navbarLogoutBtn');
   
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 
-
+//if user is not logged in show login button 
 function showLoginButton() {
     const navbarLoginBtn = document.getElementById("navbarLoginBtn");
     const navbarLogoutBtn = document.getElementById("navbarLogoutBtn");
@@ -20,7 +21,6 @@ function showLoginButton() {
       navbarLoginBtn.style.display = "inline-block";
       navbarLogoutBtn.style.display = "none";
   
-      // Add an event listener to the login button
       navbarLoginBtn.addEventListener('click', toggleLoginOrLogout);
     } else {
       console.error("Button elements not found.");
@@ -28,7 +28,7 @@ function showLoginButton() {
   }
   
 
-
+//if user is logged in, show log  out button
 function showLogoutButton() {
     const navbarLoginBtn = document.getElementById("navbarLoginBtn");
     const navbarLogoutBtn = document.getElementById("navbarLogoutBtn");
@@ -41,19 +41,8 @@ function showLogoutButton() {
     }
   }
   
-  function toggleLogin() {
-    var loginForm = document.getElementById('loginForm');
-    if (loginForm && loginForm.style) { 
-      if (loginForm.style.display === 'block') {
-        loginForm.style.display = 'none';
-      } else {
-        loginForm.style.display = 'block';
-      }
-    } else {
-      console.error('Login form not found.');
-    }
-  }
   
+  //Function to logout user
   async function logout() {
     try {
       const response = await fetch("/logout", {
@@ -91,10 +80,10 @@ function showLogoutButton() {
         // User is not logged in, show login button
         showLoginButton();
       }
-      return result || {}; // Return result or an empty object if result is undefined
+      return result || {}; // Returning result or an empty object if result is undefined
     } catch (error) {
       console.error("Error checking login status:", error);
-      return {}; // Return an empty object in case of an error
+      return {}; // Returning an empty object in case of an error
     }
   }
 
@@ -106,7 +95,6 @@ function showLogoutButton() {
       logout();
     } else {
       // If the user is not logged in, proceed with the login functionality
-      toggleLogin();
       window.location.href = '/login.html';
     }
   }

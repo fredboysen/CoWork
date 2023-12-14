@@ -65,7 +65,7 @@ function openPostJob() {
     });
   });
   
-
+//Get joblisting & Update html
   async function fetchAndDisplayJobListings() {
     try {
       const response = await fetch('/get-job-listings');
@@ -79,7 +79,7 @@ function openPostJob() {
         result.jobListings.forEach((job) => {
           const jobCard = document.createElement('div');
           jobCard.className = 'job_card';
-  
+  //Updating html content 
           jobCard.innerHTML = `
   <div class="jobDesc">
     <div class="text">
