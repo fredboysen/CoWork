@@ -902,10 +902,20 @@ q {
 }
 
 
+.col-2.col-4-medium.col-12-small p,
+.col-2.col-4-medium.col-12-small h2 {
+  font-size: 14px; /* Adjust this value to change the text size */
+}
+
+#jacob {
+    /* Set the width */
+    height: 206px; /* Maintain aspect ratio */
+
+}
 
 #content section {
 	background: #fff;
-	padding: px 30px 45px 30px;
+	padding: 30px 45px 30px;
 	box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.1);
 	margin: 0 0 25px 0;
 }
