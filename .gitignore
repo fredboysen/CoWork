@@ -1,5 +1,0 @@
-#node js
-node_modules/
-
-#environmental variables
-.env

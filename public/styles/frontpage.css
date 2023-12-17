@@ -1,10 +1,12 @@
+/* Importing Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200");
 
-
+/* Body styles */
 body {
-	background:  #f7f7f7 url("images/bg03.jpg");
-	color:  #000000;
-	
+	/* Background image and color */
+	background: #f7f7f7 url("images/bg03.jpg");
+	color: #000000;
+	/* Font styles */
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-size: 1rem;
 	font-weight: 400;
@@ -12,83 +14,89 @@ body {
 	overflow-x: hidden;
 }
 
+/* Navbar styles */
 .navbar {
-    background-color: #fdda00;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	
-  }
-  
-  .navbar a {
-    color: black;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.3s, background-color 0.3s;
-    margin: 10px 10px 50px 125px;
-    cursor: pointer;
+	/* Background color and layout */
+	background-color: #fdda00;
+	height: 75px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Navbar links */
+.navbar a {
+	/* Link appearance */
+	color: black;
+	text-decoration: none;
+	font-size: 15px;
+	transition: color 0.3s, background-color 0.3s;
+	margin: 10px 10px 50px 125px;
+	cursor: pointer;
 	display: inline;
-  }
+}
 
-
-
-  .contact {
-	background-color: white; 
-	color: #000000; 
-	padding: 20px; 
+/* Contact section styles */
+.contact {
+	/* Contact section appearance */
+	background-color: white;
+	color: #000000;
+	padding: 20px;
 	text-align: center;
 	font-style: bold;
 	font-weight: 500;
 	border-top: solid 1px #272e31;
+}
 
-  }
-  .team {
-	text-align: center; 
-	font-weight: bold; 
-	margin-top: 10px; 
+/* Team heading styles */
+.team {
+	/* Team heading appearance */
+	text-align: center;
+	font-weight: bold;
+	margin-top: 10px;
 	margin-bottom: 20px;
-	font-size:50px !important;
-  }
-  
+	font-size: 50px !important;
+}
+
+/* Footer styles */
 .footer {
-	background-color: white; 
+	/* Footer appearance */
+	background-color: white;
 	padding: 20px;
-	color: black; 
+	color: black;
 	text-align: center;
 }
 
+/* Logo styles */
 .logo {
-	max-width: 250px;
-	/* Adjust the max-width as needed */
-	height: auto;
-	/* Maintain aspect ratio */
+	/* Logo appearance */
+	max-width: 250px; /* Adjust the max-width as needed */
+	height: auto; /* Maintain aspect ratio */
 	float: left;
-    margin-top: 15%;
-margin-left: -45.1%;
+	margin-top: 15%;
+	margin-left: -45.1%;
 }
 
-
-
-/* dropdown */
-
+/* Dropdown styles */
 .dropdown botton {
+	/* Dropdown button appearance */
 	background-color: #fdda00;
-	 color: black;
-	 padding: 2px 5px;
-	 border: none;
-	 cursor: pointer;
-
+	color: black;
+	padding: 2px 5px;
+	border: none;
+	cursor: pointer;
 }
 
 .dropdown a {
-	display: block; 
+	/* Dropdown link appearance */
+	display: block;
 	text-decoration: none;
 	padding: 10px 15px;
 	margin-left: 10%;
 }
 
-.dropdown .content{
+.dropdown .content {
+	/* Dropdown content appearance */
 	display: none;
 	background-color: #fdda00;
 	position: absolute;
@@ -99,58 +107,50 @@ margin-left: -45.1%;
 }
 
 .dropdown:hover .content {
+	/* Show dropdown content on hover */
 	display: block;
 }
 
-.dropdown:hover botton{
-	background-color: hsl(0,0,70%);
-}
-
-.dropdown a:hover{
-	background-color: hsl(0, 0%, 52%);
-}
-
+/* Media query for screens smaller than 770px */
 @media screen and (max-width: 770px) {
+	/* Navbar and dropdown adjustments for smaller screens */
 	.navbar li {
-	  display: none ; /* Hide the regular links on smaller screens */
+		display: none; /* Hide regular links on smaller screens */
 	}
-  
+	/* Show dropdown on smaller screens */
 	.dropdown {
-	  display: block; /* Show the dropdown as the navigation bar */
-	 position: absolute;
+		display: block;
+		position: absolute;
 	}
-  
 	.logo {
-		display: none;
+		display: none; /* Hide the logo on smaller screens */
 	}
 	.dropdown .dropbtn {
-	  display: block;
+		display: block;
 	}
-  
 	.dropdown:hover .dropdown-content {
-	  display: block; /* Show dropdown content on hover */
+		display: block; /* Show dropdown content on hover */
 	}
-  }
-  
-  /* Media query for screens larger than 770px */
-  @media screen and (min-width: 771px) {
-	.dropdown {
-	  display: none; /* Hide the dropdown on larger screens */
-	}
-  }
+}
 
-ol,
-ul {
+/* Media query for screens larger than 770px */
+@media screen and (min-width: 771px) {
+	.dropdown {
+		display: none; /* Hide the dropdown on larger screens */
+	}
+}
+
+/* List styles */
+ol, ul {
 	list-style: none;
 }
 
-blockquote,
-q {
+/* Quote styles */
+blockquote, q {
 	quotes: none;
 }
 
-/* Container */
-
+/* Container styles for different screen sizes */
 .container {
 	margin: 0 auto;
 	max-width: 100%;
@@ -158,7 +158,6 @@ q {
 }
 
 @media screen and (max-width: 1680px) {
-
 	.container {
 		width: 1200px;
 	}
@@ -166,7 +165,6 @@ q {
 }
 
 @media screen and (max-width: 1280px) {
-
 	.container {
 		width: calc(100% - 40px);
 	}
@@ -174,7 +172,6 @@ q {
 }
 
 @media screen and (max-width: 980px) {
-
 	.container {
 		width: calc(100% - 50px);
 	}
@@ -182,7 +179,6 @@ q {
 }
 
 @media screen and (max-width: 736px) {
-
 	.container {
 		width: calc(100% - 40px);
 	}
@@ -190,20 +186,21 @@ q {
 }
 
 /* Row */
-
 .row>* {
 	padding: 25px 0 0 25px;
 }
 
+/* Media query for screens with a maximum width of 1680 pixels */
 @media screen and (max-width: 1680px) {
 
+	 /* Flexbox layout for rows */
 	.row {
 		display: flex;
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
 	}
-
+  /* Box-sizing for elements within rows */
 	.row>* {
 		box-sizing: border-box;
 	}
@@ -211,8 +208,10 @@ q {
 
 }
 
+/* Media query for screens with a maximum width of 1280 pixels */
 @media screen and (max-width: 1280px) {
 
+	 /* Flexbox layout for rows */
 	.row {
 		display: flex;
 		flex-wrap: wrap;
@@ -220,33 +219,35 @@ q {
 		align-items: stretch;
 	}
 
+	 /* Box-sizing for elements within rows */
 	.row>* {
 		box-sizing: border-box;
 	}
 
-
+  /* Adjustments for rows at this screen size */
 	.row {
 		margin-top: -20px;
 		margin-left: -20px;
 	}
 
+	 /* Padding adjustments for elements within rows */
 	.row>* {
 		padding: 20px 0 0 20px;
 	}
 
-	
+
 
 }
 
 @media screen and (max-width: 980px) {
-
+ /* Flexbox layout for rows */
 	.row {
 		display: flex;
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
 	}
-
+ /* Box-sizing for elements within rows */
 	.row>* {
 		box-sizing: border-box;
 	}
@@ -254,7 +255,7 @@ q {
 	.row.gtr-uniform>*> :last-child {
 		margin-bottom: 0;
 	}
-
+ /* Handling alignment of rows */
 	.row.aln-left {
 		justify-content: flex-start;
 	}
@@ -283,10 +284,13 @@ q {
 		order: -1;
 	}
 
+	/* Adjusting column sizes and offsets for medium screens */
+    /* Example: .col-1-medium for 8.33333% width */
 	.row>.col-1-medium {
 		width: 8.33333%;
 	}
 
+	/* Example: .off-1-medium for 8.33333% left margin */
 	.row>.off-1-medium {
 		margin-left: 8.33333%;
 	}
@@ -379,6 +383,11 @@ q {
 		margin-left: 100%;
 	}
 
+	 /* Similar adjustments for other column sizes */
+
+    /* Resetting margins and paddings for different grid spacings */
+    /* Example: .row.gtr-0 for no margin and padding */
+
 	.row.gtr-0 {
 		margin-top: 0px;
 		margin-left: 0px;
@@ -387,6 +396,8 @@ q {
 	.row.gtr-0>* {
 		padding: 0px 0 0 0px;
 	}
+
+	   /* Similar adjustments for other grid spacings */
 
 	.row.gtr-0.gtr-uniform {
 		margin-top: 0px;
@@ -485,6 +496,7 @@ q {
 
 @media screen and (max-width: 736px) {
 
+	 /* Flexbox layout for rows */
 	.row {
 		display: flex;
 		flex-wrap: wrap;
@@ -492,6 +504,7 @@ q {
 		align-items: stretch;
 	}
 
+	/* Box-sizing for elements within rows */
 	.row>* {
 		box-sizing: border-box;
 	}
@@ -500,6 +513,7 @@ q {
 		margin-bottom: 0;
 	}
 
+	 /* Handling alignment of rows */
 	.row.aln-left {
 		justify-content: flex-start;
 	}
@@ -528,10 +542,13 @@ q {
 		order: -1;
 	}
 
+	   /* Adjusting column sizes and offsets for small screens */
+    /* Example: .col-1-small for 8.33333% width */
 	.row>.col-1-small {
 		width: 8.33333%;
 	}
 
+	 /* Example: .off-1-small for 8.33333% left margin */
 	.row>.off-1-small {
 		margin-left: 8.33333%;
 	}
@@ -629,10 +646,15 @@ q {
 		margin-left: 0px;
 	}
 
+	 /* Similar adjustments for other column sizes */
+
+	 /* Resetting margins and paddings for different grid spacings */
+    /* Example: .row.gtr-0 for no margin and padding */
 	.row.gtr-0>* {
 		padding: 0px 0 0 0px;
 	}
-
+	
+	 /* Similar adjustments for other grid spacings */
 	.row.gtr-0.gtr-uniform {
 		margin-top: 0px;
 	}
@@ -804,11 +826,11 @@ q {
 	width: 100%;
 }
 
-.bordered-feature-image-2{
-    width: 102%;
-}
 
 
+
+
+/* Styles for an image container with a border and shadow */
 .bordered-feature-image {
 	display: block;
 	background: #fff;
@@ -818,17 +840,19 @@ q {
 	outline: 0;
 }
 
+/* Styles applied to images within the bordered-feature-image class */
 .bordered-feature-image img {
 	display: block;
 	width: 100%;
 	height: 110%;
 }
 
+/* Styles applied to images within the bordered-feature-image-2 class */
 .bordered-feature-image-2 img {
 	width: 96%;
-
 }
 
+/* Styling for a bordered image with class .bordered-feature-image-2 */
 .bordered-feature-image-2 {
 	display: block;
 	background: #fff;
@@ -836,6 +860,7 @@ q {
 	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.15);
 	margin: 0 0 1.5em 0;
 	outline: 0;
+	width: 102%;
 }
 
 
@@ -902,16 +927,6 @@ q {
 }
 
 
-.col-2.col-4-medium.col-12-small p,
-.col-2.col-4-medium.col-12-small h2 {
-  font-size: 14px; /* Adjust this value to change the text size */
-}
-
-#jacob {
-    /* Set the width */
-    height: 206px; /* Maintain aspect ratio */
-
-}
 
 #content section {
 	background: #fff;
@@ -951,20 +966,6 @@ q {
 	border-bottom: solid 1px #e2e6e8;
 }
 
-/* Copyright */
-
-#copyright {
-	border-top: solid 1px #b5bec3;
-	box-shadow: inset 0px 1px 0px 0px #e0e4e7;
-	text-align: center;
-	padding: 45px 0 80px 0;
-	color: #8d9ca3;
-	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
-}
-
-#copyright a {
-	color: #8d9ca3;
-}
 
 /* Large */
 
@@ -1040,9 +1041,6 @@ q {
 }
 
 @media screen and (max-width: 736px) {
-
-	
-
 	/* Multi-use */
 
 	.link-list li {
@@ -1102,7 +1100,7 @@ q {
 	-moz-transition: all .8s ease;
 	-webkit-transition: all .8s ease;
 	transition: all .8s ease;
-    background-color: #fdda00;
+	background-color: #fdda00;
 	box-shadow: 0px 0px 30px 0px rgba(95, 95, 95, 0.24);
 	border: .5px solid rgba(0, 0, 0, 0.336);
 
@@ -1113,15 +1111,15 @@ q {
 	color: black;
 	font-weight: 500;
 	text-transform: uppercase;
-	margin-bottom: 11px; 
+	margin-bottom: 11px;
 }
 
 #pricing .pricing-table h1 {
-	color:  black;
+	color: black;
 	font-size: 50px;
 	font-weight: 450;
 	position: relative;
-	padding-left: 10px; 
+	padding-left: 10px;
 }
 
 #pricing .pricing-table h1 span {
@@ -1138,7 +1136,7 @@ q {
 #pricing .pricing-table ul li {
 	font-size: 16px;
 	font-weight: 400;
-	color:  black;
+	color: black;
 	display: block;
 	line-height: 33px;
 }
@@ -1151,31 +1149,14 @@ q {
 	transition: all .4s ease;
 }
 
-
-.section {
-	padding: 130px 0px;
-}
-
-
-
-.section-header .section-title {
-	font-size: 35px;
-	margin-bottom: 12px;
-	font-weight: 600;
-	position: relative;
-	line-height: 30px; }
-
-user agent stylesheet section {
-	display: block;
-}
-
 #pricing {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-size: 1rem;
 	font-weight: 200;
 	line-height: 1.5;
-	color: #000000;;
+	color: #000000;
+	;
 	background-color: white;
 	border-top: solid 1px #272e31;
 	border-bottom: solid 1px #272e31;
@@ -1183,106 +1164,110 @@ user agent stylesheet section {
 }
 
 
-
-::after,
-::before {
-	box-sizing: border-box;
+/* space between sections */ 
+.section {
+	padding: 130px 0px;
 }
 
-::after,
-::before {
-	box-sizing: border-box;
-}
+
+/*  styling for the bottom */
+
 .btn-border {
-    border-style: solid;
-    border-width: 1px;
-    cursor: pointer;
-    border-color: #fdda00;
-    color:  black;
-    width: 100px;
-    height: 50px;
-    padding: 14px 15px;
-    box-shadow: 0px 8px 9px 0px rgba(96, 94, 94, 0.17);
+	border-style: solid;
+	border-width: 1px;
+	cursor: pointer;
+	border-color: #fdda00;
+	color: black;
+	width: 100px;
+	height: 50px;
+	padding: 14px 15px;
+	box-shadow: 0px 8px 9px 0px rgba(96, 94, 94, 0.17);
 }
 
 .btn-common {
-	background-color:  #fdda00;
+	background-color: #fdda00;
 	position: relative;
 	z-index: 1;
 	box-shadow: 0px 8px 9px 0px rgba(96, 94, 94, 0.17);
 	height: 50px;
-	padding: 14px 15px; }
-  
-  .btn-common:hover {
-	color:  black;
-	transform: translateY(-2px); 
+	padding: 14px 15px;
 }
 
-#contact {
-    background-color:  #fdda00;
-	
+.btn-common:hover {
+	color: black;
+	transform: translateY(-2px);
 }
 
-
-
-.form-group{
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 7px;
+/* Coworkers section.. styling for the group */ 
+.form-group {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 7px;
 }
 
 
 /* ads left and right */
-
 .left-side-panel {
-    width: 130px;
-    /* Adjusted width for the left side-panel */
-    background-color: rgba(236, 226, 226, 0.945);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    /* Full viewport height */
-    
-  }
-  
-  .right-side-panel {
-    width: 130px;
-    /* Adjusted width for the right side-panel */
-    background-color: rgba(236, 226, 226, 0.945);
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    /* Full viewport height */
-  }
-  
+	width: 130px;
+	/* Adjusted width for the left side-panel */
+	background-color: rgba(236, 226, 226, 0.945);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	/* Full viewport height */
 
-  .ad1 {
-    width: 130px;
-    height: 100vh;
-    position: fixed;
-    left: 0; /* Adjust left position */
-    top: 0; /* Adjust top position */
-  }
-  
-  .ad2 {
-    width: 130px;
-    height: 100vh;
-    position: fixed;
-    right: 0; /* Adjust right position */
-    top: 70px; /* Adjust top position */
-  }
+}
 
+.right-side-panel {
+	width: 130px;
+	/* Adjusted width for the right side-panel */
+	background-color: rgba(236, 226, 226, 0.945);
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	/* Full viewport height */
+}
+
+
+.ad1 {
+	width: 130px;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	/* Adjust left position */
+	top: 0;
+	/* Adjust top position */
+}
+
+.ad2 {
+	width: 130px;
+	height: 100vh;
+	position: fixed;
+	right: 0;
+	/* Adjust right position */
+	top: 70px;
+	/* Adjust top position */
+}
+
+/* responsiveness for Ads on smaller screen */
 
 @media (max-width: 1500px) {
 
-    .col-lg-2 {
-      display: none;
-    } }
+	.col-lg-2 {
+		display: none;
+	}
+}
 
 
-    .col-4 section {
-        padding: 20px; /* Adjust the value as needed */
-      }
+.col-4 section {
+	padding: 20px;
+	/* Adjust the value as needed */
+}
+
+/* Color for contact forum */
+#contact {
+	background-color: #fdda00;
+}
