@@ -926,6 +926,14 @@ blockquote, q {
 	padding: 45px 0 45px 0;
 }
 
+#jacob {
+   
+    height: 206px;
+}
+.col-2.col-4-medium.col-12-small p,
+.col-2.col-4-medium.col-12-small h2 {
+  font-size: 14px; /* Adjust this value to change the text size */
+}
 
 
 #content section {
