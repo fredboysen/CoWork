@@ -1,114 +1,529 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../public/styles/bootstrap.min.css" type="text/css" rel="stylesheet">
-  <link href="../public/styles/styles.css" rel="stylesheet" type="text/css">
-  <script src="../public/scripts/bootstrap.bundle.min.js"></script>
-  <script src="../public/scripts/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/public/styles/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <link href="../public/styles/frontpage.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="../public/scripts//bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../public/scripts/home.js"></script>
 </head>
 
 <body>
 
+  <!--Responsive navbar with CoWork logo fixed at the left-->
   <nav class="navbar navbar-expand-md navbar-light bg-yellow fixed-top">
     <div class="container">
-      <img src="/public/images/logo-no-background.png" id="logo" alt="logo" class="logo float-left">
-      <ul class="navbar-nav ml-auto">
+      <a class="logo" href="index.html">
+        <img src="/public/images/logo-no-background.png" id="logo" alt="logo" class="logo float-left"> </a>
+      <ul class="navbar-nav ml-auto" id="navbarlinks">
         <li class="nav-item">
-          <a class="nav-link" href="Joblisting.html">Job listing</a>
+          <a class="nav-link" href="learningpaths.html"><i class="fas fa-question-circle"></i>
+            Learning path</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="learningpaths.html">Learning paths</a>
+          <a class="nav-link" href="Joblisting.html"> <i class="fas fa-plus"></i>
+            Job listing</a>
         </li>
-        <!-- Profile Link -->
         <li class="nav-item">
-          <a class="nav-link float-right" href="login-nice.html">Profile</a>
-        </li>
-        <!-- Hamburger Icon -->
-        <li class="nav-item hamburger-icon">
-          <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-            &#9776;
-          </a>
+          <!--Sign in option linked to backend-->
+          <a id="navbarLoginBtn" class="profile" onclick="toggleLogin()"> <i class="fa-solid fa-right-to-bracket"></i>
+            Sign in</a>
+          <a id="navbarLogoutBtn" class="profile" style="display: none;" onclick="logout()"> <i
+              class="fa-solid fa-right-to-bracket"></i> Sign out</a>
         </li>
       </ul>
+      <div class="dropdown">
+        <botton>CoWork</botton>
+        <div class="content">
+          <a href="learningpaths.html">Learning path</a>
+          <a href="Joblisting.html">Job listing</a>
+          <a href="login.html">Sign in</a>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <div class="dropdown-menu" id="dropdownMenu">
-
-    <a href="Joblisting.html">Job listing</a>
-    <a href="learningpaths.html">Learning paths</a>
-    <a href="login-nice.html">Profile</a>
-  </div>
- 
-
-  <div class="bottom" style="margin-top: 100px;">
-    <input class="input" type="text" placeholder="Insert area or postal code">
-    <input class="input" type="text" placeholder="Search for jobs or qualifications">
-    <button type="button" id="bottom" class="btn btn-primary btn-lg">Search for </button>
-  </div>
-
+<!--ads-->
   <div class="container1">
     <div class="row justify-content-center">
-      <div class="col-lg-2  col-sm-2 side-panel left-side-panel">
+      <div class="col-lg-2 col-sm-2 side-panel left-side-panel">
         <img src="../public/images/jobhunt.jpg" id="ad1" alt="ad1" class="ad1">
         <p>Left Side Panel Content</p>
       </div>
-      <div class="col-lg-8 main-content">
-        <div class="row">
-          <div class="col-lg-6 col-sm-6 mt-3">
-            <div class="fred">
-              <img src="../public/images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
-              <h5 class="titleF">Frederik Boysen <br> Global Business Engineering 5.Semester</h5>
-              <p class="card-text">I found a relevant study job through CoWork and i have never been more well-suited
-                for
-                my future career! A relevant study job is extremely important to me. As I am studying Engineering, I
-                feel
-                that it is very important to experience what the industry is like before I graduate
-              </p>
+
+      <div id="banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-6 col-12-medium">
+             
+              <p>CoWork: Where students find tailored job opportunities. Discover meaningful work experiences aligned
+                with
+                your studies. Streamlined connections for students and employers.</p>
             </div>
-          </div>
-          <div class="col-lg-6 col-sm-6 mt-3">
-            <div class="Ernø">
-              <img src="../public/images/clipart--person-icon--cliparts-15.png" class="card-img-top" alt="Person Image">
-              <h5 class="titleJ">Jacob A.E <br> Economics and IT 7. semester</h5>
-              <p class="card-text">Personally, I deeply understand the significance of students discovering relevance in
-                their educational pursuits. It's not merely about absorbing information; it's about uncovering
-                connections
-                between academic knowledge and practical application.
-              </p>
+            <div class="col-6 col-12-medium imp-medium">
+
+             
+              <a href="#" class="bordered-feature-image"><img src="/public/Images/logo-color.png" alt="" /></a>
+
             </div>
           </div>
         </div>
+      </div>
+      </section>
 
-      </div>
-      <div class="col-lg-2 col-sm-2 side-panel right-side-panel">
-        <img src="../public/images/low-cost.png" id="ad2" alt="ad2" class="ad2 float-right">
-        <p>Right Side Panel Content</p>
-      </div>
+      <!-- Features about the CoWorkers -->
+      <section id="features">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="team">Meet the CoWorkers</h2>
+            </div>
+          </div>
+
+        <div class="row">
+            <!-- Feature #1 -->
+            <div class="col-2 col-4-medium col-12-small">
+                <section>
+                    <a href="#" class="bordered-feature-image"><img
+                            src="/public/Images/406268213_338339208812118_740798429528094468_n.jpg" alt="" /></a>
+                    <h2>Jonas Etmann Skjøth</h2>
+                    <p>
+                        <strong>Jonas E. Skjøth</strong>, Co-founder of CoWork, played a pivotal role in shaping the
+                        company.
+                        With a focus on marketing and finance, Jonas adeptly navigated the intricacies of these domains,
+                        contributing significantly to CoWork's success. His proficiency in analyzing competition provided
+                        invaluable insights that drove the company's strategies and growth. You can reach out to Jonas via
+                        email at <a href="mailto:jonas.etmann@cowork.com">jonas.etmann@cowork.com</a>.
+                    </p>
+                </section>
+
+            </div>
+            <div class="col-2 col-4-medium col-12-small">
+
+              <!-- CoWorker #2 -->
+              <section>
+                <a href="#" class="bordered-feature-image"><img
+                    src="/public/Images/385529416_872546594272544_8289244985925664875_n.jpg" alt="" /></a>
+                <h2>Benjamin Kring Suner</h2>
+                <p>
+                  <strong>Benjamin Kring Suner</strong> co-founded CoWork with a keen focus on operational efficiency
+                  and
+                  strategic planning. His multi-faceted approach involved streamlining processes and orchestrating
+                  seamless
+                  operations within the company. Benjamin's adeptness at aligning strategic initiatives with the
+                  company's
+                  vision significantly contributed to its growth and success. You can connect with Benjamin via email at
+                  <a href="mailto:benjamin.skring@cowork.com">benjamin.krings@cowork.com</a>.
+                </p>
+              </section>
+
+            </div>
+
+            <div class="col-2 col-4-medium col-12-small">
+
+              <!-- CoWorker #3 -->
+              <section>
+                <a href="#" class="bordered-feature-image"><img id="thom"
+                    src="/public/Images/403970237_324085987173603_1922788542620055907_n.jpg" alt="" /></a>
+
+                <h2>Thomas Schelde</h2>
+                <p>
+                  As the most crucial player in CoWork's launch, <strong>Thomas Schelde</strong>, a Co-founder, wielded
+                  unparalleled expertise in software front-end development. His innovative approach and mastery in
+                  crafting
+                  seamless user experiences were instrumental in shaping the website's interface, serving as the
+                  cornerstone
+                  of CoWork's successful launch. Thomas played a pivotal role in designing and implementing the
+                  front-end
+                  elements, ensuring an intuitive and engaging online platform for users. Connect with Thomas via email
+                  at
+                  <a href="mailto:thomas.schelde@cowork.com">thomas.schelde@cowork.com</a>.
+                </p>
+              </section>
+
+            </div>
+            <div class="col-2 col-4-medium col-12-small">
+
+              <!-- CoWorker #4 -->
+              <section>
+                <a href="#" class="bordered-feature-image-2"><img
+                    src="/public/Images/403632658_869473291748763_1702201186405426330_n.jpg" alt="" /></a>
+
+                <h2>Frederik Boysen</h2>
+                <p>
+                  <strong>Frederik Boysen</strong>, an essential Co-founder, spearheaded the backend development at
+                  CoWork
+                  with unparalleled expertise. His proficiency in crafting robust and scalable systems formed the
+                  backbone
+                  of CoWork's technical infrastructure. Frederik played a pivotal role in architecting and implementing
+                  the
+                  backend solutions, ensuring a seamless and efficient platform for the company's operations. Connect
+                  with
+                  Frederik via email at <a href="mailto:frederik.boysen@cowork.com">frederik.boysen@cowork.com</a>
+                </p>
+              </section>
+
+
+            </div>
+            <div class="col-2 col-4-medium col-12-small">
+
+              <!-- Feature #3 -->
+              <section>
+                <a href="#" class="bordered-feature-image"><img id="Donne"
+                    src="/public/Images/Donne.jpg" alt="" /></a>
+
+                <h2>Marcus Eduard</h2>
+                <p>
+                  Marcus Eduard, a Co-founder, focused on business development and securing initial investments for CoWork. His strategic financial planning and partnerships were vital in laying the foundation for CoWork's successful launch. To connect with Marcus, drop him an email at
+                  <a href="mailto:marcus.eduard@cowork.com">marcus.eduard@cowork.com</a>.
+                </p>
+              </section>
+            </div>
+            <div class="col-2 col-4-medium col-12-small">
+
+              <!-- Feature #3 -->
+              <section>
+                <a href="#" class="bordered-feature-image"><img id="jacob"
+                    src="/public/Images/410552069_1508597699982608_8161006627948504620_n.jpg" alt="" /></a>
+
+                <h2>Jacob Kjær Spanggaard</h2>
+                <p>
+                  Jacob Kjær Spanggard, another Co-founder, focused on optimizing operations and building a collaborative workspace at CoWork. His efforts streamlined internal processes and created a productive environment for everyone involved. Contact Jacob via email at <a href="mailto:jacob.spanggard@cowork.com">jacob.spanggard@cowork.com</a>.
+                </p>
+              </section>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Content -->
+      <section id="content">
+        <div class="container">
+          <div class="row aln-center">
+            <div class="col-4 col-12-medium">
+
+              <!-- About #1 -->
+              <section>
+                <header>
+                  <h2>Who We Are</h2>
+                  <h3>Global business engineering</h3>
+                </header>
+                <a href="#" class="feature-image"><img src="/public/Images/download.png" alt="" /></a>
+                <p>The concept of CoWork was born from the firsthand challenges experienced by a group of students at
+                  Via University College in securing study-relevant jobs. This spark ignited CoWork's inception,
+                  evolving it into a progressively larger project led by four handsome fellows studying Global Business
+                  Engineering.
+                </p>
+              </section>
+
+            </div>
+            <div class="col-4 col-6-medium col-12-small">
+
+              <!-- About #2 -->
+              <section>
+                <header>
+                  <h2>What is CoWork?</h2>
+                  <h3>Five quick sentences about CoWork</h3>
+                </header>
+                <ul class="check-list">
+                  <li>Empowering students</li>
+                  <li>Connecting talent with opportunities </li>
+                  <li>Streamlining job searches</li>
+                  <li>Revolutionizing study employment</li>
+                  <li>Uniting talent and opportunity</li>
+                </ul>
+              </section>
+
+            </div>
+            <div class="col-4 col-6-medium col-12-small">
+
+              <!-- About #3 -->
+              <section>
+                <header>
+                  <h2>What People Are Saying</h2>
+                  <h3>Reviews of CoWork</h3>
+                </header>
+                <ul class="quote-list">
+                  <li>
+                    <p>"Awesome platform, i found my dream studyjob"</p>
+                    <span>Peter Pedersen</span>
+                  </li>
+                  <li>
+                    <p>"Within seconds of watching the learning path guides i made the perfect CV!"</p>
+                    <span>Hassan Rabbit</span>
+                  </li>
+                  <li>
+                    <p>"Tremendous respect for making such a good website! best looking ever"</p>
+                    <span>Michael Spang</span>
+                  </li>
+                </ul>
+              </section>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Section Header -->
+      <section id="pricing" class="section">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-lg-12s">
+              <div class="pricing-text section-header text-center">
+                <div>
+                  <h2 class="section-title">Pricing Plans</h2>
+                  <div class="desc-text">
+                    <p>Unlock the full potential of CoWork with our subscription based services! </p>
+                    <p>We have 5 different subscriptions! Read about all the advantages you get by subscribing to
+                      CoWork, down below</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing Tables -->
+          <div class="row pricing-tables">
+            <!-- Free Subscription -->
+            <div class="col-lg-6 col-md-3 col-xs-12">
+              <div class="pricing-table text-center">
+                <div class="pricing-details">
+                  <h3>Free subscription</h3>
+                  <h1>$</span>0</h1>
+                  <ul>
+                    <li>Limited access</li>
+                    <li>Apply for jobs</li>
+                    <li>No dashboard</li>
+                    <li>Without enchancements</li>
+                  </ul>
+                </div>
+                <div class="plan-button">
+                  <a href="login.html" class="btn btn-common">Register</a>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Basic, Silver, Gold, and Business Subscriptions -->
+            <!-- Each subscription follows a similar structure with different details -->
+            <div class="col-lg-6 col-md-3 col-xs-12">
+              <div class="pricing-table text-center">
+                <div class="pricing-details">
+                  <!-- Basic -->
+                  <h3>Basic subscription</h3>
+                  <h1>$</span>5</h1>
+                  <ul>
+                    <li>Headhunting service</li>
+                    <li>Resumé builder</li>
+                    <li>Job agent</li>
+                    <li>Basic features included</li>
+                  </ul>
+                </div>
+                <div class="plan-button">
+                  <a href="#" class="btn btn-common">Purchase</a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-3 col-xs-12">
+              <div class="pricing-table text-center">
+                <div class="pricing-details">
+                  <!-- Silver -->
+                  <h3>Silver subscription</h3>
+                  <h1>$</span>10</h1>
+                  <ul>
+                    <li>Resumé and job agent</li>
+                    <li>Limited Dashboard</li>
+                    <li>Highlight 2 times a week</li>
+                    <li>Unlock Learning path</li>
+                  </ul>
+                </div>
+                <div class="plan-button">
+                  <a href="#" class="btn btn-common">Purchase</a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-6 col-md-3 col-xs-12">
+              <div class="pricing-table text-center">
+                <div class="pricing-details">
+                  <!-- Gold -->
+                  <h3>Gold subscription</h3>
+
+                  <h1>$</span>20</h1>
+                  <ul>
+                    <li>Job Matching</li>
+                    <li>Dashboard</li>
+                    <li>Highlighted everyday</li>
+                    <li>All Features included</li>
+
+                  </ul>
+                </div>
+                <div class="plan-button">
+                  <a href="#" class="btn btn-common">Purchase</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-md-3 col-xs-12 col-lg-offset-6">
+              <div class="pricing-table text-center">
+                <div class="pricing-details">
+                  <!-- Business -->
+                  <h3>Business subscription</h3>
+                  <h1>$</span>150</h1>
+                  <ul>
+                    <li></li>
+                    <li>Headhunting services</li>
+                    <li>Up to 10 job posts</li>
+                    <li>Dashboard</li>
+                    <li>All Features included</li>
+
+                  </ul>
+                </div>
+                <div class="plan-button">
+                  <a href="#" class="btn btn-common">Purchase</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <div class="container">
+          <!-- Contact Header -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="contact-text section-header text-center">
+                <div>
+                  <h2 class="section-title">Get In Touch</h2>
+                  <div class="desc-text">
+                    <p>Please fill out the following, and we will get back in touch with you as soon as possible!</p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <!-- Contact Form -->
+              <form id="contactForm" novalidate="true">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required=""
+                        data-error="Please enter your name">
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" placeholder="Subject" id="msg_subject" class="form-control" name="msg_subject"
+                        required="" data-error="Please enter your subject">
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="email" name="email" placeholder="Email" required=""
+                        data-error="Please enter your Email">
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+
+                      <select id="register-role" name="role" class="form-control" required>
+                        <option value="student">Student</option>
+                        <option value="employer">Employer</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea class="form-control" id="message" name="message" placeholder="Write Message" rows="4"
+                        data-error="Write your message" required=""></textarea>
+                      <div class="help-block with-errors"></div>
+                    </div>
+                    <br>
+                    <div class="submit-button">
+                      <button class="btn btn-common disabled" id="submit" type="submit"
+                        style="pointer-events: all; cursor: pointer;">Submit</button>
+                      <div id="msgSubmit" class="h3 hidden"></div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+            <div class="col-lg-1">
+            </div>
+
+            <!-- Contact Image -->
+            <div class="col-lg-4 col-md-12">
+              <div class="contact-img">
+                <img src="/public/Images/checklist.png" class="img-fluid" alt="">
+              </div>
+            </div>
+
+
+            <div class="col-lg-1">
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+    <!--ads-->
+    <div class="col-lg-2 col-sm-2 side-panel right-side-panel">
+      <img src="../public/images/low-cost.png" id="ad2" alt="ad2" class="ad2 float-right">
+      <p>Right Side Panel Content</p>
     </div>
   </div>
-  
-
-  <div class="short-cut card col-lg-4 col-sm-4 fixed-top" style="top: 75px; right: 20px;">
-
-    <div class="card-body">
-      <h5 class="card-title">Short cuts</h5>
-      <ul class="list-group list-group-flush">
-        <!-- Når hjemmesiden er lavet skal # laves om til de jobs stillinger der er indenfor de forskellige fag-->
-        <li class="list-group-item"><a href="#">Engineering</a></li>
-        <li class="list-group-item"><a href="#">Medicine</a></li>
-        <li class="list-group-item"><a href="#">Industry and Trades</a></li>
-        <li class="list-group-item"><a href="#">Healthcare</a></li>
-        <li class="list-group-item"><a href="#">Sales and Communication</a></li>
-        <li class="list-group-item"><a href="#">Economics</a></li>
-        <li class="list-group-item"><a href="#">Other</a></li>
-      </ul>
-    </div>
   </div>
-  <script src="../public/scripts/bootstrap.bundle.min.js"></script>
+
+  </div>
+  </div>
+  </section>
+
+  <!-- Contact Information -->
+  <div class="contact">
+    <h2>Contact</h2>
+    <p>Address: Fake Address 4</p>
+    <p> 8000, Aarhus C, Denmark </p>
+    <p>Phone: +45 88 88 88 88</p>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p> CoWork &copy; 2023</p>
+  </footer>
+
+  <script src="/public/scripts/common.js"></script>
+  <script src="/public/scripts/home.js"></script>
+
 </body>
 
 </html>

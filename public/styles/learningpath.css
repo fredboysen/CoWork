@@ -1,157 +1,236 @@
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200");
 
+/* Body Styles */
+
+/* Body Background and Font Styles */
+body {
+  background: #f7f7f7 url("images/bg03.jpg");
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+/* Navbar Styles */
 .navbar {
-    background-color: yellow;
-    height: 75px;
+  background-color: #fdda00;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar Link Styles */
+.navbar a {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s, background-color 0.3s;
+  margin: 0 72px;
+  cursor: pointer;
+  display: inline;
+}
+
+/* dropdown */
+
+/* Dropdown Button Styles */
+.dropdown botton {
+  background-color: #fdda00;
+  color: black;
+  padding: 2px 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown Anchor Tag Styles */
+.dropdown a {
+  display: block;
+  text-decoration: none;
+  padding: 2px 2px;
+  margin-left: 10%;
+}
+
+/* Dropdown Content Styles */
+.dropdown .content {
+  display: none;
+  background-color: #fdda00;
+  position: absolute;
+  box-shadow: 2px 2px 5px black;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Show Dropdown Content on Hover */
+.dropdown:hover .content {
+  display: block;
+  min-width: 80px;
+  border: 1px solid black;
+  max-height: 200px; /* Tilføjet - Juster efter behov */
+  width: 100px !important;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Media Query for Screens Below 770px */
+
+@media screen and (max-width: 770px) {
+  .navbar li {
+    display: none; /* Hide the regular links on smaller screens */
   }
-  
-  .navbar a {
-    color: black;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.3s, background-color 0.3s;
-    margin-right: 150px;
+
+  .dropdown {
+    display: block; /* Show the dropdown as the navigation bar */
+    position: relative;
+    margin-right: 100%;
   }
-  
-  
-  
-  /* Show icon on screens less than 1000px */
-  @media (max-width: 998px) {
-    .hamburger-icon{
-      display: block; /* Show icon on smaller screens */
-    }
-  
-    /* Hide regular navigation links on smaller screens */
-    .navbar a {
-      display: none;
-    }
-    
-  }
-  
-  /* Show regular navigation links on screens 1000px and larger */
-  @media (min-width: 1000px) {
-    .hamburger-icon {
-      display: none; /* Hide icon on larger screens */
-    }
-  
-    /* Show regular navigation links on larger screens */
-    .navbar a {
-      display: inline;
-    }
-  }
-  
-  .navbar a:hover {
-    color: white;
-    font-size: 22px;
-    border-bottom: 2px solid black;
-  }
-  
+
   .logo {
-    max-width: 250px;
-    /* Adjust the max-width as needed */
-    height: auto;
-    /* Maintain aspect ratio */
-    float: left;
+    display: none;
   }
-  
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .flex-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-  
-  }
-  
-  
-  .left-side-panel {
-    width: 200px;
-    /* Adjusted width for the left side-panel */
-    background-color: rgba(236, 226, 226, 0.945);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    /* Full viewport height */
-    
-  }
-  
-  .right-side-panel {
-    width: 200px;
-    /* Adjusted width for the right side-panel */
-    background-color: rgba(236, 226, 226, 0.945);
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    /* Full viewport height */
-  }
-  
-  .ad1 {
-    width: 220px;
-    height: 980px;
-    position: fixed;
-    left: 0; /* Adjust left position */
-    top: 0; /* Adjust top position */
-  }
-  
-  .ad2 {
-    width: 210px;
-    height: 1000px;
-    position: fixed;
-    right: 0; /* Adjust right position */
-    top: 70px; /* Adjust top position */
+  .dropdown .dropbtn {
+    display: block;
   }
 
+  .dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content on hover */
+  }
+}
 
+/* Media query for screens larger than 770px */
+@media screen and (min-width: 771px) {
+  .dropdown {
+    display: none; /* Hide the dropdown on larger screens */
+  }
+}
+
+/* logo */
+.logo {
+  max-width: 250px;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Banner */
+
+#banner {
+  border-top: solid 1px #222628;
+  box-shadow: inset 0px 1px 0px 0px #3e484a;
+  padding: 35px 0 35px 0;
+  color: #030303;
+  margin-top: 2%;
+}
+
+#banner p {
+  font-size: 1.5em;
+  font-weight: 200;
+  line-height: 1.25em;
+  padding-right: 1em;
+  margin: 0 0 1em 0;
+  margin-top: 46%;
+}
+
+/* Flex Container Styles */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.left-side-panel {
+  width: 200px;
+  /* Adjusted width for the left side-panel */
+  background-color: rgba(236, 226, 226, 0.945);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  /* Full viewport height */
+  border: solid 2px;
+}
+
+.right-side-panel {
+  width: 200px;
+  /* Adjusted width for the right side-panel */
+  background-color: rgba(236, 226, 226, 0.945);
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  /* Full viewport height */
+}
+
+.ad1 {
+  width: 220px;
+  height: 980px;
+  position: fixed;
+  left: 0; /* Adjust left position */
+  top: 0; /* Adjust top position */
+}
+
+.ad2 {
+  width: 210px;
+  height: 1000px;
+  position: fixed;
+  right: 0; /* Adjust right position */
+  top: 70px; /* Adjust top position */
+}
+
+/* Media Query for Screens up to 1500px */
 @media (max-width: 1500px) {
-
-    .col-lg-2 {
-      display: none;
-    } }
-
-  .video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 5%;
+  .col-lg-2 {
+    display: none;
   }
-  
-  .video {
-    margin-bottom: 100px; /* Add space between videos */
-  }
+}
 
-  .video-content {
-    text-align: center; /* Align content text to the left within the video content */
-    margin-top: 10%;
-    width: 80%;
-    padding: 15px;
-    cursor: pointer;
-    display: center;
-    border-radius: 10px;
-    background: #fff;
-    margin-bottom: 15px;
-    justify-content: space-between;
-    border: 2px solid rgb(190, 190, 190);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-    
-  }
+/* Video Container Styles */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
+}
 
-  .video-border {
-    border: 2px solid #333;
-   width: 750px;
-  }
+/* Video Container Paragraph Styles */
+.video-container p {
+  font-style: italic;
+  margin-top: 20px;
+}
 
+/* Video Container Anchor Tag Styles */
+.video-container a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
 
+/* Video Styles */
+.video {
+  margin-bottom: 50px; /* Add space between videos */
+}
 
+.video-content {
+  text-align: left; /* Align content text to the left within the video content */
+  margin-top: 15%;
+}
 
-  
+/* Video Border Styles */
+.video-border {
+  border: 2px solid #333;
+  width: 750px;
+}

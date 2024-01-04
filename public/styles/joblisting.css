@@ -1,6 +1,7 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-*{
+
+/* Resetting default styles for all elements */
+* {
   margin: 0;
   padding: 0;
   outline: none;
@@ -8,60 +9,96 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Arial", sans-serif;
 }
-body{
+
+/* Body styles */
+body {
   background: rgb(233, 233, 233);
+  overflow-x: hidden;
 }
-.container{
+
+/* Container for layout */
+.container {
   display: flex;
   width: 1200px;
   margin: auto;
 }
-nav{
+
+/* Navigation styles */
+nav {
   position: sticky;
   top: 0;
   left: 0;
   bottom: 0;
   width: 280px;
   height: 100vh;
-  background-color: yellow;
+  background-color: #fdda00;
 }
-.navbar{
+
+/* Navbar adjustments */
+.navbar {
   width: 80%;
   margin: 0 auto;
 }
 
-
-ul{
+/* List and link styles */
+ul {
   margin: 0 auto;
 }
-li{
+
+li {
   padding-bottom: 2rem;
 }
-li a{
+
+li a {
   font-size: 16px;
   color: rgb(85, 83, 83);
 }
 
-nav i{
+/* Styling for icons within the navigation */
+nav i {
   width: 50px;
   font-size: 18px;
   text-align: center;
 }
 
-.profile{
+nav a {
+  cursor: pointer;
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+  color: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+
+/* PDF link styles */
+.pdfLink {
+  float: right;
+  color: black;
+  font-style: bold;
+  font-weight: 1000;
+}
+
+.pdfLink:hover {
+  border-bottom: 2px solid black;
+}
+
+/* Profile section */
+.profile {
   position: absolute;
-  bottom: 0%;
 }
 
 /* Main Section */
-.main{
+.main {
   width: 100%;
 }
-.main-top{
+
+/* Top section within the main area */
+.main-top {
   width: 100%;
-  background-color: yellow;
+  background-color: #fdda00;
   padding: 10px;
   text-align: center;
   font-size: 18px;
@@ -69,84 +106,74 @@ nav i{
   text-transform: uppercase;
   color: rgb(43, 43, 43);
 }
-.main-body{
+
+/* Body section within the main area */
+.main-body {
   padding: 10px 10px 10px 20px;
 }
-h1{
+
+h1 {
   margin: 20px 10px;
 }
-.search_bar{
+
+/* Form and input styles */
+.posting-content {
+  /* Styling for the form container */
+  background-color: #f9f9f9;
   display: flex;
-  padding: 10px;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
 }
-.search_bar input{
-  width: 50%;
-  padding: 10px;
-  border: 1px solid rgb(190, 190, 190);
+
+/* Styles for the job posting form */
+#postJobForm {
+  width: 100%;
 }
-.search_bar input:focus{
-  border: 1px solid blueviolet;
+
+#postJobForm label {
+  font-size: 16px;
+  margin-bottom: 8px;
 }
-.search_bar select{
-  border: 1px solid rgb(190, 190, 190);
-  padding: 10px;
-  margin-left: 2rem;
-}
-.search_bar .filter{
+.search_bar .filter {
   width: 300px;
 }
 
-.tags_bar{
-  width: 45%;
+.tags_bar {
+  width: 55%;
   display: flex;
-  padding: 5px;
+  padding: 10px;
   justify-content: space-between;
 }
-.tag{
+.tag {
   background: #fff;
-  padding: 10px 25px;
+  padding: 10px 15px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   font-size: 13px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.remove_button {
-  margin-left: 5px;
-  padding: 3px 7px;
-  border-radius: 50%;
-  background-color: #110f0f;
-  color: #fff;
-  font-size: 10px;
-  cursor: pointer;
-}
-
-.remove_button:hover {
-  background-color: #cc0000;
-}
-
-.remove_button:active {
-  background-color: #aa0000;
-}
-
-.tag i{
+.tag i {
   margin-right: 0.7rem;
 }
-.row{
+
+/* Row layout styles */
+.row {
   display: flex;
   padding: 10px;
   margin-top: 1.3rem;
   justify-content: space-between;
 }
-.row p{
-  color: rgb(54, 54, 54);
-  font-size: 15px;
-}
-.row p span{
-  color: blueviolet;
-}
-.job_card{
+
+/* Job card layout styles */
+.job_card {
   width: 100%;
   padding: 15px;
   cursor: pointer;
@@ -158,53 +185,43 @@ h1{
   border: 2px solid rgb(190, 190, 190);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
 }
-.job_details{
+
+/* Job details layout */
+.job_details {
   display: flex;
 }
-.job_details .img{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.job_details .img i{
-  width: 70px;
-  font-size: 3rem;
-  margin-left: 1rem;
-  padding: 10px;
-  color: rgb(82, 22, 138);
-  background: rgb(216, 205, 226);
-}
-.job_details .text{
+
+.job_details .text {
   margin-left: 2.3rem;
 }
-.job_details .text span{
+
+.job_details .text span {
   color: rgb(116, 112, 112);
 }
-.job_salary{
-  text-align: right;
-  color: rgb(54, 54, 54);
-}
-.job_card:active{
-  border: 2px solid blueviolet;
+
+/* Active job card styles */
+.job_card:active {
+  border: 2px solid #fdda00;
   transition: 0.4s;
 }
 
- @media (min-width: 576px) {
-    .container {
-      /* Adjust the container width or other properties */
-      width: 90%;
-      margin: 0 auto;
-    }
-  
-    /* Additional adjustments for tablet-specific elements */
+/* Media query for tablet screens */
+@media (min-width: 576px) {
+  .container {
+    /* Adjust the container width or other properties */
+    width: 90%;
+    margin: 0 auto;
   }
-  
-  /* Example adjustments for larger screens */
-  @media (min-width: 992px) {
-    .job_card {
-      /* Modify the job card layout */
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 20px;
-    }
+
+  /* Additional adjustments for tablet-specific elements */
+}
+
+/* Media query for larger screens */
+@media (min-width: 992px) {
+  .job_card {
+    /* Modify the job card layout for larger screens */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
 }
